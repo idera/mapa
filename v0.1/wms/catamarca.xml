@@ -1,0 +1,2073 @@
+<?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 5.2.1 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=GEOS INPUT=EPPL7 INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>Atlas Catamarca WMS Server</Title>
+  <Abstract>Servidor WMS del Atlas Catamarca</Abstract>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/>
+  <ContactInformation>
+  </ContactInformation>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/jpg</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <Format>image/tiff</Format>
+      <Format>image/svg+xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/jpg</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+    <GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetStyles>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+    <Name>ACAT</Name>
+    <Title>Atlas Catamarca WMS Server</Title>
+    <SRS>EPSG:4326</SRS>
+    <SRS>EPSG:22183</SRS>
+    <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+    <BoundingBox SRS="EPSG:22183"
+                minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>provin</Name>
+        <Title>Limites Catamarca</Title>
+        <Abstract>Limites Catamarca</Abstract>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-78.7118" miny="-35.434" maxx="-56.1351" maxy="-20.6102" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="2.33288e+06" miny="6.07922e+06" maxx="4.40174e+06" maxy="7.68174e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="168" height="221">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=provin&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>deptos_capa</Name>
+        <Title>Departamentos Catamarca</Title>
+        <Abstract>Departamentos de Catamarca</Abstract>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1673" miny="-30.1189" maxx="-64.5844" maxy="-25.1463" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19457e+06" miny="6.66867e+06" maxx="3.63644e+06" maxy="7.21628e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ecorr</Name>
+        <Title>Ecoregiones</Title>
+        <Abstract>Ecoregiones de Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1621" miny="-30.1191" maxx="-64.5847" maxy="-25.1464" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19507e+06" miny="6.66865e+06" maxx="3.63641e+06" maxy="7.21628e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="266" height="167">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ecorr&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>unireg</Name>
+        <Title>Unidades Regionales</Title>
+        <Abstract>Unidades Regionales de Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1588" miny="-30.1141" maxx="-64.5839" maxy="-25.1455" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19537e+06" miny="6.6692e+06" maxx="3.6365e+06" maxy="7.21638e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="140" height="221">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=unireg&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>abanicos</Name>
+        <Title>Abanicos - Aluviales</Title>
+        <Abstract>Abanicos - Aluviales de Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.7132" miny="-28.2778" maxx="-66.9847" maxy="-25.7449" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33189e+06" miny="6.87233e+06" maxx="3.4012e+06" maxy="7.15232e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>barjanes</Name>
+        <Title>Geoforma- Barjanes</Title>
+        <Abstract>Geoforma de Origen Eólico-Barjanes Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.533" miny="-27.5874" maxx="-67.4599" maxy="-27.4407" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34863e+06" miny="6.9484e+06" maxx="3.35566e+06" maxy="6.96457e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>campodunas</Name>
+        <Title>Geoforma-Campo de dunas</Title>
+        <Abstract>Geoforma de Origen Eólico-Campo de dunas de Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.7692" miny="-27.5996" maxx="-67.44" maxy="-27.1565" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32532e+06" miny="6.94706e+06" maxx="3.35727e+06" maxy="6.99576e+06" />
+        <ScaleHint min="0" max="748.354272644456" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+<!-- WARNING: The layer name 'campos de deflacion' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+        <Name>campos de deflacion</Name>
+        <Title>Geoformas-campos de deflacion</Title>
+        <Abstract>Geoforma de Origen Eólico-campos de deflacion de Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.6827" miny="-27.879" maxx="-67.6011" maxy="-27.4728" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33429e+06" miny="6.9159e+06" maxx="3.34175e+06" maxy="6.96083e+06" />
+        <ScaleHint min="0" max="748.354272644456" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>conos</Name>
+        <Title>Geoformas: Conos</Title>
+        <Abstract>Geoformas de Origen Volcánico:Conos</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.9225" miny="-28.277" maxx="-67.295" maxy="-25.7944" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.31136e+06" miny="6.87211e+06" maxx="3.37012e+06" maxy="7.14656e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cuaternario</Name>
+        <Title>Litología - Cuaternario</Title>
+        <Abstract>Litología - Cuaternario</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.5569" miny="-26.3321" maxx="-67.4602" maxy="-26.1664" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34455e+06" miny="7.08751e+06" maxx="3.35401e+06" maxy="7.10577e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>espejos_de_falla</Name>
+        <Title>Estructuras - Espejo de Falla</Title>
+        <Abstract>Estructuras - Espejo de Falla</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.8026" miny="-28.2858" maxx="-67.7288" maxy="-28.009" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32315e+06" miny="6.87064e+06" maxx="3.32995e+06" maxy="6.90123e+06" />
+        <ScaleHint min="0" max="798.244557487419" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>gla1</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>gla1</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.9128" miny="-28.4124" maxx="-67.3642" maxy="-27.1086" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.31254e+06" miny="6.85704e+06" maxx="3.36473e+06" maxy="7.00089e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>gla2</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>gla2</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.8941" miny="-28.337" maxx="-67.3021" maxy="-25.7677" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.31425e+06" miny="6.86546e+06" maxx="3.36938e+06" maxy="7.14956e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>gla3</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>gla3</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.8841" miny="-28.4432" maxx="-67.3662" maxy="-27.3132" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.31541e+06" miny="6.85363e+06" maxx="3.36478e+06" maxy="6.97825e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>medano</Name>
+        <Title>Geoforma - Médano</Title>
+        <Abstract>Geoforma - Médano</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.6183" miny="-27.6609" maxx="-67.5669" maxy="-27.5162" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34032e+06" miny="6.94012e+06" maxx="3.34519e+06" maxy="6.9561e+06" />
+        <ScaleHint min="0" max="748.354272644456" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>metamorfitas</Name>
+        <Title>Litología- Metamorfitas</Title>
+        <Abstract>Litología- Metamorfitas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.6652" miny="-28.4321" maxx="-67.1293" maxy="-28.0966" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33684e+06" miny="6.85511e+06" maxx="3.38902e+06" maxy="6.89171e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>paleoconos</Name>
+        <Title>Geoformas: Paleoconos</Title>
+        <Abstract>Geoformas: Paleoconos</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.8994" miny="-28.3885" maxx="-67.3275" maxy="-27.3571" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.31381e+06" miny="6.85974e+06" maxx="3.36866e+06" maxy="6.97336e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sedimentitas</Name>
+        <Title>Litología: Sedimentitas</Title>
+        <Abstract>Litología: Sedimentitas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.4373" miny="-26.0374" maxx="-67.3262" maxy="-25.9045" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.35613e+06" miny="7.12031e+06" maxx="3.36711e+06" maxy="7.13493e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>terciario</Name>
+        <Title>Litología: Sedimentitas</Title>
+        <Abstract>Litología: Sedimentitas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.9585" miny="-28.2797" maxx="-67.6519" maxy="-27.6706" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.30783e+06" miny="6.87141e+06" maxx="3.33702e+06" maxy="6.93851e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cuenca</Name>
+        <Title>Cuencas</Title>
+        <Abstract>Hidrografia - Cuencas Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1673" miny="-30.1189" maxx="-64.5844" maxy="-25.1463" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19457e+06" miny="6.66867e+06" maxx="3.63644e+06" maxy="7.21628e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="259" height="167">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cuenca&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>agua_alta</Name>
+        <Title>Disponibilidad de Agua: ALTA</Title>
+        <Abstract>Disponibilidad de Agua: ALTA</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-65.9828" miny="-28.5357" maxx="-65.5966" maxy="-27.836" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.50169e+06" miny="6.84415e+06" maxx="3.53948e+06" maxy="6.92163e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>agua_baja</Name>
+        <Title>Disponibilidad de Agua: BAJA</Title>
+        <Abstract>Disponibilidad de Agua: BAJA</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.2182" miny="-28.8849" maxx="-65.4117" maxy="-26.5988" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.38116e+06" miny="6.80546e+06" maxx="3.55739e+06" maxy="7.05823e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>agua_media</Name>
+        <Title>Disponibilidad de Agua: MEDIA</Title>
+        <Abstract>Disponibilidad de Agua: MEDIA</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.9756" miny="-29.3591" maxx="-64.9732" maxy="-25.9215" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.30812e+06" miny="6.7529e+06" maxx="3.59971e+06" maxy="7.13242e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>supriego</Name>
+        <Title>Superficies bajo Riego</Title>
+        <Abstract>Superficies bajo Riego</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.8138" miny="-29.0922" maxx="-65.092" maxy="-25.9877" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32339e+06" miny="6.78248e+06" maxx="3.5884e+06" maxy="7.12531e+06" />
+        <ScaleHint min="0" max="898.025127173347" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>nogal</Name>
+        <Title>Nogal</Title>
+        <Abstract>Producción: Nogal</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.3756" miny="-28.824" maxx="-65.7268" maxy="-25.9121" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.36572e+06" miny="6.8122e+06" maxx="3.52666e+06" maxy="7.13419e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>tabaco</Name>
+        <Title>Tabaco</Title>
+        <Abstract>Producción: Tabaco</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-65.9133" miny="-28.683" maxx="-65.1011" maxy="-27.8204" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.50854e+06" miny="6.82783e+06" maxx="3.58786e+06" maxy="6.92311e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>aromatica</Name>
+        <Title>Aromáticas</Title>
+        <Abstract>Producción: Aromáticas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1068" miny="-28.4032" maxx="-65.8232" maxy="-25.8864" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19537e+06" miny="6.85884e+06" maxx="3.51732e+06" maxy="7.13419e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>areas</Name>
+        <Title>Áreas Programáticas</Title>
+        <Abstract>Salud: Áreas Programáticas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="49" height="293">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=areas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>microreg</Name>
+        <Title>Actividad Económica</Title>
+        <Abstract>Regionalización Socio-Productiva de la Provincia de Catamarca</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="266" height="185">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=microreg&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>bio</Name>
+        <Title>Perdida de biodiversidad</Title>
+        <Abstract>Degradacion Ambiental:Perdida de biodiversidad</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=bio&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>degra</Name>
+        <Title>Degradacion Ambiental</Title>
+        <Abstract>Degradacion Ambiental</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=degra&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>colma</Name>
+        <Title>colamtacion de dique</Title>
+        <Abstract>Degradacion Ambiental:colamtacion de dique</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=colma&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>deser</Name>
+        <Title>Deserrificacion</Title>
+        <Abstract>Degradacion Ambiental:Deserrificacion</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=deser&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>epidemia</Name>
+        <Title>Epidemias</Title>
+        <Abstract>Degradacion Ambiental:Epidemias</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=epidemia&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>incend</Name>
+        <Title>Incendios Forestales</Title>
+        <Abstract>Degradacion Ambiental:Incendios Forestales</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=incend&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>deslizamiento</Name>
+        <Title>Deslizamiento</Title>
+        <Abstract>Geologia y Geomorfologia:Deslizamiento</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=deslizamiento&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>dptos_ero_hidrica</Name>
+        <Title>Erosion Hidrica</Title>
+        <Abstract>Geologia y Geomorfologia:Erosion Hidrica</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=dptos_ero_hidrica&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>ero_eolica</Name>
+        <Title>Erosion Eolica</Title>
+        <Abstract>Geologia y Geomorfologia:Erosion Eolica</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ero_eolica&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sismos</Name>
+        <Title>SISMOS</Title>
+        <Abstract>Geologia y Geomorfologia:SISMOS</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sismos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sintesisgeo</Name>
+        <Title>Sintesis</Title>
+        <Abstract>Geologia y Geomorfologia:Sintesis</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="59">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sintesisgeo&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>aludes</Name>
+        <Title>Aludes</Title>
+        <Abstract>Amenaza Hidrometereologica:Aludes</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=aludes&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>crecidas</Name>
+        <Title>Crecidas</Title>
+        <Abstract>Amenaza Hidrometereologica:Crecidas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=crecidas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sequias</Name>
+        <Title>Sequias</Title>
+        <Abstract>Amenaza Hidrometereologica:Sequias</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="95">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sequias&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>tormentas</Name>
+        <Title>Tormentas</Title>
+        <Abstract>Amenaza Hidrometereologica:Tormentas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="59">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=tormentas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sintesishidrologia</Name>
+        <Title>Sintesis</Title>
+        <Abstract>Amenaza Hidrometereologica:Sintesis</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sintesishidrologia&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>accidentes_de_transito</Name>
+        <Title>Accidentes de Transito</Title>
+        <Abstract>Amenaza Tecnologicas:Accidentes de Transito</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="95">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=accidentes_de_transito&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>contaminacion</Name>
+        <Title>contaminacion</Title>
+        <Abstract>Amenaza Tecnologicas:contaminacion</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=contaminacion&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>explosion</Name>
+        <Title>explosion</Title>
+        <Abstract>Amenaza Tecnologicas:explosion</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="59">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=explosion&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>incendio</Name>
+        <Title>incendios civiles</Title>
+        <Abstract>Amenaza Tecnologicas:incendios civiles</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=incendio&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sintesiss</Name>
+        <Title>sintesis</Title>
+        <Abstract>Amenaza Tecnologicas:sintesis</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sintesiss&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sustancias</Name>
+        <Title>sustancias peligrosas</Title>
+        <Abstract>Amenaza Tecnologicas:sustancias peligrosas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sustancias&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sinteco</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>sinteco</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sinteco&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sintfis</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>sintfis</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sintfis&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sintsoc</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>sintsoc</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sintsoc&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>aguapotable</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>aguapotable</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=aguapotable&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>cloacas</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>cloacas</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cloacas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>educac</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>educac</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=educac&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>pobre</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>pobre</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=pobre&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sal</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>sal</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sal&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>viv</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>viv</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1599" miny="-30.1176" maxx="-64.5848" maxy="-25.1489" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19528e+06" miny="6.66882e+06" maxx="3.6364e+06" maxy="7.216e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=viv&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ignibritas</Name>
+        <Title>ignibritas</Title>
+        <Abstract>Geoformas: ignibritas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-68.4882" miny="-26.6071" maxx="-67.0075" maxy="-25.6742" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.2521e+06" miny="7.05746e+06" maxx="3.39886e+06" maxy="7.15891e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>crater</Name>
+        <Title>Crater</Title>
+        <Abstract>Geoformas: Crater</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-68.8244" miny="-27.327" maxx="-67.2872" maxy="-25.1854" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.22036e+06" miny="6.97742e+06" maxx="3.37027e+06" maxy="7.21249e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cono</Name>
+        <Title>Conos Volcánicos</Title>
+        <Abstract>Geoformas: Conos Volcánicos</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-68.8896" miny="-27.7971" maxx="-67.2852" maxy="-25.174" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.21511e+06" miny="6.92532e+06" maxx="3.37046e+06" maxy="7.21364e+06" />
+        <ScaleHint min="0" max="1995.61139371855" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>coladas</Name>
+        <Title>Coladas de lavas</Title>
+        <Abstract>Geoformas: Coladas de lavas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-68.5773" miny="-27.2021" maxx="-67.0676" maxy="-25.1551" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.24455e+06" miny="6.99148e+06" maxx="3.39237e+06" maxy="7.21633e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>calderas</Name>
+        <Title>Caldera</Title>
+        <Abstract>Geoformas: Calderas</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-68.2839" miny="-26.7873" maxx="-66.8216" maxy="-25.1921" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.27282e+06" miny="7.03763e+06" maxx="3.41719e+06" maxy="7.21273e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sierras</Name>
+        <Title>Sierras</Title>
+        <Abstract>Orografía: Sierras</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-68.3937" miny="-29.6045" maxx="-65.1242" maxy="-25.1828" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.26805e+06" miny="6.7257e+06" maxx="3.58484e+06" maxy="7.21368e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>coloa</Name>
+        <Title>Arana</Title>
+        <Abstract>Colonoias: Arana</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-67.5798" miny="-28.0865" maxx="-67.4289" maxy="-27.9668" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34472e+06" miny="6.89311e+06" maxx="3.3594e+06" maxy="6.9062e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>colob</Name>
+        <Title>Carranza</Title>
+        <Abstract>Colonoias: Carranza</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-66.0437" miny="-29.0874" maxx="-65.9131" maxy="-28.9896" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.49575e+06" miny="6.78301e+06" maxx="3.50846e+06" maxy="6.79385e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>coloc</Name>
+        <Title>Colonia del Valle</Title>
+        <Abstract>Colonoias: Colonia del Valle</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-65.9111" miny="-28.6804" maxx="-65.8197" maxy="-28.6182" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.50869e+06" miny="6.82811e+06" maxx="3.51762e+06" maxy="6.835e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>colod</Name>
+        <Title>Chumbicha</Title>
+        <Abstract>Colonoias: Chumbicha</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-66.3021" miny="-28.8877" maxx="-66.2573" maxy="-28.8541" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.47053e+06" miny="6.80512e+06" maxx="3.4749e+06" maxy="6.80883e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>coloe</Name>
+        <Title>Nueva Coneta</Title>
+        <Abstract>Colonoias: Nueva Coneta</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-65.8604" miny="-28.6286" maxx="-65.798" maxy="-28.5359" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.51366e+06" miny="6.83386e+06" maxx="3.51976e+06" maxy="6.84412e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>colof</Name>
+        <Title>Telaritos</Title>
+        <Abstract>Colonoias: Telaritos</Abstract>
+        <SRS>EPSG:22183</SRS>
+        <LatLonBoundingBox minx="-65.6793" miny="-29.4855" maxx="-65.5497" maxy="-29.372" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.53114e+06" miny="6.73884e+06" maxx="3.54367e+06" maxy="6.75138e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Imagen</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Imagen</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting LAYER.EXTENT or wms_extent metadata. Also check that your data exists in the DATA statement -->
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Capital</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Capital</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting LAYER.EXTENT or wms_extent metadata. Also check that your data exists in the DATA statement -->
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>IMAGEN_PET</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>IMAGEN_PET</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting LAYER.EXTENT or wms_extent metadata. Also check that your data exists in the DATA statement -->
+        <ScaleHint min="997.805696859274" max="0" />
+        <!-- WARNING: Only MINSCALEDENOM and no MAXSCALEDENOM specified in the mapfile. A default value of 0 has been returned for the Max ScaleHint but this is probably not what you want. -->
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>IMAGEN_PET2</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>IMAGEN_PET2</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting LAYER.EXTENT or wms_extent metadata. Also check that your data exists in the DATA statement -->
+        <ScaleHint min="997.805696859274" max="0" />
+        <!-- WARNING: Only MINSCALEDENOM and no MAXSCALEDENOM specified in the mapfile. A default value of 0 has been returned for the Max ScaleHint but this is probably not what you want. -->
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>camnorte</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>camnorte</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-85.3877" miny="-12.992" maxx="-75.3936" maxy="-0.594635" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="1.35451e+06" miny="8.54513e+06" maxx="2.44962e+06" maxy="9.93243e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>camcost</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>camcost</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-90.2222" miny="-34.4018" maxx="-75.8217" maxy="-3.69195" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="1.19647e+06" miny="6.12891e+06" maxx="2.40377e+06" maxy="9.56658e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>camsur</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>camsur</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-72.7145" miny="-35.3695" maxx="-65.1023" maxy="-20.8885" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="2.88794e+06" miny="6.08638e+06" maxx="3.58159e+06" maxy="7.68002e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>camincat</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>camincat</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.2186" miny="-28.9238" maxx="-65.7742" maxy="-26.6882" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.38116e+06" miny="6.80114e+06" maxx="3.52202e+06" maxy="7.04833e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rutainca</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>rutainca</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.7937" miny="-34.2807" maxx="-64.1411" maxy="-22.8432" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.15034e+06" miny="6.20717e+06" maxx="3.67121e+06" maxy="7.47076e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>campalza</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>campalza</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.1683" miny="-27.8834" maxx="-65.8511" maxy="-25.906" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.38495e+06" miny="6.91645e+06" maxx="3.51466e+06" maxy="7.13504e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>evacuacion</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>evacuacion</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.2129" miny="-28.3057" maxx="-66.8154" maxy="-27.8937" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.38103e+06" miny="6.86937e+06" maxx="3.41972e+06" maxy="6.91471e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>itinerario</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>itinerario</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.655" miny="-28.817" maxx="-65.7988" maxy="-27.232" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33843e+06" miny="6.81298e+06" maxx="3.51964e+06" maxy="6.98757e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>camboli</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>camboli</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-70.0171" miny="-20.6924" maxx="-64.3275" maxy="-11.1464" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.0811e+06" miny="7.71294e+06" maxx="3.67427e+06" maxy="8.76659e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>caminocata</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>caminocata</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.2186" miny="-28.9238" maxx="-65.7742" maxy="-26.6882" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.38116e+06" miny="6.80114e+06" maxx="3.52202e+06" maxy="7.04833e+06" />
+        <ScaleHint min="0" max="1746.15996950373" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>falla</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>falla</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.9602" miny="-28.1209" maxx="-67.1667" maxy="-25.6601" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.30737e+06" miny="6.88956e+06" maxx="3.38286e+06" maxy="7.16139e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>calles</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>calles</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.826" miny="-28.5467" maxx="-65.7259" maxy="-28.4192" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.51705e+06" miny="6.84293e+06" maxx="3.52683e+06" maxy="6.85704e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cauces</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>cauces</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6358" miny="-28.7994" maxx="-65.5586" maxy="-25.6565" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34028e+06" miny="6.81493e+06" maxx="3.54309e+06" maxy="7.16223e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>fract</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>fract</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.9602" miny="-28.1209" maxx="-67.1667" maxy="-25.6601" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.30737e+06" miny="6.88956e+06" maxx="3.38286e+06" maxy="7.16139e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>geodivisoria</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>geodivisoria</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.3355" miny="-29.5546" maxx="-65.5465" maxy="-25.5811" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.27358e+06" miny="6.73123e+06" maxx="3.54395e+06" maxy="7.16961e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>isoyetas</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>isoyetas</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.8048" miny="-29.4796" maxx="-65.0843" maxy="-26.416" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32492e+06" miny="6.73954e+06" maxx="3.58881e+06" maxy="7.07785e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lineas</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lineas</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1673" miny="-30.1189" maxx="-64.5844" maxy="-25.1463" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19457e+06" miny="6.66867e+06" maxx="3.63644e+06" maxy="7.21628e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="42" height="95">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=lineas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>linea</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>linea</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1673" miny="-30.1189" maxx="-64.5844" maxy="-25.1463" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19457e+06" miny="6.66867e+06" maxx="3.63644e+06" maxy="7.21628e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="42" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=linea&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lim_litigio</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lim_litigio</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.7732" miny="-28.0196" maxx="-66.1339" maxy="-27.1496" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.42395e+06" miny="6.90134e+06" maxx="3.48673e+06" maxy="6.99752e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lim_interdep</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lim_interdep</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.4236" miny="-29.7198" maxx="-65.0919" maxy="-25.9018" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.26542e+06" miny="6.71291e+06" maxx="3.58787e+06" maxy="7.13392e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lim_intermuni</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lim_intermuni</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.4116" miny="-29.0673" maxx="-64.7647" maxy="-26.3464" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.26508e+06" miny="6.78523e+06" maxx="3.6203e+06" maxy="7.08461e+06" />
+        <ScaleHint min="0" max="698.463987801492" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lim_interprov</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lim_interprov</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.165" miny="-30.1189" maxx="-64.5844" maxy="-25.1463" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19479e+06" miny="6.66867e+06" maxx="3.63644e+06" maxy="7.21628e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lim_internac</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lim_internac</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.0984" miny="-27.8082" maxx="-68.2299" maxy="-25.1463" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19457e+06" miny="6.92269e+06" maxx="3.27515e+06" maxy="7.21628e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>linea2</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>linea2</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1673" miny="-30.1189" maxx="-64.5844" maxy="-25.1463" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19457e+06" miny="6.66867e+06" maxx="3.63644e+06" maxy="7.21628e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="42" height="95">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=linea2&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="947.91541201631" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rios</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>rios</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.0966" miny="-29.4225" maxx="-65.0399" maxy="-25.2113" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19933e+06" miny="6.74586e+06" maxx="3.59317e+06" maxy="7.20917e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lat_132bis</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lat_132bis</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.589" miny="-29.6054" maxx="-64.9495" maxy="-26.7607" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34605e+06" miny="6.72559e+06" maxx="3.60177e+06" maxy="7.03992e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lat_220</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lat_220</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.5267" miny="-27.2562" maxx="-65.9648" maxy="-26.6009" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.44784e+06" miny="6.98595e+06" maxx="3.50348e+06" maxy="7.05844e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lat_proybis</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>lat_proybis</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.7667" miny="-29.5801" maxx="-65.0849" maxy="-28.4412" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.52285e+06" miny="6.72838e+06" maxx="3.58866e+06" maxy="6.8543e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>redferro</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>redferro</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.649" miny="-30.9461" maxx="-64.0579" maxy="-24.694" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.53552e+06" miny="6.57691e+06" maxx="3.68563e+06" maxy="7.26857e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>ruta_exter</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>ruta_exter</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.4106" miny="-30.3856" maxx="-64.2489" maxy="-24.0438" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.17196e+06" miny="6.63911e+06" maxx="3.66833e+06" maxy="7.33807e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Rut_prov_pav</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_prov_pav</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7953" miny="-29.5944" maxx="-65.0587" maxy="-26.4752" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32604e+06" miny="6.72682e+06" maxx="3.59119e+06" maxy="7.0713e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Rut_prov_pav_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_prov_pav_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7953" miny="-29.5944" maxx="-65.0587" maxy="-26.4752" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32604e+06" miny="6.72682e+06" maxx="3.59119e+06" maxy="7.0713e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Rut_prov_mej</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_prov_mej</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.8042" miny="-29.9006" maxx="-64.8017" maxy="-25.6298" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32571e+06" miny="6.69287e+06" maxx="3.61575e+06" maxy="7.165e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Rut_prov_mej_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_prov_mej_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.8042" miny="-29.9006" maxx="-64.8017" maxy="-25.6298" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32571e+06" miny="6.69287e+06" maxx="3.61575e+06" maxy="7.165e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Rut_nac_pav</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_nac_pav</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.3588" miny="-29.7158" maxx="-64.8541" maxy="-26.5802" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.27168e+06" miny="6.71336e+06" maxx="3.61088e+06" maxy="7.05881e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Rut_nac_pav_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_nac_pav_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.3588" miny="-29.7158" maxx="-64.8541" maxy="-26.5802" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.27168e+06" miny="6.71336e+06" maxx="3.61088e+06" maxy="7.05881e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Rut_nac_mej</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_nac_mej</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.8751" miny="-27.2759" maxx="-66.5964" maxy="-27.0729" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.41335e+06" miny="6.98362e+06" maxx="3.44084e+06" maxy="7.00595e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Rut_nac_mej_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_nac_mej_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.8751" miny="-27.2759" maxx="-66.5964" maxy="-27.0729" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.41335e+06" miny="6.98362e+06" maxx="3.44084e+06" maxy="7.00595e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>huella</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>huella</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.5251" miny="-30.0627" maxx="-64.9224" maxy="-26.5396" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.44937e+06" miny="6.67491e+06" maxx="3.60391e+06" maxy="7.06492e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>huella_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>huella_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.5251" miny="-30.0627" maxx="-64.9224" maxy="-26.5396" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.44937e+06" miny="6.67491e+06" maxx="3.60391e+06" maxy="7.06492e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>mejorada</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>mejorada</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7129" miny="-29.3273" maxx="-64.8895" maxy="-26.6367" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.3336e+06" miny="6.75641e+06" maxx="3.60787e+06" maxy="7.0535e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>mejorada_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>mejorada_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7129" miny="-29.3273" maxx="-64.8895" maxy="-26.6367" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.3336e+06" miny="6.75641e+06" maxx="3.60787e+06" maxy="7.0535e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>pavimentada</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>pavimentada</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6302" miny="-28.4679" maxx="-65.7857" maxy="-27.6837" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34032e+06" miny="6.85167e+06" maxx="3.52098e+06" maxy="6.93752e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>pavimentada_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>pavimentada_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6302" miny="-28.4679" maxx="-65.7857" maxy="-27.6837" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34032e+06" miny="6.85167e+06" maxx="3.52098e+06" maxy="6.93752e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>natural</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>natural</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6981" miny="-29.7867" maxx="-64.7573" maxy="-26.6328" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33578e+06" miny="6.7055e+06" maxx="3.62017e+06" maxy="7.05396e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>natural_anot</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>natural_anot</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6981" miny="-29.7867" maxx="-64.7573" maxy="-26.6328" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33578e+06" miny="6.7055e+06" maxx="3.62017e+06" maxy="7.05396e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Rut_exter</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>Rut_exter</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.4106" miny="-30.3856" maxx="-64.2489" maxy="-24.0438" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.17196e+06" miny="6.63911e+06" maxx="3.66833e+06" maxy="7.33807e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sist</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>sist</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.4247" miny="-29.5616" maxx="-65.5417" maxy="-25.1935" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.26494e+06" miny="6.73045e+06" maxx="3.54441e+06" maxy="7.21244e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>capitasuda</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>capitasuda</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-81.6247" miny="-35.6454" maxx="-70.8926" maxy="0.493386" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="2.0636e+06" miny="6.03905e+06" maxx="2.95469e+06" maxy="1.00567e+07" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>localidaprin</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>localidaprin</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6681" miny="-28.8192" maxx="-65.7945" maxy="-27.2169" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33715e+06" miny="6.81274e+06" maxx="3.52006e+06" maxy="6.98924e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>loinca</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>loinca</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.8801" miny="-33.8164" maxx="-64.183" maxy="-22.9855" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.2332e+06" miny="6.25867e+06" maxx="3.66826e+06" maxy="7.45667e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>guerras</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>guerras</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7203" miny="-28.8615" maxx="-65.0695" maxy="-27.4221" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33212e+06" miny="6.80805e+06" maxx="3.59079e+06" maxy="6.96642e+06" />
+        <ScaleHint min="0" max="1197.36683623113" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>fundacion</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>fundacion</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.1016" miny="-28.4679" maxx="-65.7814" maxy="-27.5184" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.3921e+06" miny="6.85167e+06" maxx="3.52141e+06" maxy="6.95641e+06" />
+        <ScaleHint min="0" max="748.354272644456" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cultura</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>cultura</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.2794" miny="-29.2867" maxx="-65.0971" maxy="-25.7819" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.27844e+06" miny="6.76092e+06" maxx="3.58774e+06" maxy="7.14744e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>localicalcha</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>localicalcha</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6681" miny="-28.8192" maxx="-65.7945" maxy="-27.2169" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33715e+06" miny="6.81274e+06" maxx="3.52006e+06" maxy="6.98924e+06" />
+        <ScaleHint min="0" max="1097.5862665452" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>locali</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>locali</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.802" miny="-29.9316" maxx="-64.9726" maxy="-25.5061" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32598e+06" miny="6.68943e+06" maxx="3.59921e+06" maxy="7.17871e+06" />
+        <ScaleHint min="0" max="299.341709057782" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>derrota</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>derrota</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.9661" miny="-27.2232" maxx="-66.9661" maxy="-27.2232" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.40429e+06" miny="6.98924e+06" maxx="3.40429e+06" maxy="6.98924e+06" />
+        <ScaleHint min="0" max="1596.48911497484" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cabeceras</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>cabeceras</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.5822" miny="-29.2809" maxx="-65.0582" maxy="-26.06" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34623e+06" miny="6.76157e+06" maxx="3.59152e+06" maxy="7.11758e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="280" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cabeceras&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="299.341709057782" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ciudades_principales</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>ciudades_principales</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.5822" miny="-29.2809" maxx="-65.0582" maxy="-26.6868" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34623e+06" miny="6.76157e+06" maxx="3.59152e+06" maxy="7.0481e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>comisarias</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>comisarias</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.8006" miny="-28.4957" maxx="-65.7329" maxy="-28.4234" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.51953e+06" miny="6.84858e+06" maxx="3.52615e+06" maxy="6.85657e+06" />
+        <ScaleHint min="0" max="848.134842330383" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>judicial</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>judicial</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.8006" miny="-28.4957" maxx="-65.7529" maxy="-28.4306" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.51953e+06" miny="6.84857e+06" maxx="3.5242e+06" maxy="6.85578e+06" />
+        <ScaleHint min="0" max="848.134842330383" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>diques</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>diques</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.278" miny="-29.2763" maxx="-65.2143" maxy="-26.6021" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.47298e+06" miny="6.76207e+06" maxx="3.57635e+06" maxy="7.0582e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>aeropuerto</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>aeropuerto</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.6514" miny="-28.6049" maxx="-65.6514" maxy="-28.6049" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.53409e+06" miny="6.83643e+06" maxx="3.53409e+06" maxy="6.83643e+06" />
+        <ScaleHint min="0.498902848429637" max="997.805696859274" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>puestos</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>puestos</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.3494" miny="-29.9757" maxx="-64.6631" maxy="-25.2269" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.27318e+06" miny="6.68455e+06" maxx="3.62904e+06" maxy="7.20887e+06" />
+        <ScaleHint min="0" max="1347.03769076002" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>aforo</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>aforo</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.1995" miny="-29.9957" maxx="-65.3493" maxy="-26.3751" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.28771e+06" miny="6.68233e+06" maxx="3.56278e+06" maxy="7.08182e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>pluviometria</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>pluviometria</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7918" miny="-29.554" maxx="-65.0871" maxy="-26.9975" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32632e+06" miny="6.73129e+06" maxx="3.58848e+06" maxy="7.01341e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+<!-- WARNING: The layer name 'telefonia fija' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+        <Name>telefonia fija</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>telefonia fija</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6428" miny="-29.2811" maxx="-65.0585" maxy="-26.6855" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34034e+06" miny="6.76154e+06" maxx="3.59149e+06" maxy="7.04817e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+<!-- WARNING: The layer name 'telefonia movil' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+        <Name>telefonia movil</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>telefonia movil</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6507" miny="-28.9401" maxx="-65.0886" maxy="-26.685" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33903e+06" miny="6.79934e+06" maxx="3.58886e+06" maxy="7.04822e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+<!-- WARNING: The layer name 'servicio semipublico' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+        <Name>servicio semipublico</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>servicio semipublico</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.4576" miny="-28.7714" maxx="-65.5515" maxy="-26.0596" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.35764e+06" miny="6.81803e+06" maxx="3.5438e+06" maxy="7.11775e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>calibaja</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>calibaja</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.205" miny="-29.6257" maxx="-65.205" maxy="-29.6257" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.57699e+06" miny="6.72308e+06" maxx="3.57699e+06" maxy="6.72308e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>calimedia</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>calimedia</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.9383" miny="-27.979" maxx="-65.3744" maxy="-25.922" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.30927e+06" miny="6.90585e+06" maxx="3.56155e+06" maxy="7.13239e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>calialta</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>calialta</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.1276" miny="-28.9546" maxx="-65.3818" maxy="-26.8485" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.29254e+06" miny="6.79773e+06" maxx="3.56026e+06" maxy="7.02941e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>consorcio</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>consorcio</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6414" miny="-29.0625" maxx="-65.3135" maxy="-27.2371" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34013e+06" miny="6.78577e+06" maxx="3.56685e+06" maxy="6.98703e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>inten</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>inten</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6098" miny="-28.9237" maxx="-65.0958" maxy="-26.6854" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.343e+06" miny="6.80116e+06" maxx="3.58818e+06" maxy="7.04822e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>agrono</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>agrono</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7883" miny="-29.2901" maxx="-65.0495" maxy="-26.6835" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.3262e+06" miny="6.76055e+06" maxx="3.59237e+06" maxy="7.04822e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>vid</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>vid</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7918" miny="-28.4644" maxx="-65.4687" maxy="-25.4515" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32448e+06" miny="6.85205e+06" maxx="3.55203e+06" maxy="7.18474e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>minas</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>minas</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.8177" miny="-29.84" maxx="-65.0418" maxy="-25.3723" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.22756e+06" miny="6.69958e+06" maxx="3.5926e+06" maxy="7.19191e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="147" height="491">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.atlas.catamarca.gov.ar:8080/cgi-bin/wms_acat?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=minas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>escuelas</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>escuelas</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.8642" miny="-29.9018" maxx="-64.7786" maxy="-25.3955" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.31991e+06" miny="6.69274e+06" maxx="3.61798e+06" maxy="7.19089e+06" />
+        <ScaleHint min="0" max="299.341709057782" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>postas</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>postas</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.8311" miny="-29.9528" maxx="-64.8092" maxy="-25.511" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.3232e+06" miny="6.68709e+06" maxx="3.61496e+06" maxy="7.17813e+06" />
+        <ScaleHint min="0" max="898.025127173347" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>et_exis</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>et_exis</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.567" miny="-29.2772" maxx="-64.9493" maxy="-26.6842" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.3477e+06" miny="6.76197e+06" maxx="3.60211e+06" maxy="7.04841e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>et_proy</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>et_proy</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.7668" miny="-29.3175" maxx="-65.6466" maxy="-28.4812" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.52284e+06" miny="6.75748e+06" maxx="3.53433e+06" maxy="6.85014e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>pistas</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>pistas</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.5868" miny="-28.0648" maxx="-66.3722" maxy="-26.1319" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34399e+06" miny="6.89628e+06" maxx="3.46278e+06" maxy="7.10958e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>curtidos</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>curtidos</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.1892" miny="-28.7133" maxx="-65.7412" maxy="-28.1226" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.48151e+06" miny="6.82447e+06" maxx="3.52529e+06" maxy="6.88992e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>molienda</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>molienda</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.648" miny="-28.8285" maxx="-65.7016" maxy="-27.5854" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33913e+06" miny="6.81171e+06" maxx="3.52913e+06" maxy="6.94841e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>industrias</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>industrias</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6858" miny="-29.4282" maxx="-64.8279" maxy="-26.686" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33639e+06" miny="6.74523e+06" maxx="3.61375e+06" maxy="7.04807e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>diferi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>diferi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6402" miny="-29.216" maxx="-65.1059" maxy="-26.6598" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.34049e+06" miny="6.76875e+06" maxx="3.58694e+06" maxy="7.05103e+06" />
+        <ScaleHint min="0" max="498.902848429637" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ur2comi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>ur2comi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.5242" miny="-29.604" maxx="-64.9196" maxy="-28.5948" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.54654e+06" miny="6.72565e+06" maxx="3.60466e+06" maxy="6.83714e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ur1comi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>ur1comi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.9802" miny="-28.5141" maxx="-65.5805" maxy="-27.6556" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.50195e+06" miny="6.84655e+06" maxx="3.54107e+06" maxy="6.94162e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ur3comi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>ur3comi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.1407" miny="-27.7163" maxx="-66.646" maxy="-26.5878" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.3875e+06" miny="6.93479e+06" maxx="3.43565e+06" maxy="7.05951e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ur4comi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>ur4comi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.4101" miny="-27.5835" maxx="-65.9786" maxy="-27.3506" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.45951e+06" miny="6.94968e+06" maxx="3.50211e+06" maxy="6.97542e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ur5comi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>ur5comi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.7713" miny="-28.3116" maxx="-67.2016" maxy="-27.3357" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.32625e+06" miny="6.8684e+06" maxx="3.3811e+06" maxy="6.97591e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonaa</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>zonaa</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.2387" miny="-29.2231" maxx="-65.7734" maxy="-28.5079" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.47679e+06" miny="6.76797e+06" maxx="3.52204e+06" maxy="6.84721e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonab</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>zonab</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.499" miny="-28.278" maxx="-65.1078" maxy="-27.865" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.54934e+06" miny="6.87261e+06" maxx="3.58754e+06" maxy="6.91816e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonac</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>zonac</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.4336" miny="-28.579" maxx="-65.0987" maxy="-28.3099" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.55555e+06" miny="6.83923e+06" maxx="3.58818e+06" maxy="6.86886e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonad</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>zonad</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.3591" miny="-26.9642" maxx="-66.0043" maxy="-26.4034" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.46434e+06" miny="7.0183e+06" maxx="3.49957e+06" maxy="7.08039e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonae</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>zonae</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.6397" miny="-26.4846" maxx="-67.0525" maxy="-25.3776" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.23671e+06" miny="7.071e+06" maxx="3.39409e+06" maxy="7.1915e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonaf</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>zonaf</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-66.4006" miny="-28.6772" maxx="-66.1432" maxy="-28.0587" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.46085e+06" miny="6.82846e+06" maxx="3.48592e+06" maxy="6.89696e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonag</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>zonag</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.6025" miny="-29.0272" maxx="-65.4289" maxy="-28.6504" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.53886e+06" miny="6.78961e+06" maxx="3.55563e+06" maxy="6.83131e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>monumprov</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>monumprov</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-67.6972" miny="-28.7021" maxx="-65.3609" maxy="-25.416" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.33412e+06" miny="6.82571e+06" maxx="3.56245e+06" maxy="7.18881e+06" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>monumcapi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>monumcapi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-65.7981" miny="-28.4838" maxx="-65.7037" maxy="-28.389" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.51979e+06" miny="6.8499e+06" maxx="3.52901e+06" maxy="6.86038e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cerros</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>cerros</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-68.6505" miny="-29.5086" maxx="-65.2158" maxy="-25.2301" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.2429e+06" miny="6.73632e+06" maxx="3.57604e+06" maxy="7.20798e+06" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>maxi</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>maxi</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-69.1237" miny="-27.94" maxx="-66.616" maxy="-25.115" />
+        <BoundingBox SRS="EPSG:22183"
+                    minx="3.19239e+06" miny="6.91002e+06" maxx="3.43789e+06" maxy="7.21969e+06" />
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>

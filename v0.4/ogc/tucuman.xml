@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 5.2.1 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=GEOS INPUT=EPPL7 INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>Servicio WMS de la IDET</Title>
+  <Abstract>Servicio de mapas para Web de la Infraestructura de Datos de la Provincia de Tucuman-IDET.</Abstract>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/>
+  <ContactInformation>
+  </ContactInformation>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/gif</Format>
+      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <Format>image/tiff</Format>
+      <Format>image/svg+xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/gif</Format>
+      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+    <GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetStyles>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+    <Name>idet_wms</Name>
+    <Title>Servicio WMS de la IDET</Title>
+    <SRS>EPSG:4326</SRS>
+    <SRS>EPSG:22183</SRS>
+    <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+    <BoundingBox SRS="EPSG:4326"
+                minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Departamental</Name>
+        <Title>Division Departamental</Title>
+        <Abstract>Departamentos de la provincia de Tucuman</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="170" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Departamental&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Localidades</Name>
+        <Title>Localidades principales</Title>
+        <Abstract>Localidades principales de la provincia de Tucuman</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="169" height="54">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Localidades&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Radios_censales</Name>
+        <Title>Radios censales</Title>
+        <Abstract>Radios censales.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="128" height="21">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Radios_censales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Comunas</Name>
+        <Title>Comunas</Title>
+        <Abstract>Comunas de Tucuman</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="256" height="1713">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Comunas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Municipios</Name>
+        <Title>Municipios</Title>
+        <Abstract>Municipios de la provincia de Tucuman</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="132" height="308">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Municipios&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Poblac</Name>
+        <Title>Poblacion total. Censo 2001.</Title>
+        <Abstract>Cantidad total de poblacion por radios censales. Censo 2001. INDEC</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="163" height="90">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Poblac&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Poblac2010</Name>
+        <Title>Poblacion total. Censo 2010.</Title>
+        <Abstract>Cantidad total de poblacion por departamento. Censo 2010. INDEC</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="121" height="65">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Poblac2010&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Hogares</Name>
+        <Title>Cantidad de Hogares. Censo 2001.</Title>
+        <Abstract>Cantidad total de hogares por radios censales. Censo 2001. INDEC</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="89" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Hogares&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Viviendas2010</Name>
+        <Title>Viviendas totales. Censo 2010.</Title>
+        <Abstract>Cantidad de viviendas segun el Censo 2010. INDEC.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="121" height="65">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Viviendas2010&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>IPMH_Convergente</Name>
+        <Title>Privacion Convergente segun el IPMH</Title>
+        <Abstract>IPMH: Privacion convergente, solo de recurssos corrientes, solo patrimonial, sin privacion, total</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="144" height="124">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=IPMH_Convergente&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Discapacidad</Name>
+        <Title>Discapacidad. Censo 2001.</Title>
+        <Abstract>Cantidad de discapacitados por radio censal. Censo 2001.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="136" height="124">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Discapacidad&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Aeropuertos</Name>
+        <Title>Aeropuertos.</Title>
+        <Abstract>Aeropuertos que funcionan actualmente en la provincia de Tucuman</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="221" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Aeropuertos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Ingenios</Name>
+        <Title>Ingenios.</Title>
+        <Abstract>Ingenios que funcionan actualmente en la provincia de Tucuman</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="81" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Ingenios&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Ferrocarriles</Name>
+        <Title>Ferrocarriles.</Title>
+        <Abstract>Lineas de ferrocarriles</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="168" height="54">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Ferrocarriles&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Gasoductos</Name>
+        <Title>Gasoductos.</Title>
+        <Abstract>Trayecto de los gasoductos.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-66.1851" miny="-28.0073" maxx="-64.4818" maxy="-26.0586" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="99" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://central.tucuman.gov.ar:8180/cgi-bin/wms_idet?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Gasoductos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>

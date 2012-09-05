@@ -1,0 +1,2533 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengeospatial.net/wms/1.1.1/capabilities_1_1_1.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 5.6.6 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=CAIRO SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER SUPPORTS=FASTCGI SUPPORTS=THREADS SUPPORTS=GEOS INPUT=TIFF INPUT=EPPL7 INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>IDESF-Infraestructura de Datos Espaciales de Santa Fe</Title>
+  <Abstract>Servidor de Mapas de la Infraestructura de Datos Espaciales de Santa Fe. Argentina</Abstract>
+        <KeywordList>
+          <Keyword>Santa Fe</Keyword>
+          <Keyword> Distritos</Keyword>
+          <Keyword> Departamentos</Keyword>
+          <Keyword> Autopistas...</Keyword>
+        </KeywordList>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/>
+  <ContactInformation>
+    <ContactPersonPrimary>
+      <ContactPerson>Grupo de Desarrollo</ContactPerson>
+      <ContactOrganization>IDESF</ContactOrganization>
+    </ContactPersonPrimary>
+      <ContactPosition>Grupo de Desarrollo - IDESF</ContactPosition>
+    <ContactAddress>
+        <AddressType>postal</AddressType>
+        <Address>San Martín 2466</Address>
+        <City>Santa Fe</City>
+        <StateOrProvince>Santa Fe</StateOrProvince>
+        <PostCode>S3000FSB</PostCode>
+        <Country>Argentina</Country>
+    </ContactAddress>
+      <ContactVoiceTelephone>54-342-4508700 INT 5147/9</ContactVoiceTelephone>
+      <ContactFacsimileTelephone>54-342-4574892</ContactFacsimileTelephone>
+  <ContactElectronicMailAddress>desarrolloidesf@santafe.gov.ar</ContactElectronicMailAddress>
+  </ContactInformation>
+  <Fees>none</Fees>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>text/html</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+    <GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetStyles>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+    <Name>IDESFOGC</Name>
+    <Title>IDESF-Infraestructura de Datos Espaciales de Santa Fe</Title>
+    <Abstract>Servidor de Mapas de la Infraestructura de Datos Espaciales de Santa Fe. Argentina</Abstract>
+    <KeywordList>
+     <Keyword>Santa Fe</Keyword>
+     <Keyword> Distritos</Keyword>
+     <Keyword> Departamentos</Keyword>
+     <Keyword> Autopistas...</Keyword>
+    </KeywordList>
+    <SRS>EPSG:22185</SRS>
+    <SRS>EPSG:4326</SRS>
+    <LatLonBoundingBox minx="-65.5442" miny="-36.148" maxx="-54.4558" maxy="-27.0391" />
+    <BoundingBox SRS="EPSG:22185"
+                minx="5e+06" miny="6e+06" maxx="6e+06" maxy="7e+06" />
+    <Layer>
+      <Name>imagenes</Name>
+      <Title>Imágenes</Title>
+      <Abstract>Imágenes(Cartasimágenes)</Abstract>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c2960iiig</Name>
+        <Title>c2969iiig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-61.5205" miny="-30.0131" maxx="-59.9948" maxy="-28.9868" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-61.5205" miny="-30.0131" maxx="-59.9948" maxy="-28.9868" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c2960ivg</Name>
+        <Title>c2960ivg</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-60.0062" miny="-30.0125" maxx="-58.4806" maxy="-28.9862" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-60.0062" miny="-30.0125" maxx="-58.4806" maxy="-28.9862" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c2960ig</Name>
+        <Title>c2960ig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-61.5198" miny="-29.013" maxx="-59.995" maxy="-27.987" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-61.5198" miny="-29.013" maxx="-59.995" maxy="-27.987" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c2960iig</Name>
+        <Title>c2960iig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-60.0053" miny="-29.0104" maxx="-58.4808" maxy="-27.9844" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-60.0053" miny="-29.0104" maxx="-58.4808" maxy="-27.9844" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c2963iig</Name>
+        <Title>c2963iig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.0106" miny="-29.0173" maxx="-61.4755" maxy="-27.9824" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.0106" miny="-29.0173" maxx="-61.4755" maxy="-27.9824" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c2963ivg</Name>
+        <Title>c2963ivg</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.0057" miny="-30.013" maxx="-61.48" maxy="-28.9869" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.0057" miny="-30.013" maxx="-61.48" maxy="-28.9869" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3160ig</Name>
+        <Title>c3160ig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-61.5218" miny="-31.0126" maxx="-59.9956" maxy="-29.986" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-61.5218" miny="-31.0126" maxx="-59.9956" maxy="-29.986" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3160iig</Name>
+        <Title>c3160iig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-60.0061" miny="-31.0127" maxx="-58.4799" maxy="-29.9861" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-60.0061" miny="-31.0127" maxx="-58.4799" maxy="-29.9861" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3160iiig</Name>
+        <Title>c3160iiig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-61.5225" miny="-32.0129" maxx="-59.9952" maxy="-30.9861" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-61.5225" miny="-32.0129" maxx="-59.9952" maxy="-30.9861" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3160ivg</Name>
+        <Title>c3160ivg</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-60.0062" miny="-32.0127" maxx="-58.4791" maxy="-30.9859" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-60.0062" miny="-32.0127" maxx="-58.4791" maxy="-30.9859" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3163iig</Name>
+        <Title>c3163iig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.0062" miny="-31.0126" maxx="-61.48" maxy="-29.986" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.0062" miny="-31.0126" maxx="-61.48" maxy="-29.986" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3163ivg</Name>
+        <Title>c3163ivg</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.0063" miny="-32.0127" maxx="-61.479" maxy="-30.9859" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.0063" miny="-32.0127" maxx="-61.479" maxy="-30.9859" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3360ig</Name>
+        <Title>c3360ig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-61.5223" miny="-33.0136" maxx="-59.9946" maxy="-31.9864" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-61.5223" miny="-33.0136" maxx="-59.9946" maxy="-31.9864" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3360iiig</Name>
+        <Title>c3360iiig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-61.5238" miny="-34.0131" maxx="-59.9953" maxy="-32.9857" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-61.5238" miny="-34.0131" maxx="-59.9953" maxy="-32.9857" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3363iig</Name>
+        <Title>c3363iig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.2151" miny="-33.0261" maxx="-61.4626" maxy="-31.9721" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.2151" miny="-33.0261" maxx="-61.4626" maxy="-31.9721" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3363ivg</Name>
+        <Title>c3363ivg</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.0065" miny="-34.0133" maxx="-61.4778" maxy="-32.9856" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.0065" miny="-34.0133" maxx="-61.4778" maxy="-32.9856" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3560ig</Name>
+        <Title>c3560ig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-61.5246" miny="-35.0133" maxx="-59.9953" maxy="-33.9855" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-61.5246" miny="-35.0133" maxx="-59.9953" maxy="-33.9855" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>c3563iig</Name>
+        <Title>c3563iig</Title>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.0066" miny="-35.0134" maxx="-61.4773" maxy="-33.9855" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.0066" miny="-35.0134" maxx="-61.4773" maxy="-33.9855" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>limites</Name>
+      <Title>Límites</Title>
+      <Abstract>Límites(Administrativos/Servicios/Sociedad)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>departamentos</Name>
+        <Title>Departamentos</Title>
+        <Abstract>Departamentos de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="133" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=departamentos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>departamentos_toponimia</Name>
+        <Title>Departamentos_toponimia</Title>
+        <Abstract>Departamentos de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>catastro_regiones</Name>
+        <Title>Regiones</Title>
+        <Abstract>Regiones de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="103" height="82">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=catastro_regiones&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>catastro_regiones_toponimia</Name>
+        <Title>Regiones_toponimia</Title>
+        <Abstract>Regiones de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>distritos</Name>
+        <Title>Distritos</Title>
+        <Abstract>Límites de los distritos de Santa Fe - SCIT</Abstract>
+        <KeywordList>
+          <Keyword>Distritos</Keyword>
+          <Keyword> limites</Keyword>
+        </KeywordList>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="74" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=distritos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>distritos_toponimia</Name>
+        <Title>Distritos_toponimia</Title>
+        <Abstract>Límites de los distritos de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>limite_provincial</Name>
+        <Title>Límite Provincial</Title>
+        <Abstract>Límite Provincial de Santa Fe</Abstract>
+        <KeywordList>
+          <Keyword>Distritos</Keyword>
+          <Keyword> límites</Keyword>
+        </KeywordList>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="111" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=limite_provincial&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>medio_ambiente</Name>
+      <Title>Medio Ambiente</Title>
+      <Abstract>Medio Ambiente(Áreas protegidas/Bosques/Focos de calor/Suelos)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ind_produccion</Name>
+        <Title>Suelos-Índice de Productividad</Title>
+        <Abstract>Suelos-Índice de Productividad - INTA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:4326"
+                    minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="75" height="155">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ind_produccion&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="74.8354272644456" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>bcayasta</Name>
+        <Title>Parque Provincial Cayastá</Title>
+        <Abstract>Parque Provincial Cayastá - SEC MEDIO AMBIENTE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="108" height="39">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=bcayasta&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>bosques_nativos</Name>
+        <Title>Bosques Nativos</Title>
+        <Abstract>Bosques Nativos - SEC MEDIO AMBIENTE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="108" height="39">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=bosques_nativos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>bosque_nativo_incluido</Name>
+        <Title>Zonificación del Bosque Nativo</Title>
+        <Abstract>Zonificación del Bosque Nativo - SEC MEDIO AMBIENTE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="177" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=bosque_nativo_incluido&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>bosque_nativo_incluido_topo</Name>
+        <Title>Zonificación del Bosque Nativo_toponimia</Title>
+        <Abstract>Zonificación del Bosque Nativo - SEC MEDIO AMBIENTE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>areas_naturales</Name>
+        <Title>Áreas Naturales Protegidas</Title>
+        <Abstract>Áreas Naturales Protegidas - SECRETARÍA DE MEDIO AMBIENTE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="162" height="24">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=areas_naturales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="99.7805696859274" max="5986.83418115564" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>areas_naturales_toponimia</Name>
+        <Title>Áreas Naturales Protegidas _toponimia</Title>
+        <Abstract>Áreas Naturales Protegidas - SECRETARÍA DE MEDIO AMBIENTE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>sociedad</Name>
+      <Title>Sociedad</Title>
+      <Abstract>Sociedad(Educación/Población/Policía/Promoción Comunitaria/Seguridad Social)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>uurr</Name>
+        <Title>Unidades Regionales Policía</Title>
+        <Abstract>Unidades Regionales Policía de la Provincia de Santa Fe - DIRECCIÓN PROVINCIAL DE ASUNTOS INTERNOS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="167" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=uurr&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>uurr_topo</Name>
+        <Title>Unidades Regionales Policía_toponimia</Title>
+        <Abstract>Unidades Regionales Policía de la Provincia de Santa Fe - DIRECCIÓN PROVINCIAL DE ASUNTOS INTERNOS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>radio_nbi_poblacion</Name>
+        <Title>Población con NBI</Title>
+        <Abstract>Población con NBI - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="96" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=radio_nbi_poblacion&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>porcpconnbi_toponimia</Name>
+        <Title>Población con NBI_toponimia</Title>
+        <Abstract>Población con NBI - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="99.7805696859274" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>radio_nbi_hogares</Name>
+        <Title>Hogares con NBI</Title>
+        <Abstract>Hogares con NBI - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="96" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=radio_nbi_hogares&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>porchconnbi_toponimia</Name>
+        <Title>Hogares con NBI_toponimia</Title>
+        <Abstract>Hogares con NBI - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="99.7805696859274" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>indiceMasculinidad</Name>
+        <Title>Índice de Masculinidad</Title>
+        <Abstract>Índice de Masculinidad - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="79" height="50">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=indiceMasculinidad&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>porcDiscapacidad</Name>
+        <Title>Hogares con alguna persona con discapacidad</Title>
+        <Abstract>Hogares con alguna persona con discapacidad - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="76" height="50">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=porcDiscapacidad&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>promHijos</Name>
+        <Title>Promedio de hijos por mujer (mayor de 14 años)</Title>
+        <Abstract>Promedio de hijos por mujer (mayor de 14 años) - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="75" height="50">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=promHijos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>porcNoNativos</Name>
+        <Title>No nativos sobre la población total</Title>
+        <Abstract>No nativos sobre la población total - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="99" height="65">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=porcNoNativos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>porcDescIndigena</Name>
+        <Title>Hogares con algún descendiente indígena</Title>
+        <Abstract>Hogares con algún descendiente indígena - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="80" height="65">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=porcDescIndigena&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>porcCobObraSocial</Name>
+        <Title>Población con cobertura social</Title>
+        <Abstract>Población con cobertura social - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="81" height="50">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=porcCobObraSocial&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>porcAlfabetismo</Name>
+        <Title>Alfabetismo</Title>
+        <Abstract>Albafetismo - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="87" height="65">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=porcAlfabetismo&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>densidadPoblacion</Name>
+        <Title>Densidad de población</Title>
+        <Abstract>Densidad de población - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="135" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=densidadPoblacion&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>jurisdiccionessetyss</Name>
+        <Title>Jurisdicciones SETySS</Title>
+        <Abstract>Jurisdicciones - Secretaría de Trabajo</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="145" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=jurisdiccionessetyss&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>jurisdiccionessetyss_toponimia</Name>
+        <Title>Jurisdicciones SETySS_toponimia</Title>
+        <Abstract>Jurisdicciones - Secretaría de Trabajo</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>jefeshogarenero2007</Name>
+        <Title>Jefes de hogar-Enero 2007</Title>
+        <Abstract>Jefes de hogar-Enero 2007 - Secretaría de Trabajo</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="104" height="185">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=jefeshogarenero2007&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>jefeshogarmayo2007</Name>
+        <Title>Jefes de hogar-Mayo 2007</Title>
+        <Abstract>Jefes de hogar-Mayo 2007 - Secretaría de Trabajo</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="103" height="170">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=jefeshogarmayo2007&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>empleadosactividadagropecuaria</Name>
+        <Title>Empleados actividad agropecuaria</Title>
+        <Abstract>Empleados actividad agropecuaria - Secretaría de Trabajo</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="81" height="110">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=empleadosactividadagropecuaria&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>circuns_area</Name>
+        <Title>Circunscripciones Prom. Com.</Title>
+        <Abstract>Circunscripciones - SEC DE PROMOCION COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="176" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=circuns_area&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>circuns_topo</Name>
+        <Title>Circunscripciones Prom. Com._toponimia</Title>
+        <Abstract>Circunscripciones - SEC DE PROMOCION COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>cdz_01</Name>
+        <Title>Centros de Distribución Zonal</Title>
+        <Abstract>Centros de Distribución Zonal - SEC DE PROMOCION COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="172" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cdz_01&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>cdz_02</Name>
+        <Title>Centros de Distribución Zonal_toponimia</Title>
+        <Abstract>Centros de Distribución Zonal - SEC DE PROMOCION COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>radios_censales</Name>
+        <Title>Radios censales</Title>
+        <Abstract>Radios censales - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="114" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=radios_censales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>radios_censales_toponimia</Name>
+        <Title>Radios censales_toponimia</Title>
+        <Abstract>Radios censales - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="997.805696859274" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sedes_circuns</Name>
+        <Title>Sedes Circunsc. Prom. Com.</Title>
+        <Abstract>Sedes Circunsc. - SEC PROMOCIÓN COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="170" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sedes_circuns&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sedes_circuns_topo</Name>
+        <Title>Sedes Circunsc. Prom. Com._toponimia</Title>
+        <Abstract>Sedes Circunsc. - SEC PROMOCIÓN COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>oficinassetyss</Name>
+        <Title>Oficinas de la SETySS</Title>
+        <Abstract>Oficinas de la SECRETARÍA DE TRABAJO</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="98" height="56">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=oficinassetyss&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="2993.41709057782" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>uurr_puntos</Name>
+        <Title>Jefaturas</Title>
+        <Abstract>Ubicación Jefaturas Santa Fe - ASUNTOS INTERNOS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="80" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=uurr_puntos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="34.9231993900746" max="2993.41709057782" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>uurr_puntos_topo</Name>
+        <Title>Jefaturas_toponimia</Title>
+        <Abstract>Ubicación Jefaturas Santa Fe - ASUNTOS INTERNOS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>puntos_cdz</Name>
+        <Title>Puntos CDZ Prom. Com.</Title>
+        <Abstract>SEC PROMOCION COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="151" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=puntos_cdz&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>puntos_cdz_topo</Name>
+        <Title>Puntos CDZ Prom. Com._toponimia</Title>
+        <Abstract>Puntos Centros de Distribución Zonal - PROMOCIÓN COMUNITARIA</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="24.9451424214819" max="49.8902848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>escuelas</Name>
+        <Title>Escuelas</Title>
+        <Abstract>Escuelas - MINISTERIO DE EDUCACIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="103" height="35">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=escuelas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>escuelas_toponimia</Name>
+        <Title>Escuelas_toponimia</Title>
+        <Abstract>Escuelas - MINISTERIO DE EDUCACIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="24.9451424214819" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>salud</Name>
+      <Title>Salud</Title>
+      <Abstract>Salud(Infraestructura)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>zonas_salud</Name>
+        <Title>Zonas de Salud</Title>
+        <Abstract>Zonas de Salud de Santa Fe - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="109" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=zonas_salud&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>zonas_salud_topo</Name>
+        <Title>Zonas de Salud_toponimia</Title>
+        <Abstract>Zonas de Salud de Santa Fe - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>salud_regiones</Name>
+        <Title>Regiones de Salud</Title>
+        <Abstract>Regiones de Salud de Santa Fe - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="103" height="82">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=salud_regiones&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>salud_regiones_topo</Name>
+        <Title>Regiones de Salud_toponimia</Title>
+        <Abstract>Regiones de Salud de Santa Fe - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="4989.02848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>salud_areas_cs</Name>
+        <Title>Áreas Centros de Salud</Title>
+        <Abstract>Áreas de Centros de Salud - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="146" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=salud_areas_cs&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="24.9451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>salud_areas_cs_toponimia</Name>
+        <Title>Áreas Centros de Salud_toponimia</Title>
+        <Abstract>Áreas de Centros de Salud - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="24.9451424214819" max="49.8902848429637" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sedes_zonas_salud</Name>
+        <Title>Sedes de Zonas de Salud</Title>
+        <Abstract>Sedes de Zonas de Salud - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="154" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sedes_zonas_salud&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sedes_zonas_salud_topo</Name>
+        <Title>Sedes de Zonas de Salud_toponimia</Title>
+        <Abstract>Sedes de Zonas de Salud - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="24.9451424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>salud_centros</Name>
+        <Title>Centros de Salud</Title>
+        <Abstract>Centros de Salud - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="115" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=salud_centros&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>salud_centros_toponimia</Name>
+        <Title>Centros de Salud_toponimia</Title>
+        <Abstract>Centros de Salud - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="24.9451424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>salud_baseref</Name>
+        <Title>Centros de Salud Base Ref.</Title>
+        <Abstract>Centros de Salud Base Referencial - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="164" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=salud_baseref&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>salud_baseref_toponimia</Name>
+        <Title>Centros de Salud Base Ref._toponimia</Title>
+        <Abstract>Centros de Salud Base Referencial - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="24.9451424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>salud_efectores_pciales</Name>
+        <Title>Centros de Salud Públicos Provinciales</Title>
+        <Abstract>Centros de Salud Públicos Provinciales - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="154" height="39">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=salud_efectores_pciales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>salud_efectores_pciales_topo</Name>
+        <Title>Centros de Salud Públicos Provinciales_toponimia</Title>
+        <Abstract>Centros de Salud Públicos Provinciales - MINISTERIO DE SALUD</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="24.9451424214819" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>planeamiento_catastral</Name>
+      <Title>Planeamiento Catastral</Title>
+      <Abstract>Planeamiento Catastral(Catastro)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>scit_parcelas</Name>
+        <Title>Parcelas</Title>
+        <Abstract>Parcelas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="118" height="35">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=scit_parcelas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>scit_parcelas_toponimia</Name>
+        <Title>Parcelas_toponimia</Title>
+        <Abstract>Parcelas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>scit_manz_pcia</Name>
+        <Title>Manzanas SCIT</Title>
+        <Abstract>Departamentos de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="110" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=scit_manz_pcia&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>scit_manz_pcia_toponimia</Name>
+        <Title>Manzanas_toponimia SCIT</Title>
+        <Abstract>Manzanas_toponimia - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0.0997805696859274" max="24.9451424214819" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>localizacion</Name>
+      <Title>Localización</Title>
+      <Abstract>Localización(Urbano)</Abstract>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>manzanasipec</Name>
+        <Title>Manzanas IPEC</Title>
+        <Abstract>Manzanas - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="113" height="37">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=manzanasipec&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>localidades_point</Name>
+        <Title>Localidades</Title>
+        <Abstract>Localidades de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="90" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=localidades_point&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>localidades_point_toponimia</Name>
+        <Title>Localidades_toponimia</Title>
+        <Abstract>Localidades de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="2993.41709057782" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>parajes_point</Name>
+        <Title>Parajes</Title>
+        <Abstract>Parajes de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="71" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=parajes_point&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="24.9451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>parajes_point_toponimia</Name>
+        <Title>Parajes_toponimia</Title>
+        <Abstract>Parajes de la Provincia de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="2993.41709057782" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cabeceras</Name>
+        <Title>Cabeceras Departamentales</Title>
+        <Abstract>Cabeceras Departamentales de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="127" height="37">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cabeceras&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>cabeceras_toponimia</Name>
+        <Title>Cabeceras Departamentales_toponimia</Title>
+        <Abstract>Cabeceras Departamentales de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="2993.41709057782" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>servicios</Name>
+      <Title>Servicios</Title>
+      <Abstract>Servicios(Agua/Energía Eléctrica)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cooperativas_electricas</Name>
+        <Title>Cooperativas Eléctricas</Title>
+        <Abstract>Cooperativas Eléctricas - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="144" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cooperativas_electricas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>cooperativas_electricas_toponimia</Name>
+        <Title>Cooperativas Eléctricas_toponimia</Title>
+        <Abstract>Cooperativas Eléctricas - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="1995.61139371855" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rat_aerea</Name>
+        <Title>Red Alta Tensión Aérea</Title>
+        <Abstract>Red Alta Tensión - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="142" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rat_aerea&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rat_subterranea</Name>
+        <Title>Red Alta Tensión Subterránea</Title>
+        <Abstract>Red Alta Subterránea - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="172" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rat_subterranea&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rmt_aerea</Name>
+        <Title>Red Media Tensión Aérea</Title>
+        <Abstract>Red Media Tensión - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="152" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rmt_aerea&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rmt_subterranea</Name>
+        <Title>Red Media Tensión Subterránea</Title>
+        <Abstract>Red Media Tensión Subterránea - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="182" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rmt_subterranea&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MAAcueductos</Name>
+        <Title>Sistema de Grandes Acueductos</Title>
+        <Abstract>Sistema de Grandes Acueductos - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <SRS>EPSG:32620</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="202" height="251">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MAAcueductos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="99.7805696859274" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MAAcueductosToponimia</Name>
+        <Title>Sistema de Grandes Acueductos_toponimia</Title>
+        <Abstract>Sistema de Grandes Acueductos_toponimia - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <SRS>EPSG:32620</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rat_et</Name>
+        <Title>Red Alta Tensión Est. Transf.</Title>
+        <Abstract>Red Alta Tensión Estaciones Transformadoras - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="169" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rat_et&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rat_estructuras</Name>
+        <Title>Red Alta Tensión Estructuras</Title>
+        <Abstract>Red Alta Tensión Estructuras - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="169" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rat_estructuras&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rmt_setas</Name>
+        <Title>Red Media Tensión SETAS</Title>
+        <Abstract>Red Media Tensión SETAS - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="160" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rmt_setas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rmt_columnas</Name>
+        <Title>Red Media Tensión Columnas</Title>
+        <Abstract>Red Media Tensión Columnas - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="173" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rmt_columnas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rmt_grandes_clientes</Name>
+        <Title>Red Media Tensión Grandes Clientes</Title>
+        <Abstract>Red Media Tensión Grandes Clientes - EPE</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="206" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rmt_grandes_clientes&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MAObrasToma</Name>
+        <Title>Obras de Toma</Title>
+        <Abstract>Obras de Toma - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="106" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MAObrasToma&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="99.7805696859274" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MAObrasTomaToponimia</Name>
+        <Title>Obras de Toma_toponimia</Title>
+        <Abstract>Obras de Toma_toponimia - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>hidrografia</Name>
+      <Title>Hidrografía</Title>
+      <Abstract>Hidrografía</Abstract>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>lagunas</Name>
+        <Title>Lagunas</Title>
+        <Abstract>Lagunas de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="75" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=lagunas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rios_01</Name>
+        <Title>Ríos</Title>
+        <Abstract>Ríos de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rios_02</Name>
+        <Title>Ríos</Title>
+        <Abstract>Ríos de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rios_03</Name>
+        <Title>Ríos</Title>
+        <Abstract>Ríos de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="57" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rios_03&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rios_topo</Name>
+        <Title>Ríos_toponimia</Title>
+        <Abstract>Ríos de Santa Fe - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="1496.70854528891" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MACanales</Name>
+        <Title>Red de Canales de Drenaje</Title>
+        <Abstract>Red de Canales de Drenaje - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="162" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MACanales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="24.9451424214819" max="249.451424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MACanalesToponimia</Name>
+        <Title>Red de Canales de Drenaje_toponimia</Title>
+        <Abstract>Red de Canales de Drenaje_toponimia - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>transporte</Name>
+      <Title>Transporte</Title>
+      <Abstract>Transporte(Red Ferroviaria/Red Vial)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ejesipec</Name>
+        <Title>Ejes de calles</Title>
+        <Abstract>Ejes de calles - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="102" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ejesipec&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>ejesipec_toponimia</Name>
+        <Title>Ejes de calles_toponimia</Title>
+        <Abstract>Ejes de calles_toponimia - IPEC</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="498.902848429637" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>caminos_comunales</Name>
+        <Title>Caminos Comunales</Title>
+        <Abstract>Caminos Comunales - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="131" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=caminos_comunales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>rutas_sec</Name>
+        <Title>Rutas Prov. Secundarias</Title>
+        <Abstract>Rutas Prov. Secundarias - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="105" height="52">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rutas_sec&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rutas_sec_toponimia</Name>
+        <Title>Rutas Prov. Secundarias_toponimia</Title>
+        <Abstract>Rutas Prov. Secundarias - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="1496.70854528891" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>rutas_provinciales</Name>
+        <Title>Rutas Provinciales</Title>
+        <Abstract>Rutas Provinciales - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="105" height="52">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rutas_provinciales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rutas_provinciales_toponimia</Name>
+        <Title>Rutas Provinciales_toponimia</Title>
+        <Abstract>Rutas Provinciales - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="1496.70854528891" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>rutas_nacionales</Name>
+        <Title>Rutas Nacionales</Title>
+        <Abstract>Rutas Nacionales - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="105" height="35">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rutas_nacionales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>rutas_nacionales_toponimia</Name>
+        <Title>Rutas Nacionales_toponimia</Title>
+        <Abstract>Rutas Nacionales - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="1496.70854528891" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>autopistas</Name>
+        <Title>Autopistas</Title>
+        <Abstract>Autopistas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="85" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=autopistas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>autopistas_toponimia</Name>
+        <Title>Autopistas_toponimia</Title>
+        <Abstract>Autopistas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="1496.70854528891" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>vias_ferreas</Name>
+        <Title>Vías Férreas</Title>
+        <Abstract>Vías Férreas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="96" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=vias_ferreas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>vias_ferreas_toponimia</Name>
+        <Title>Vías Férreas_toponimia</Title>
+        <Abstract>Vías Férreas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="1496.70854528891" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>elevacion</Name>
+      <Title>Elevación</Title>
+      <Abstract>Elevación(Curvas de nivel(urbano)/Puntos(urbano))</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MACurvaNivel</Name>
+        <Title>Curvas de Nivel</Title>
+        <Abstract>Curvas de Nivel - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="108" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MACurvaNivel&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="2.49451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MACurvaNivelToponimia</Name>
+        <Title>Curvas de Nivel_toponimia</Title>
+        <Abstract>Curvas de Nivel - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MACurvasHistoricas</Name>
+        <Title>Líneas de Riesgo Históricas</Title>
+        <Abstract>Líneas de Riesgo Históricas - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="92" height="187">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MACurvasHistoricas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MACurvasHistoricasToponimia</Name>
+        <Title>Líneas de Riesgo Históricas _toponimia</Title>
+        <Abstract>Líneas de Riesgo Históricas - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="74.8354272644456" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MACurvasTeoricas</Name>
+        <Title>Líneas de Riesgo Teóricas</Title>
+        <Abstract>Líneas de Riesgo Teóricas - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="110" height="260">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MACurvasTeoricas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MACurvasTeoricasToponimia</Name>
+        <Title>Líneas de Riesgo Teóricas _toponimia</Title>
+        <Abstract>Líneas de Riesgo Teóricas - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <ScaleHint min="0" max="74.8354272644456" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cotas_catastro</Name>
+        <Title>Cotas SCIT</Title>
+        <Abstract>Cotas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="90" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cotas_catastro&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>cotas_catastro_toponimia</Name>
+        <Title>Cotas SCIT_toponimia</Title>
+        <Abstract>Cotas - SCIT</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MACotas</Name>
+        <Title>Cotas</Title>
+        <Abstract>Cotas - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="63" height="20">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MACotas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="2.49451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MACotasToponimia</Name>
+        <Title>Cotas_toponimia</Title>
+        <Abstract>Cotas_toponimia - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MAPuntosFijos</Name>
+        <Title>Puntos Fijos</Title>
+        <Abstract>Puntos Fijos - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="93" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MAPuntosFijos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="2.49451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MAPuntosFijosToponimia</Name>
+        <Title>Puntos Fijos_toponimia</Title>
+        <Abstract>Puntos Fijos_toponimia - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>MAPuntosTopoBatim</Name>
+        <Title>Punto Topo-batimétricos</Title>
+        <Abstract>Puntos Topo-batimétricos - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="152" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=MAPuntosTopoBatim&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="2.49451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>MAPuntosTopoBatimToponimia</Name>
+        <Title>Puntos Topo-batimétricos_toponimia</Title>
+        <Abstract>Puntos Topo-batimétricos_toponimia - MINISTERIO DE AGUAS</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>economia</Name>
+      <Title>Economía</Title>
+      <Abstract>Economía(Industrias)</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>aceiteras2006</Name>
+        <Title>Producción Aceites 2006</Title>
+        <Abstract>Producción Aceites 2006 - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="172" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=aceiteras2006&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>recepcion_leche2006</Name>
+        <Title>Recepción Leche 2006</Title>
+        <Abstract>Recepción Leche 2006 - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="185" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=recepcion_leche2006&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>faena_bovinos_senasa2006</Name>
+        <Title>Faena de Bovinos 2006</Title>
+        <Abstract>Faena de Bovinos 2006 - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="178" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=faena_bovinos_senasa2006&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+    </Layer>
+    <Layer>
+      <Name>agricultura_ganaderia</Name>
+      <Title>Agricultura y Ganadería</Title>
+      <Abstract>Agricultura y Ganadería</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>bovinos_2002</Name>
+        <Title>Rodeo bovino 2002</Title>
+        <Abstract>Rodeo bovino 2002 - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="235" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=bovinos_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cria_bovina_2002</Name>
+        <Title>Rodeo bovino - cría 2002</Title>
+        <Abstract>Rodeo bovino - cría 2002 (1punto=2000cabezas) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="258" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cria_bovina_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cultivado_2002</Name>
+        <Title>Superficie cultivada 2002</Title>
+        <Abstract>Superficie cultivada 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="238" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cultivado_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>girasol_2002</Name>
+        <Title>Superficie cultivada girasol 2002</Title>
+        <Abstract>Superficie cultivada girasol 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="271" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=girasol_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>invernada_bovina_2002</Name>
+        <Title>Rodeo bovino - invernada 2002</Title>
+        <Abstract>Rodeo bovino - invernada 2002 (1punto=2000cabezas) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="289" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=invernada_bovina_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>maiz_2002</Name>
+        <Title>Superficie cultivada maíz 2002</Title>
+        <Abstract>Superficie cultivada maíz 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="262" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=maiz_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>monte_natural_2002</Name>
+        <Title>Superficie monte natural 2002</Title>
+        <Abstract>Superficie monte natural 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="260" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=monte_natural_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>praderas_permanentes_2002</Name>
+        <Title>Superficie praderas 2002</Title>
+        <Abstract>Superficie praderas 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="238" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=praderas_permanentes_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>recria_bovina_2002</Name>
+        <Title>Rodeo bovino - recría 2002</Title>
+        <Abstract>Rodeo bovino - recría 2002 (1punto=2000cabezas) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="270" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=recria_bovina_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>soja_2002_multipunto</Name>
+        <Title>Superficie cultivada soja 2002</Title>
+        <Abstract>Superficie cultivada soja 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="259" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=soja_2002_multipunto&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>tambo_2002</Name>
+        <Title>Rodeo bovino - lechero 2002</Title>
+        <Abstract>Rodeo bovino - lechero 2002 (1punto=2000cabezas) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="278" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=tambo_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>trigo_2002</Name>
+        <Title>Superficie cultivada trigo 2002</Title>
+        <Abstract>Superficie cultivada trigo 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="261" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=trigo_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>verdeos_2002</Name>
+        <Title>Superficie cultivada verdeos 2002</Title>
+        <Abstract>Superficie cultivada verdeos 2002 (1punto=1000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="277" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=verdeos_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>pastizal_2002</Name>
+        <Title>Superficie de pastizales 2002</Title>
+        <Abstract>Superficie de pastizales 2002 (1punto=2000has) - MINISTERIO DE LA PRODUCCIÓN</Abstract>
+        <SRS>EPSG:22185</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4154" miny="-34.8242" maxx="-57.9377" maxy="-27.6729" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.1873e+06" miny="6.14688e+06" maxx="5.68872e+06" maxy="6.93576e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="257" height="22">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.idesf.santafe.gov.ar/cgi-bin/idesf?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=pastizal_2002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="249.451424214819" max="2494.51424214819" />
+      </Layer>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>

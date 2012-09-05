@@ -1,0 +1,1454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://sdi.ign.gob.ar:80/geoserver2/schemas/wms/1.1.1/WMS_MS_Capabilities.dtd">
+<WMT_MS_Capabilities version="1.1.1" updateSequence="638">
+  <Service>
+    <Name>OGC:WMS</Name>
+    <Title>Servicio WMS del Instituto Geográfico Nacional de la República Argentina</Title>
+    <Abstract/>
+    <KeywordList>
+      <Keyword>WFS</Keyword>
+      <Keyword>WMS</Keyword>
+      <Keyword>GEOSERVER</Keyword>
+    </KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>Oscar López</ContactPerson>
+        <ContactOrganization>Instituto Geográfico Nacional</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>Unidad de Tecnologías de la Información</ContactPosition>
+      <ContactAddress>
+        <AddressType/>
+        <Address>Av. Cabildo 381</Address>
+        <City>Ciudad Autónoma de Buenos Aires</City>
+        <StateOrProvince>Ciudad Autónoma de Buenos Aires</StateOrProvince>
+        <PostCode>1426</PostCode>
+        <Country>Argentina</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone>(54-11) 4576-5576</ContactVoiceTelephone>
+      <ContactFacsimileTelephone>4576-5576</ContactFacsimileTelephone>
+      <ContactElectronicMailAddress>olopez@ign.gob.ar</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>NONE</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom xml</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/openlayers</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss xml</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml</Format>
+        <Format>application/vnd.google-earth.kml xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>application/vnd.google-earth.kmz xml</Format>
+        <Format>application/vnd.google-earth.kmz+xml</Format>
+        <Format>atom</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png8</Format>
+        <Format>image/svg</Format>
+        <Format>image/svg xml</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>kml</Format>
+        <Format>kmz</Format>
+        <Format>openlayers</Format>
+        <Format>rss</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>text/html</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <DescribeLayer>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </DescribeLayer>
+      <GetLegendGraphic>
+        <Format>image/png</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/gif</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetLegendGraphic>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+    </Exception>
+    <UserDefinedSymbolization SupportSLD="1" UserLayer="1" UserStyle="1" RemoteWFS="1"/>
+    <Layer>
+      <Title>Servicio WMS del Instituto Geográfico Nacional de la República Argentina</Title>
+      <Abstract/>
+      <!--Limited list of EPSG projections:-->
+      <SRS>EPSG:22174</SRS>
+      <SRS>EPSG:4326</SRS>
+      <SRS>EPSG:900913</SRS>
+      <LatLonBoundingBox minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+      <Layer queryable="1">
+        <Name>IGM:1</Name>
+        <Title>Puntos Destacados</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.505" miny="-55.095" maxx="-53.656" maxy="-21.8"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.505" miny="-55.095" maxx="-53.656" maxy="-21.8"/>
+        <Style>
+          <Name>1</Name>
+          <Title>pob</Title>
+          <Abstract>pob</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:10</Name>
+        <Title>Límte Nacional</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.566" miny="-58.352" maxx="-53.636" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.566" miny="-58.352" maxx="-53.636" maxy="-21.778"/>
+        <Style>
+          <Name>10</Name>
+          <Title>LÃ­mite nacional</Title>
+          <Abstract>LÃ­mite nacional</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=10"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:11</Name>
+        <Title>Límite Provincial</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-71.86" miny="-46.0" maxx="-55.62" maxy="-22.085"/>
+        <BoundingBox SRS="EPSG:4326" minx="-71.86" miny="-46.0" maxx="-55.62" maxy="-22.085"/>
+        <Style>
+          <Name>11</Name>
+          <Title>LÃ­mite provincial</Title>
+          <Abstract>LÃ­mite provincial</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=11"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:12</Name>
+        <Title>Ríos Interminentes</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.402" miny="-54.996" maxx="-55.5" maxy="-21.781"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.402" miny="-54.996" maxx="-55.5" maxy="-21.781"/>
+        <Style>
+          <Name>12</Name>
+          <Title>RÃ­os intermitentes</Title>
+          <Abstract>Default line style, 1 pixel wide red</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=12"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:13</Name>
+        <Title>Ríos Permanentes</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.301" miny="-55.052" maxx="-53.641" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.301" miny="-55.052" maxx="-53.641" maxy="-21.778"/>
+        <Style>
+          <Name>13</Name>
+          <Title>RÃ­os permanentes</Title>
+          <Abstract>Default line style, 1 pixel wide red</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=13"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:14</Name>
+        <Title>Caminos Principales</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.016" miny="-54.874" maxx="-53.636" maxy="-21.933"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.016" miny="-54.874" maxx="-53.636" maxy="-21.933"/>
+        <Style>
+          <Name>14</Name>
+          <Title>Caminos rurales</Title>
+          <Abstract>Default line style, 1 pixel wide red</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=14"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:15</Name>
+        <Title>Caminos Rurales</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.113" miny="-55.055" maxx="-56.681" maxy="-21.814"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.113" miny="-55.055" maxx="-56.681" maxy="-21.814"/>
+        <Style>
+          <Name>15</Name>
+          <Title>Caminos rurales</Title>
+          <Abstract>Default line style, 1 pixel wide red</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=15"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:16</Name>
+        <Title>Caminos Secundarios</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.194" miny="-54.841" maxx="-53.724" maxy="-21.854"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.194" miny="-54.841" maxx="-53.724" maxy="-21.854"/>
+        <Style>
+          <Name>16</Name>
+          <Title>Caminos secundarios</Title>
+          <Abstract>Default line style, 1 pixel wide blue</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=16"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:17</Name>
+        <Title>Posgar</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.859" miny="-54.84" maxx="-53.645" maxy="-22.128"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.859" miny="-54.84" maxx="-53.645" maxy="-22.128"/>
+        <Style>
+          <Name>17</Name>
+          <Title>Posgar</Title>
+          <Abstract>A sample style that just prints out a 6px wide red square</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=17"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:18</Name>
+        <Title>Límite Departamental</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.566" miny="-55.058" maxx="-53.636" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.566" miny="-55.058" maxx="-53.636" maxy="-21.778"/>
+        <Style>
+          <Name>18</Name>
+          <Title>LÃ­mite Departamental</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=18"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:19</Name>
+        <Title>Ejidos</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.894" miny="-54.833" maxx="-53.643" maxy="-21.941"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.894" miny="-54.833" maxx="-53.643" maxy="-21.941"/>
+        <Style>
+          <Name>19</Name>
+          <Title>Ejidos</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=19"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:2</Name>
+        <Title>Centros Poblados</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.885" miny="-54.857" maxx="-53.643" maxy="-21.858"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.885" miny="-54.857" maxx="-53.643" maxy="-21.858"/>
+        <Style>
+          <Name>2</Name>
+          <Title>pob</Title>
+          <Abstract>pob</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:20</Name>
+        <Title>Islas</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.566" miny="-55.064" maxx="-54.095" maxy="-23.059"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.566" miny="-55.064" maxx="-54.095" maxy="-23.059"/>
+        <Style>
+          <Name>20</Name>
+          <Title>Islas</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=20"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:21</Name>
+        <Title>Lagos Interminentes</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.904" miny="-53.983" maxx="-55.546" maxy="-22.162"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.904" miny="-53.983" maxx="-55.546" maxy="-22.162"/>
+        <Style>
+          <Name>21</Name>
+          <Title>Lagos Intermitentes</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=21"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:22</Name>
+        <Title>Lagos Permanentes</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.457" miny="-55.089" maxx="-54.363" maxy="-22.15"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.457" miny="-55.089" maxx="-54.363" maxy="-22.15"/>
+        <Style>
+          <Name>22</Name>
+          <Title>Lagos Permanentes</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=22"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:23</Name>
+        <Title>Límite internacional</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-75.718" miny="-55.902" maxx="-34.793" maxy="5.273"/>
+        <BoundingBox SRS="EPSG:4326" minx="-75.718" miny="-55.902" maxx="-34.793" maxy="5.273"/>
+        <Style>
+          <Name>23</Name>
+          <Title>Provincias</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=23"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:26</Name>
+        <Title>Grilla Hojas 250</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.502" miny="-56.0" maxx="-52.5" maxy="-20.991"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.502" miny="-56.0" maxx="-52.5" maxy="-20.991"/>
+        <Style>
+          <Name>26</Name>
+          <Title>Grilla 250</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=26"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:27</Name>
+        <Title>Provincias</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.566" miny="-55.058" maxx="-53.636" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-95.4762496293346" miny="-63.812914058134574" maxx="-20.929421513065417" maxy="10.733914058134589"/>
+        <Style>
+          <Name>27</Name>
+          <Title>Provincias</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=27"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:3</Name>
+        <Title>Edificios</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.318" miny="-54.808" maxx="-53.753" maxy="-21.816"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.318" miny="-54.808" maxx="-53.753" maxy="-21.816"/>
+        <Style>
+          <Name>3</Name>
+          <Title>pob</Title>
+          <Abstract>pob</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:4</Name>
+        <Title>Infraestructura Ferroviaria</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.318" miny="-51.685" maxx="-55.785" maxy="-22.059"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.318" miny="-51.685" maxx="-55.785" maxy="-22.059"/>
+        <Style>
+          <Name>4</Name>
+          <Title>pob</Title>
+          <Abstract>pob</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=4"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:5</Name>
+        <Title>Infraestructura Rural</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.302" miny="-55.05" maxx="-53.758" maxy="-22.158"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.302" miny="-55.05" maxx="-53.758" maxy="-22.158"/>
+        <Style>
+          <Name>5</Name>
+          <Title>pob</Title>
+          <Abstract>pob</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=5"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:6</Name>
+        <Title>Actividades Comerciales</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.121" miny="-54.966" maxx="-53.652" maxy="-21.87"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.121" miny="-54.966" maxx="-53.652" maxy="-21.87"/>
+        <Style>
+          <Name>6</Name>
+          <Title>pob</Title>
+          <Abstract>pob</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=6"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:7</Name>
+        <Title>Puentes</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.22" miny="-54.847" maxx="-53.656" maxy="-22.046"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.22" miny="-54.847" maxx="-53.656" maxy="-22.046"/>
+        <Style>
+          <Name>7</Name>
+          <Title>Puentes</Title>
+          <Abstract>Puentes</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=7"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:8</Name>
+        <Title>Curvas de Nivel</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.55" miny="-55.05" maxx="-53.637" maxy="-21.781"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.55" miny="-55.05" maxx="-53.637" maxy="-21.781"/>
+        <Style>
+          <Name>8</Name>
+          <Title>LÃ­mite nacional</Title>
+          <Abstract>LÃ­mite nacional</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=8"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>IGM:9</Name>
+        <Title>Vías Férreas</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.308" miny="-51.885" maxx="-55.772" maxy="-22.034"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.308" miny="-51.885" maxx="-55.772" maxy="-22.034"/>
+        <Style>
+          <Name>9</Name>
+          <Title>Ferrocarril</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=9"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:Oceano</Name>
+        <Title>Océano</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox SRS="EPSG:4326" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <Style>
+          <Name>Océano</Name>
+          <Title>OcÃ©ano</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=Oceano"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:afl</Name>
+        <Title>CURSOS DE AGUA</Title>
+        <Abstract>Son arcos que describen la traza de los cursos de agua permanentes  en la escala de referencia. Es importante esta consideración en particular cuando se trata la asignación del nombre en su base de datos. Puede darse el caso de un curso de agua que no posea nombre, o sea, que se consignará como “SIN NOMBRE”, pero que al buscar la misma referencia en otra escala de captura (1:100.000 ó 1:50.000) tenga asignado un cierto nombre. b. No se incluyen en la misma capa temática a los espejos de agua por merecer un tratamiento gráfico como polígono. c. La digitalización y estructura topológica es de un conjunto de arcos entre intersecciones, o sea, que cada arco tiene su nodo final e inicial en una intersección o en la punta de la traza. Por lo cual la asignación de atributos será por arco reiterándose los mismos cuando se trate de un objeto con las mismas características.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.402" miny="-55.052" maxx="-53.641" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.402" miny="-55.052" maxx="-53.641" maxy="-21.778"/>
+        <Style>
+          <Name>afl</Name>
+          <Title>afl</Title>
+          <Abstract>Afluentes</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=afl"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:age</Name>
+        <Title>ACCIDENTES GEOGRAFICOS ESPECIALES</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.566" miny="-55.064" maxx="-55.501" maxy="-23.059"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.566" miny="-55.064" maxx="-55.501" maxy="-23.059"/>
+        <Style>
+          <Name>age</Name>
+          <Title>Accidentes Geográficos Especiales</Title>
+          <Abstract>Accidentes Geográficos Especiales</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=age"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:ahu</Name>
+        <Title>Actividades humanas</Title>
+        <Abstract>Son puntos que representan las principales actividades humanas correspondientes a la escala 1:250.000, independientemente de la situación de habitabilidad. De esta forma quedan así representados, escuelas puestos de estancias, comisarías, casas de guardaparques, etc. con un criterio cartográfico de uso general. b. Para los casos en que se dispone de la cantidad de habitantes, se incluirá esta información según los valores del censo de población del año 1991.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.121" miny="-54.966" maxx="-53.825" maxy="-21.87"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.121" miny="-54.966" maxx="-53.825" maxy="-21.87"/>
+        <Style>
+          <Name>ahu</Name>
+          <Title>Actividades Humanas</Title>
+          <Abstract>Actividades Humanas</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=ahu"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:alt</Name>
+        <Title>PUNTOS GEOGRAFICOS DESTACADOS</Title>
+        <Abstract>Son puntos que materializan los representados en la cartografía de escala 1:250.000 tales como los cerros, puntos trigonométricos, puntos acotados, etc.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.505" miny="-55.095" maxx="-53.656" maxy="-21.8"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.505" miny="-55.095" maxx="-53.656" maxy="-21.8"/>
+        <Style>
+          <Name>alt</Name>
+          <Title>Altimetria</Title>
+          <Abstract>Altimetria</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=alt"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:cam</Name>
+        <Title>VIAS DE COMUNICACIÓN</Title>
+        <Abstract>Son arcos que describen la traza de red vial. A su vez la definición gráfica, se corresponde con la imagen satelitaria correspondiente. b Para la determinación de sus características se recurrió entre otras fuentes a la cartografía del Automóvil Club Argentino. c. No se integran con líneas férreas, por las diferencias en la estructura de su base de datos. d. La digitalización y estructura topológica es de un conjunto de arcos entre intersecciones, o sea, que cada arco tiene su nodo final e inicial en una intersección o en la punta de la traza. Por lo cual la asignación de atributos será por arco reiterándose los mismos cuando se trate de un objeto con las mismas características.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.194" miny="-55.055" maxx="-53.636" maxy="-21.814"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.194" miny="-55.055" maxx="-53.636" maxy="-21.814"/>
+        <Style>
+          <Name>cam</Name>
+          <Title>Caminos Principales</Title>
+          <Abstract>Autopistas</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=cam"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:cep</Name>
+        <Title>CENTROS POBLADOS</Title>
+        <Abstract>Son puntos que representan los principales centros urbanos de la República Argentina a escala 1:250.000, independientemente de la situación de habitabilidad. De esta forma quedan así representados, ciudades, pueblos, etc. con un criterio cartográfico de uso general. b. No se incluyen los ejidos urbanos en esta cobertura, por merecer un tratamiento como polígono. c. Para los casos en que se dispone de la cantidad de habitantes, se incluirá esta información según los valores del censo de población del año 1991.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.885" miny="-54.857" maxx="-53.647" maxy="-21.858"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.885" miny="-54.857" maxx="-53.647" maxy="-21.858"/>
+        <Style>
+          <Name>cep</Name>
+          <Title>Centros Poblados</Title>
+          <Abstract>Centros Poblados</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=cep"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:continente</Name>
+        <Title>continente</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-75.718" miny="-55.902" maxx="-34.793" maxy="5.273"/>
+        <BoundingBox SRS="EPSG:4326" minx="-75.718" miny="-55.902" maxx="-34.793" maxy="5.273"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default polygon style</Title>
+          <Abstract>A sample style that just draws out a solid gray interior with a black 1px outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=continente"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:cun</Name>
+        <Title>CURVAS DE NIVEL</Title>
+        <Abstract>Son arcos que describen y definen gráficamente la elevación del terreno. Estos arcos corresponden a las curvas de nivel de la cartografía del IGN, con escala de captura 1:250.000. b. La digitalización y estructura topológica de los arcos entre intersecciones tienen su nodo final e inicio en una intersección o en la punta de la curva de nivel, por lo tanto los atributos serán por arcos.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.55" miny="-55.05" maxx="-53.637" maxy="-21.781"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.55" miny="-55.05" maxx="-53.637" maxy="-21.781"/>
+        <Style>
+          <Name>cun</Name>
+          <Title>cun</Title>
+          <Abstract>cun</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=cun"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:edi</Name>
+        <Title>Edificios</Title>
+        <Abstract>Son puntos que representan edificaciones de baja importancia que figuran en la cartografía del IGN correspondientes a la escala 1:250.000.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.318" miny="-54.962" maxx="-53.753" maxy="-21.816"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.318" miny="-54.962" maxx="-53.753" maxy="-21.816"/>
+        <Style>
+          <Name>edi</Name>
+          <Title>Edificio</Title>
+          <Abstract>Edificio</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=edi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:egna</Name>
+        <Title>ESPACIOS GEOGRAFICOS NATURALES Y ANTROPICOS</Title>
+        <Abstract>Son polígonos que representan el tipo y el uso de los sedimentos o minerales que componen el suelo en la época de captura de la información. b. Esta información es relevada mediante la interpretación de imágenes satelitales.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.566" miny="-55.056" maxx="-52.187" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.566" miny="-55.056" maxx="-52.187" maxy="-21.778"/>
+        <Style>
+          <Name>egna</Name>
+          <Title>egna</Title>
+          <Abstract>egna</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=egna"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:eji</Name>
+        <Title>EJIDOS URBANOS</Title>
+        <Abstract>Son polígonos que representan los ejidos y manzanas urbanas en aquellos sectores que a escala 1:250.000, corresponde que se represente de esta manera. b. La fuente es interpretación de imágenes.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.894" miny="-54.833" maxx="-53.643" maxy="-21.941"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.894" miny="-54.833" maxx="-53.643" maxy="-21.941"/>
+        <Style>
+          <Name>eji</Name>
+          <Title>Ejidos Urbanos</Title>
+          <Abstract>Ejidos Urbanos</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=eji"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:ffc</Name>
+        <Title>VIAS FERREAS</Title>
+        <Abstract>Son arcos que describen la traza de las líneas férreas; a su vez la definición gráfica se corresponde con la imagen satelitaria. b. La digitalización y estructura topológica es de un conjunto de arcos entre intersecciones, o sea, que cada arco tiene su nodo final e inicial en una intersección o en la punta de la traza. Por lo cual la asignación de atributos será por arco reiterándose los mismos cuando se trate de un objeto con las mismas características.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.308" miny="-51.885" maxx="-55.772" maxy="-22.034"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.308" miny="-51.885" maxx="-55.772" maxy="-22.034"/>
+        <Style>
+          <Name>ffc</Name>
+          <Title>Ferrocarril</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=ffc"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:iru</Name>
+        <Title>INFRAESTRUCUTURA RURAL</Title>
+        <Abstract>Son puntos que representan los principales centros urbanos de la República Argentina a escala 1:250.000, independientemente de la situación de habitabilidad. De esta forma quedan así representados, ciudades, pueblos, etc. con un criterio cartográfico de uso general. b. No se incluyen los ejidos urbanos en esta cobertura, por merecer un tratamiento como polígono. c. Para los casos en que se dispone de la cantidad de habitantes, se incluirá esta información según los valores del censo de población del año 1991.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.302" miny="-55.05" maxx="-53.758" maxy="-22.168"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.302" miny="-55.05" maxx="-53.758" maxy="-22.168"/>
+        <Style>
+          <Name>iru</Name>
+          <Title>Infraestructura Rural</Title>
+          <Abstract>Infraestructura Rural</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=iru"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:jad</Name>
+        <Title>JURISDICCIONES ADMINISTRATIVAS</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.567" miny="-55.058" maxx="-53.636" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.567" miny="-55.058" maxx="-53.636" maxy="-21.778"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default polygon style</Title>
+          <Abstract>A sample style that just draws out a solid gray interior with a black 1px outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=jad"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:lag</Name>
+        <Title>ESPEJOS DE AGUA</Title>
+        <Abstract>Son polígonos que representan la superficie de los principales espejos de agua que para la escala 1:250.000 corresponde. Es importante esta consideración en particular cuando se trata la asignación del nombre en su base de datos. Puede darse el caso de un espejo de agua que no posea nombre o sea que se consignará como “SIN NOMBRE”, pero que al buscar la misma referencia en otra escala de captura (1:100.000 ó 1:50.000) tenga asignado un cierto nombre. b. No se incluyen en la misma capa temática a los cursos de agua por merecer un tratamiento gráfico como arco. c. La digitalización y estructura topológica es de un conjunto de polígonos de los que se han de extraer las islas las que serán representadas en cobertura aparte (AGE).</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.457" miny="-55.089" maxx="-54.363" maxy="-22.15"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.457" miny="-55.089" maxx="-54.363" maxy="-22.15"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default polygon style</Title>
+          <Abstract>A sample style that just draws out a solid gray interior with a black 1px outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=lag"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:lim</Name>
+        <Title>LíMITES</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.567" miny="-58.352" maxx="-52.668" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.567" miny="-58.352" maxx="-52.668" maxy="-21.778"/>
+        <Style>
+          <Name>line</Name>
+          <Title>1 px blue line</Title>
+          <Abstract>Default line style, 1 pixel wide blue</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=lim"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>topp:nomenclador</Name>
+        <Title>nomenclador_prosiga</Title>
+        <Abstract>Generated from nomenclador</Abstract>
+        <KeywordList>
+          <Keyword>nomenclador</Keyword>
+        </KeywordList>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.5660934448242" miny="-55.2333335876465" maxx="-44.6937255859375" maxy="-17.6877269744873"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.5660934448242" miny="-55.2333335876465" maxx="-44.6937255859375" maxy="-17.6877269744873"/>
+        <Style>
+          <Name>nomenclador</Name>
+          <Title>Default Styler</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=nomenclador"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:pue</Name>
+        <Title>PUENTES</Title>
+        <Abstract>Son puntos que materializan la ubicación de los puentes, pasarelas, diques, represas, etc., representados en la cartografía de escala 1:250.000. b. Tanto la cantidad de puntos, como las características de los elementos y otras referencias; están limitadas, por el momento a la información disponible en la cartografía de base.</Abstract>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.22" miny="-54.847" maxx="-53.656" maxy="-22.046"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.22" miny="-54.847" maxx="-53.656" maxy="-22.046"/>
+        <Style>
+          <Name>pue</Name>
+          <Title>Puentes</Title>
+          <Abstract>Puentes</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=pue"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:red_geodesica</Name>
+        <Title>Red Geodésica</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.892" miny="-54.975" maxx="-53.645" maxy="-21.878"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.892" miny="-54.975" maxx="-53.645" maxy="-21.878"/>
+        <Style>
+          <Name>red_geodesica</Name>
+          <Title>Edificio</Title>
+          <Abstract>Edificio</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=red_geodesica"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>SIGN:tra</Name>
+        <Title>TRANSPORTES</Title>
+        <Abstract/>
+        <KeywordList/>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-73.118" miny="-54.844" maxx="-53.652" maxy="-21.938"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.118" miny="-54.844" maxx="-53.652" maxy="-21.938"/>
+        <Style>
+          <Name>tra</Name>
+          <Title>Transporte</Title>
+          <Abstract>Transporte</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sdi.ign.gob.ar:80/geoserver2/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;heigth=20&amp;layer=tra"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0">
+        <Name>SIGN</Name>
+        <Title>SIGN</Title>
+        <Abstract>Layer-Group type layer: SIGN</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-75.718" miny="-58.352" maxx="-34.793" maxy="5.273"/>
+        <BoundingBox SRS="EPSG:4326" minx="-75.718" miny="-58.352" maxx="-34.793" maxy="5.273"/>
+      </Layer>
+      <Layer queryable="0">
+        <Name>SIGN_puntos</Name>
+        <Title>SIGN_puntos</Title>
+        <Abstract>Layer-Group type layer: SIGN_puntos</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-73.566" miny="-55.095" maxx="-52.187" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.566" miny="-55.095" maxx="-52.187" maxy="-21.778"/>
+      </Layer>
+      <Layer queryable="0">
+        <Name>capabaseigm</Name>
+        <Title>capabaseigm</Title>
+        <Abstract>Layer-Group type layer: capabaseigm</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-73.566" miny="-55.064" maxx="-53.636" maxy="-21.778"/>
+        <BoundingBox SRS="EPSG:4326" minx="-73.566" miny="-55.064" maxx="-53.636" maxy="-21.778"/>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMT_MS_Capabilities>

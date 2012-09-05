@@ -1,0 +1,502 @@
+<?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 5.4.2 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER INPUT=EPPL7 INPUT=INFORMIXSPATIAL INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>WMS-Rosario</Title>
+  <Abstract>WMS-Rosario</Abstract>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/>
+  <ContactInformation>
+  </ContactInformation>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/gif</Format>
+      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <Format>image/tiff</Format>
+      <Format>image/svg+xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/gif</Format>
+      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+    <GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.rosario.gov.ar/wms/planobase?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetStyles>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+    <Name>WMS-Rosario</Name>
+    <Title>WMS-Rosario</Title>
+    <SRS>epsg:22185</SRS>
+    <SRS>epsg:4326</SRS>
+    <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+    <BoundingBox SRS="EPSG:22185"
+                minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+    <Layer>
+      <Name>FotosAreas2005</Name>
+<!-- WARNING: Mandatory metadata '..._GROUP_TITLE' was missing in this context. -->
+      <Title>FotosAreas2005</Title>
+      <Abstract>FotosAreas2005</Abstract>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>FotosAereas2005</Name>
+        <Title>Fotos Aereas</Title>
+        <SRS>EPSG:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <ScaleHint min="0.0748354272644456" max="1.39692797560298" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>FotosAereas2005-overwiew10</Name>
+        <Title>Fotos Aereas - overview10</Title>
+        <SRS>EPSG:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <ScaleHint min="5.98683418115564" max="0" />
+        <!-- WARNING: Only MINSCALEDENOM and no MAXSCALEDENOM specified in the mapfile. A default value of 0 has been returned for the Max ScaleHint but this is probably not what you want. -->
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>FotosAereas2005-overwiew20</Name>
+        <Title>Fotos Aereas - overview20</Title>
+        <SRS>EPSG:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <ScaleHint min="1.39692797560298" max="5.98683418115564" />
+      </Layer>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>ImagenesSatelitales2011</Name>
+        <Title>Imágenes Satelitales 2011</Title>
+        <SRS>EPSG:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <ScaleHint min="0.0748354272644456" max="0" />
+        <!-- WARNING: Only MINSCALEDENOM and no MAXSCALEDENOM specified in the mapfile. A default value of 0 has been returned for the Max ScaleHint but this is probably not what you want. -->
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sin_manzanas</Name>
+        <Title>Sin Manzanas</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="119" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sin_manzanas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="19.9561139371855" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>canteros</Name>
+        <Title>Canteros</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=canteros&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="7.48354272644456" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>av_circunvalacion</Name>
+        <Title>Av. Circunvalación</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="161" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=av_circunvalacion&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>manzanas</Name>
+        <Title>Manzanas</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=manzanas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="19.9561139371855" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>manzanas_no_regularizada</Name>
+        <Title>Manzanas no Regularizada</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="203" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=manzanas_no_regularizada&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="14.9670854528891" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>Parcelas</Name>
+        <Title>parcelas</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Parcelas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="2.99341709057782" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>espacios_verdes</Name>
+        <Title>Espacios Verdes</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="84" height="59">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=espacios_verdes&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="24.9451424214819" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>hidrografia</Name>
+        <Title>Hidrografía</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="112" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=hidrografia&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>avenidas_y_boulevares</Name>
+        <Title>Avenidas y Boulevares</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="182" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=avenidas_y_boulevares&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>segmentos_de_calle</Name>
+        <Title>Segmentos de calle</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="161" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=segmentos_de_calle&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="7.48354272644456" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>sentidos_de_calle</Name>
+        <Title>Sentidos de calles</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="112" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sentidos_de_calle&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="7.48354272644456" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>via_ferroviaria</Name>
+        <Title>Vía Ferroviaria</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="140" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=via_ferroviaria&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="24.9451424214819" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>puentes</Name>
+        <Title>Puentes</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="84" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=puentes&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="9.97805696859274" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>islas_del_parana</Name>
+        <Title>Islas del Paraná</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="147" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=islas_del_parana&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>bancos_de_arena</Name>
+        <Title>Bancos de Arena</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="140" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=bancos_de_arena&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>autopistas</Name>
+        <Title>Autopistas</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="105" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=autopistas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>nombres_de_calles</Name>
+        <Title>Nombres de Calles</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="154" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=nombres_de_calles&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="9.97805696859274" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>numeracion_de_calles</Name>
+        <Title>Numeración de Calles</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="175" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=numeracion_de_calles&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="9.97805696859274" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>numeros_de_manzana</Name>
+        <Title>Números de Manzana</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="161" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=numeros_de_manzana&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="3.9912227874371" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>limite_municipio</Name>
+        <Title>Limite Municipio</Title>
+        <SRS>EPSG:4326</SRS>
+        <SRS>epsg:22185</SRS>
+        <LatLonBoundingBox minx="-60.8333" miny="-33.0457" maxx="-60.568" maxy="-32.8639" />
+        <BoundingBox SRS="EPSG:22185"
+                    minx="5.42216e+06" miny="6.344e+06" maxx="5.44684e+06" maxy="6.364e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="147" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.rosario.gov.ar/wms/planobase?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=limite_municipio&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>

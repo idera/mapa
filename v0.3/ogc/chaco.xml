@@ -1,0 +1,619 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 5.6.5 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SWF OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=FRIBIDI SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER SUPPORTS=FASTCGI SUPPORTS=THREADS SUPPORTS=GEOS SUPPORTS=RGBA_PNG INPUT=EPPL7 INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>WMS Etisig</Title>
+  <Abstract>Servicio de Web Map Service (WMS) para Web del Etisig Chaco</Abstract>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/>
+  <ContactInformation>
+    <ContactPersonPrimary>
+      <ContactPerson>Rolando Rodriguez</ContactPerson>
+      <ContactOrganization>Direccion de Informacion Territorial - Secretaria de Planificacion y Evaluacion de Resultados</ContactOrganization>
+    </ContactPersonPrimary>
+      <ContactPosition>System Administrator</ContactPosition>
+    <ContactAddress>
+        <AddressType>mailing address</AddressType>
+        <Address>rsrodriguez.sper@chaco.gov.ar</Address>
+        <City>Resistencia</City>
+        <StateOrProvince>Chaco</StateOrProvince>
+        <PostCode>3500</PostCode>
+        <Country>Argentina</Country>
+    </ContactAddress>
+      <ContactVoiceTelephone>(54)03722-456426</ContactVoiceTelephone>
+  <ContactElectronicMailAddress>rsrodriguez.sper@chaco.gov.ar</ContactElectronicMailAddress>
+  </ContactInformation>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/tiff</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <Format>image/svg+xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>text/xml</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+    <GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetStyles>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+    <Name>ETISIG_CHACO</Name>
+    <Title>WMS Etisig</Title>
+    <Abstract>Servicio de Web Map Service (WMS) para Web del Etisig Chaco</Abstract>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+    <SRS></SRS>
+    <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>fajaEste</Name>
+        <Title>Imagen Satelital - Este del Chaco</Title>
+        <Abstract>Imagen Satelital faja Este de la Provincia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>fajaCentro</Name>
+        <Title>Imagen Satelital - Centro del Chaco</Title>
+        <Abstract>Imagen Satelital faja Centro de la Provincia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>fajaOeste</Name>
+        <Title>Imagen Satelital - Oeste del Chaco</Title>
+        <Abstract>Imagen Satelital faja Oeste de la Provincia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="1">
+        <Name>rciaIGN</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>rciaIGN</Title>
+        <SRS>EPSG:4326</SRS>
+        <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting the EXTENT in the LAYER object, or wms_extent metadata. Also check that your data exists in the DATA statement -->
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>obrastodo</Name>
+        <Title>Obras del Chaco</Title>
+        <Abstract>Obras inauguradas en el anio 2010/2011 en la Provincia del Chaco</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="238" height="167">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=obrastodo&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sper_udt2</Name>
+        <Title>UDT</Title>
+        <Abstract>Unidades de Desarrollo Territorial - Decreto 35/09</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="77" height="275">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sper_udt2&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>fontana_mz</Name>
+        <Title>Manzanero Municipio Fontana</Title>
+        <Abstract>Mapa manzanero de la Municipalidad de Fontana</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="98" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=fontana_mz&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>vilelas_manzanas</Name>
+        <Title>Manzanero Municipio Vilelas</Title>
+        <Abstract>Mapa manzanero de la Municipalidad de Vilelas</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="98" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=vilelas_manzanas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer>
+    <Title>MedioNatural</Title>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>reservacolonizacion</Name>
+        <Title>Reservas de Colonizacion</Title>
+        <Abstract>Reservas de Colonizacion de la Provincia del Chaco</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=reservacolonizacion&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    </Layer>
+    <Layer>
+    <Title>Limites</Title>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>regiones_chaco</Name>
+        <Title>Regiones del Chaco</Title>
+        <Abstract>Regiones de la Provincia del Chaco</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="203" height="149">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=regiones_chaco&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cuencashidrolgraficas</Name>
+        <Title>Cuencas Hidrograficas</Title>
+        <Abstract>Cuencas Hidrograficas de la Provincia del Chaco</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="231" height="239">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cuencashidrolgraficas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>frigorificos</Name>
+<!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
+        <Title>frigorificos</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting the EXTENT in the LAYER object, or wms_extent metadata. Also check that your data exists in the DATA statement -->
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=frigorificos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cotas_recinto_cca_rcia_mop</Name>
+        <Title>Cotas de Recinto - Resistencia</Title>
+        <Abstract>Cotas de Recinto - Resistencia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="70" height="221">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cotas_recinto_cca_rcia_mop&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cuencas_urbanas</Name>
+        <Title>Cuencas Urbanas - Resistencia</Title>
+        <Abstract>Cuencas Urbanas</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="196" height="131">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cuencas_urbanas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>cuenca_baja_negro</Name>
+        <Title>Cuenca Baja Rio Negro - Resistencia</Title>
+        <Abstract>Cuenca Baja Rio Negro</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="210" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=cuenca_baja_negro&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>isohietas_2008-2009</Name>
+        <Title>Isohietas 2008-2009 Provincia del Chaco</Title>
+        <Abstract>Isohietas 2008-2009</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="112" height="131">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=isohietas_2008-2009&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>lagunas_urbanas</Name>
+        <Title>Lagunas cuencas urbanas - Resistencia</Title>
+        <Abstract>Lagunas cuencas urbanas</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="196" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=lagunas_urbanas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>estaciones_de_bombeo</Name>
+        <Title>Estaciones de Bombeo - Resistencia</Title>
+        <Abstract>Estaciones de Bombeo</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="175" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=estaciones_de_bombeo&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>expropiaciones</Name>
+        <Title>Expropiaciones - Resistencia</Title>
+        <Abstract>Expropiaciones (Asentamientos)</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="133" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=expropiaciones&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>fontana_asentamientos</Name>
+        <Title>Expropiaciones - Fontana</Title>
+        <Abstract>Expropiaciones (Asentamientos) Fontana</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="126" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=fontana_asentamientos&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>planes_de_viviendas</Name>
+        <Title>Planes de Viviendas - Resistencia</Title>
+        <Abstract>Planes de Vivienda</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="168" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=planes_de_viviendas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ltig_avena</Name>
+        <Title>Diseños de Avenamiento</Title>
+        <Abstract>Diseños de Avenamiento, mapa original de Adolfo Gustin, contenido en el trabajo Sistema Fluvial y Diseños de Avenamiento de la Provincia del Chaco, Resistencia, 1981, Instituto de Ecología, Recursos Naturales y Tecnología, elaboradoa partir de imágenes Landsat 1 y 2.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="315" height="113">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ltig_avena&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ltig_paisajes_kanter</Name>
+        <Title>Paisajes Segun Kanter</Title>
+        <Abstract>Paisajes del Gran Chaco, según Helmuth Kanter, Der Gran Chaco und seine Rundgebiete, 1933, reproducido en La Argentina: Suma de Geografía, Buenos Aires, 1958.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="413" height="131">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ltig_paisajes_kanter&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ltig_parque_ragonese</Name>
+        <Title>Parque Ragonese</Title>
+        <Abstract>Sectores, Distritos y Subdistritos del Parque Chaqueño, según Ragonese y Castiglione, La Vegetación del Parque Chaqueño, Buenos aires, 1970, Boletín de la Sociedad Argentina de Botánica, Vol XI.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="476" height="131">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ltig_parque_ragonese&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ltig_regiones_morello</Name>
+        <Title>Regiones Segun Morello</Title>
+        <Abstract>Sub-regiones del Chaco Argentino de Jorge Morello con la colaboración de J. Adamoli, en La Vegetación de la República Argentina, las grandes unidades de vegetación y ambiente, Buenos Aires, 1968, INTA, Primera Parte: Objetivo y Metodología.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="392" height="77">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ltig_regiones_morello&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ltig_taxonomia</Name>
+        <Title>Taxonomia</Title>
+        <Abstract>División taxonómica de Eliseo Popolizio, en El Enfoque Sistémico de la Geomorfología del Nordeste Argentino, Resistencia, 1983, Testimonios, Facultad de Humanidades, UNNE.</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="476" height="95">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ltig_taxonomia&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>mapa_rcia</Name>
+        <Title>Manzanero Municipalidad de Resistencia</Title>
+        <Abstract>Mapa manzanero de la Municipalidad de Resistencia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="91" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=mapa_rcia&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>espacios_verdes_rcia</Name>
+        <Title>Espacios Verdes Municipalidad de Resistencia</Title>
+        <Abstract>Espacios Verdes Resistencia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="140" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=espacios_verdes_rcia&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>ltig_censal</Name>
+        <Title>Radios Censales</Title>
+        <Abstract>Radios Censales de la Provincia del Chaco</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="168" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=ltig_censal&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>precipitaciones0809</Name>
+        <Title>Precipitaciones 2008-2009</Title>
+        <Abstract>Precipitaciones 2008-2009 de la Provincia del Chaco</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="140" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=precipitaciones0809&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>sistemadefensas</Name>
+        <Title>Sistema de Defensas - Resistencia</Title>
+        <Abstract>Sistema de Defensas</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="189" height="95">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=sistemadefensas&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>subcuencas_rurales</Name>
+        <Title>Subcuencas Rurales - Resistencia</Title>
+        <Abstract>Subcuencas Rurales</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="140" height="149">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=subcuencas_rurales&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>vilelas_calles</Name>
+        <Title>Calles Municipio Vilelas</Title>
+        <Abstract>Calles Municipio Vilelas</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="133" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=vilelas_calles&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>muni_rcia_calles</Name>
+        <Title>Calles Municipio Resistencia</Title>
+        <Abstract>Calles Municipio Resistencia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="161" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=muni_rcia_calles&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>muni_rcia_av</Name>
+        <Title>Avenidas Municipio Resistencia</Title>
+        <Abstract>Avenidas Municipio Resistencia</Abstract>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="-63.4906" miny="-28.0515" maxx="-58.3613" maxy="-24.0655" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="175" height="23">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://etisig.siup.gov.ar/cgi-bin/mapserv?map=/var/www/visualizador/config/default/mapasetisig.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=muni_rcia_av&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>

@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengeospatial.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 4.8.4 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=PDF OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=FREETYPE SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=THREADS SUPPORTS=GEOS INPUT=TIFF INPUT=EPPL7 INPUT=POSTGIS INPUT=ORACLESPATIAL INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>INDEC_WMS_Poblacion</Title>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/gif</Format>
+      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/wbmp</Format>
+      <Format>image/tiff</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>text/html</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/gif</Format>
+      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+    <Name>INDEC_WMS_Poblacion</Name>
+    <Title>INDEC_WMS_Poblacion</Title>
+    <SRS>EPSG:4269</SRS>
+    <SRS>EPSG:4326</SRS>
+    <SRS>EPSG:22192</SRS>
+    <SRS>EPSG:22193</SRS>
+    <SRS>EPSG:22194</SRS>
+    <SRS>EPSG:22195</SRS>
+    <SRS>EPSG:22196</SRS>
+    <SRS>EPSG:22197</SRS>
+    <LatLonBoundingBox minx="-93.2117" miny="-56.0732" maxx="-30.4489" maxy="-19.0316" />
+    <BoundingBox SRS="EPSG:22193"
+                minx="1.68895e+06" miny="3.78544e+06" maxx="5.99671e+06" maxy="7.72556e+06" />
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c191</Name>
+        <Title>65 años o más - 1991</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c191&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c101</Name>
+        <Title>65 años o más - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c101&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c201</Name>
+        <Title>Índice de masculinidad - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c201&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c391</Name>
+        <Title>Población no nativa - 1991</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c391&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c301</Name>
+        <Title>Población no nativa - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c301&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c401</Name>
+        <Title>Tamaño medio hogares - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c401&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c591</Name>
+        <Title>Hogares unipersonales - 1991</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c591&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c501</Name>
+        <Title>Hogares unipersonales - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c501&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c691</Name>
+        <Title>Unión consensual - 1991</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c691&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c601</Name>
+        <Title>Unión consensual - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c601&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c701</Name>
+        <Title>Obra social/privado/mutual - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c701&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c891</Name>
+        <Title>jubilación/pensión - 1991</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c891&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c801</Name>
+        <Title>jubilación/pensión - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c801&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c1091</Name>
+        <Title>No completó primario - 1991</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c1091&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c1001</Name>
+        <Title>No completó primario - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c1001&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c1191</Name>
+        <Title>Completó o superó secundario - 1991</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c1191&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c1101</Name>
+        <Title>Completó o superó secundario - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c1101&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c21</Name>
+        <Title>Población analfabeta - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c21&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c12</Name>
+        <Title>Población asalariada - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c12&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c13</Name>
+        <Title>Agua de red Pública - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c13&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c14</Name>
+        <Title>Hacinamiento - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c14&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c15</Name>
+        <Title>Instituciones colectivas - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c15&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c16</Name>
+        <Title>Material de los pisos - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c16&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c17</Name>
+        <Title>Calidad de materiales de vivienda - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c17&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c18</Name>
+        <Title>Necesidades Básicas Insatisfechas - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c18&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>c19</Name>
+        <Title>Privación material de los hogares - 2001</Title>
+<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <LatLonBoundingBox minx="-180" miny="-1.94962e+13" maxx="177.492" maxy="1.04794e+28" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="18" height="12">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://200.51.91.231/cgi-bin/mapserv?map=/prosiga/INDEC_WMS_Poblacion.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c19&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>

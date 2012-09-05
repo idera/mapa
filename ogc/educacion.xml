@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://www.mapaeducativo.edu.ar:80/geoserver/schemas/wms/1.1.1/WMS_MS_Capabilities.dtd">
+<WMT_MS_Capabilities version="1.1.1" updateSequence="3974">
+  <Service>
+    <Name>OGC:WMS</Name>
+    <Title>Servicio de Mapas del Programa Nacional Mapa Educativo</Title>
+    <Abstract>Servicio de Mapas del Programa Nacional Mapa Educativo. Contiene capas de información del Sistema Educativo Argentino e información de contexto.</Abstract>
+    <KeywordList>
+      <Keyword>WMS</Keyword>
+      <Keyword>GEOSERVER</Keyword>
+      <Keyword>escuelas</Keyword>
+      <Keyword>educación</Keyword>
+      <Keyword>establecimientos educativos</Keyword>
+      <Keyword>contexto socioeconómico</Keyword>
+    </KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://geoserver.sourceforge.net/html/index.php"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>Manuel Retamozo</ContactPerson>
+        <ContactOrganization>Programa Nacional Mapa Educativo</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>Coordinador Desarrollo</ContactPosition>
+      <ContactAddress>
+        <AddressType>Work</AddressType>
+        <Address>Paraguay 1657. Oficina 102</Address>
+        <City>Buenos Aires</City>
+        <StateOrProvince>Buenos Aires</StateOrProvince>
+        <PostCode>1602</PostCode>
+        <Country>Argentina</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone>++54 11 41291408</ContactVoiceTelephone>
+      <ContactFacsimileTelephone>++54 11 41291408</ContactFacsimileTelephone>
+      <ContactElectronicMailAddress>mretamozo@mapaeducativo.edu.ar</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>NONE</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom xml</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/openlayers</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss xml</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml</Format>
+        <Format>application/vnd.google-earth.kml xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>application/vnd.google-earth.kmz xml</Format>
+        <Format>application/vnd.google-earth.kmz+xml</Format>
+        <Format>atom</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/gif;subtype=animated</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png8</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg</Format>
+        <Format>image/svg xml</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>kml</Format>
+        <Format>kmz</Format>
+        <Format>openlayers</Format>
+        <Format>rss</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/html</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <DescribeLayer>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </DescribeLayer>
+      <GetLegendGraphic>
+        <Format>image/png</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/gif</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetLegendGraphic>
+      <GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+    </Exception>
+    <UserDefinedSymbolization SupportSLD="1" UserLayer="1" UserStyle="1" RemoteWFS="1"/>
+    <Layer>
+      <Title>Servicio de Mapas del Programa Nacional Mapa Educativo</Title>
+      <Abstract>Servicio de Mapas del Programa Nacional Mapa Educativo. Contiene capas de información del Sistema Educativo Argentino e información de contexto.</Abstract>
+      <!--Limited list of EPSG projections:-->
+      <SRS>EPSG:22182</SRS>
+      <SRS>EPSG:22183</SRS>
+      <SRS>EPSG:22184</SRS>
+      <SRS>EPSG:22185</SRS>
+      <SRS>EPSG:22186</SRS>
+      <SRS>EPSG:22187</SRS>
+      <SRS>EPSG:4326</SRS>
+      <SRS>EPSG:900913</SRS>
+      <LatLonBoundingBox minx="-72.887" miny="-63.36" maxx="-53.638" maxy="-21.877"/>
+      <Layer queryable="1">
+        <Name>ogc:escuelas</Name>
+        <Title>escuelas</Title>
+        <Abstract>Establecimientos educativos de la República Argentina. Escuelas de todos los niveles y modalidades educativas, de sector de gestión estatal y privado. &#13;
+La información fue producida por el Programa Nacional Mapa Educativo del Ministerio de Educación de la Nación, y por los Mapas Educativos Provinciales de las 23 provincias y de la Ciudad Autónoma de Buenos Aires.&#13;
+El nivel de precisión de las localizaciones varía según el origen del dato. El atributo "UBICACION" contiene los siguientes valores:&#13;
+GPS: escuelas relevadas con navegadores GPS durante el Relevamiento de Escuelas Rurales o en operativos realizados por los Mapas Educativos Provinciales.&#13;
+PRECISA: la ubicación de las escuelas fue realizada sobre cartografía base proveniente del INDEC, del Instituto Geográfico Nacional y de otros organismos oficiales productores de cartografía de cada jurisdicción.&#13;
+APROXIMADA: escuelas cuya ubicación fue asignada en base a algún datos alfanumérico de referencia espacial. En estas escuelas es necesario corroborar la localización.&#13;
+&#13;
+Los demás atributos de la capa provienen del Relevamiento Anual 2010 realizado por DiNIECE y la Red Federal de Información Educativa del Ministerio de Educación de la Nación.</Abstract>
+        <KeywordList>
+          <Keyword>escuelas</Keyword>
+          <Keyword>establecimientos educativos</Keyword>
+          <Keyword>colegios</Keyword>
+          <Keyword>argentina</Keyword>
+        </KeywordList>
+        <SRS>EPSG:4326</SRS>
+        <!--WKT definition of this CRS:
+GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]-->
+        <LatLonBoundingBox minx="-72.887" miny="-63.36" maxx="-53.638" maxy="-21.877"/>
+        <BoundingBox SRS="EPSG:4326" minx="-72.887" miny="-63.36" maxx="-53.638" maxy="-21.877"/>
+        <MetadataURL type="TC211">
+          <Format>xml</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar/mapserver/metadato/escuelas.xml"/>
+        </MetadataURL>
+        <Style>
+          <Name>escuelas_idera</Name>
+          <Title>Escuelas</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=escuelas"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>cuadrado_verde</Name>
+          <Title>SIMBOLO UNICO CUADRADO VERDE CON BORDE</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.mapaeducativo.edu.ar:80/geoserver/ogc/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=escuelas&amp;style=cuadrado_verde"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMT_MS_Capabilities>
