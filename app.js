@@ -30,8 +30,6 @@ Ext.onReady(function() {
                 activeTab: 0,
                 // map needs to be visible on initialization
                 items: ["mymap",
-
-
                 {
                     title: "Ayuda",
                     autoScroll: true,
@@ -52,7 +50,7 @@ Ext.onReady(function() {
                 },
                 items: [{
                     title: "Capas",
-                    id: "arbol",
+                    id: "layers_tree",
                     border: false,
                     flex: 1
                 }, {
@@ -61,16 +59,16 @@ Ext.onReady(function() {
                     title: "Herramientas",
                     items: [{
                         title: "Leyenda",
-                        id: "leyenda"
+                        id: "legend"
                     }, {
                         title: "Mapa de Referencia",
                         html: "Pronto..."
+                    }, {
+                        title: "Posición",
+                        id: "position"
                     }]
                 }]
-            }],
-            bbar: {
-                id: "mybbar"
-            }
+            }]
         },
         // configuration of all tool plugins for this application
         tools: [{
@@ -80,7 +78,7 @@ Ext.onReady(function() {
                 border: true,
                 tbar: []
             },
-            outputTarget: "arbol"
+            outputTarget: "layers_tree"
         }, {
             ptype: "gxp_addlayers",
             actionTarget: "tree.tbar",
@@ -127,7 +125,7 @@ Ext.onReady(function() {
             toggleGroup: "navegacion"
         }, {
             ptype: "gxp_legend",
-            outputTarget: "leyenda"
+            outputTarget: "legend"
         }, {
             ptype: "gxp_print",
             outputTarget: "map.tbar"
