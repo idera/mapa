@@ -1,7 +1,19 @@
+body {
+  font-family: helvetica,tahoma,verdana,sans-serif;
+  font-size: 13px;
+  background-color: white;
+}
+
 div.olMapViewport {
   background-color: #94D0D2;
 }
 
 .gxp-icon-permalink {
   background-image: url(./gxp/img/silk/link.png);
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
