@@ -176,7 +176,7 @@ Ext.onReady(function() {
                 ptype: "gxp_wmscsource"
             },
             argentina500k: {
-                url: "http://wms.ign.gob.ar/geoserver2/wms?",
+                url: "http://wms.ign.gob.ar/geoserver/wms?",
                 title: "IGN WMS alternativo",
                 ptype: "gxp_wmscsource"
             },
