@@ -1,7 +1,7 @@
 body {
   font-family: helvetica,tahoma,verdana,sans-serif;
   font-size: 13px;
-  background-color: white;
+  background-color: white !important;
 }
 
 iframe {
@@ -19,8 +19,13 @@ iframe {
   padding: 5px;
 }
 
-div.olMapViewport {
+.olMapViewport {
   background-color: #94D0D2;
+}
+
+.olcontroloverviewmapelement {
+  background-color: #94D0D2;
+  padding: 0px;
 }
 
 .gxp-icon-permalink {

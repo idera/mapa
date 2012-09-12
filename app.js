@@ -62,7 +62,8 @@ Ext.onReady(function() {
                         id: "legend"
                     }, {
                         title: "Mapa de Referencia",
-                        html: "Pronto..."
+                        listeners: {'afterlayout': {fn: addOverview, single: true}},
+                        html: "<div id='overviewmap' style='width:100%;height:100%;'></div>"
                     }, {
                         title: "Posición",
                         id: "position"
@@ -320,5 +321,4 @@ Ext.onReady(function() {
         position = app.mapPanel.map.getLonLatFromViewPortPx(e.xy);
         Ext.getCmp('position').update("<label>Latitud: " + position.lat + "</label><br/><label>Longitud: " + position.lon + "</label>");
     });
-
 });
