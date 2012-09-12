@@ -111,7 +111,8 @@ Ext.onReady(function() {
             ptype: "gxp_wmsgetfeatureinfo",
             outputConfig: {
                 width: 400,
-                height: "auto"
+                height: 400,
+                draggable:true
             },
             actionTarget: "map.tbar",
             toggleGroup: "navegacion"
@@ -297,6 +298,7 @@ Ext.onReady(function() {
                 name: "SIGN",
                 title: "Capa Base SIG 250 IGN",
                 selected: true,
+                transparent:false,
                 group: "background"
             }, {
                 source: "ol",
