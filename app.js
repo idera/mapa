@@ -155,8 +155,7 @@ Ext.onReady(function() {
                     });
                 }
             }]
-        }
-        /*, {
+        }/*, {
             xtype: "tbbutton",
             actionTarget: "map.tbar",
             actions: [{
@@ -317,5 +316,9 @@ Ext.onReady(function() {
         }
     });
 
-    app.mapPanel.map.addControl(new OpenLayers.Control.MousePosition());
+    app.mapPanel.map.events.register("mousemove", app.mapPanel.map, function (e) {
+        position = app.mapPanel.map.getLonLatFromViewPortPx(e.xy);
+        Ext.getCmp('position').update("<label>Latitud: " + position.lat + "</label><br/><label>Longitud: " + position.lon + "</label>");
+    });
+
 });
