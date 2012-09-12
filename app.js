@@ -170,13 +170,13 @@ Ext.onReady(function() {
         defaultSourceType: "gxp_wmssource",
         sources: {
             ign: {
-                url: "ogc/ign.xml",
-                title: "Instituto Geografico Nacional",
+                url: "http://wms.ign.gob.ar/geoserver/wms?",
+                title: "Instituto Geográfico Nacional ",
                 ptype: "gxp_wmscsource"
             },
-            argentina500k: {
-                url: "http://wms.ign.gob.ar/geoserver/wms?",
-                title: "IGN WMS alternativo",
+            ignviejowms: {
+                url: "ogc/ign.xml",
+                title: "IGN (antiguo WMS)",
                 ptype: "gxp_wmscsource"
             },
             rosario: {
@@ -287,8 +287,8 @@ Ext.onReady(function() {
 
             //scales: [2000,5000,25000,50000,100000,250000,500000,1000000,2500000,5000000,10000000,5000000],
             layers: [{
-                source: "argentina500k",
-                name: "argentina500k:satelital",
+                source: "ign",
+                name: "argentina500k:argentina500k_satelital",
                 title: "Satelital SAC-C. IGN - CONAE",
                 selected: true,
                 group: "background"
