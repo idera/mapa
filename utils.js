@@ -27,3 +27,11 @@ addOverview = function() {
     var overview = new OpenLayers.Control.OverviewMap(controlOptions);
     app.mapPanel.map.addControl(overview);
 }
+
+permalinkProvider = new GeoExt.state.PermalinkProvider({encodeType: false});
+Ext.state.Manager.setProvider(permalinkProvider);
+permalinkProvider.on({
+    statechange: function(provider) {
+        permalink = provider.getLink();
+    }
+});
