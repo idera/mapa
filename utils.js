@@ -13,9 +13,9 @@ addOverview = function() {
         layers: [
             new OpenLayers.Layer.WMS(
                 "overview", 
-                "http://sdi.ign.gob.ar/geoserver2/wms?", 
+                "http://wms.ign.gob.ar/geoserver/wms?", 
                 {
-                    layers: 'SIGN'
+                    layers: 'continente,limites_y_jurisdicciones'
                 }, {
                     buffer: 0, 
                     ratio: 1, 
