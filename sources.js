@@ -4,11 +4,6 @@ var sources = {
         title: "Instituto Geográfico Nacional ",
         ptype: "gxp_wmscsource"
     },
-    ignviejowms: {
-        url: "ogc/ign.xml",
-        title: "IGN (antiguo WMS)",
-        ptype: "gxp_wmscsource"
-    },
     rosario: {
         url: "ogc/rosario.xml",
         title: "Municipalidad de Rosario",
