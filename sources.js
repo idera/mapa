@@ -25,7 +25,7 @@ var sources = {
         ptype: "gxp_wmssource"
     },
     formosa: {
-        url: "ogc/formosa.xml",
+        url: "http://idef.formosa.gob.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
         title: "IDE Formosa",
         ptype: "gxp_wmscsource"
     },
