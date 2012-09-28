@@ -15,7 +15,7 @@ addOverview = function() {
                 "overview", 
                 "http://wms.ign.gob.ar/geoserver/wms?", 
                 {
-                    layers: 'continente,solo_limites_y_jurisdicciones'
+                    layers: 'SIGN'
                 }, {
                     buffer: 0, 
                     ratio: 1, 
