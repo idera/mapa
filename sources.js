@@ -84,6 +84,11 @@ var sources = {
         title: "Buenos Aires - Dccion. Hidraulica",
         ptype: "gxp_wmscsource"
     },
+    rides: {
+    	url: "http://rides.producciontucuman.gov.ar:81/ArcGIS/services/TUCUMAN/mapserver/WMSServer",
+	title: "Tucumán MDP",
+	ptype: "gxp_wmscsource"
+    },
     ol: {
         ptype: "gxp_olsource"
     },
