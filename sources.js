@@ -86,7 +86,7 @@ var sources = {
     },
     rides: {
     	url: "http://rides.producciontucuman.gov.ar:81/ArcGIS/services/TUCUMAN/mapserver/WMSServer",
-	title: "Tucumán MDP",
+	title: "Tucumán - MDP",
 	ptype: "gxp_wmscsource"
     },
     ol: {
