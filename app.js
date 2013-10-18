@@ -69,9 +69,7 @@ Ext.onReady(function() {
         }, {
             ptype: "gxp_addlayers",
             actionTarget: "tree.tbar",
-            search: {
-                selectedSource: "idera_csw"
-            }
+            search: {selectedSource: "ideracsw"}
         }, {
             ptype: "gxp_removelayer",
             actionTarget: ["tree.tbar", "tree.contextMenu"]
@@ -174,14 +172,14 @@ Ext.onReady(function() {
                 source: "ign",
                 name: "argentina500k:argentina500k_satelital",
                 title: "Satelital SAC-C. IGN - CONAE",
-                selected: true,
+                //selected: false,
                 group: "background"
             }, {
                 source: "ign",
-                name: "SIGN",
+                name: "capabaseargenmap",
                 title: "Capa Base SIG 250 IGN",
                 selected: true,
-                transparent:false,
+                //transparent:false,
                 group: "background"
             }, {
                 source: "ol",
