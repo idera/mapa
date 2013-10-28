@@ -13,9 +13,9 @@ addOverview = function() {
         layers: [
             new OpenLayers.Layer.WMS(
                 "overview", 
-                "http://wms.ign.gob.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities", 
+                "http://wms.ign.gob.ar/geoserver/wms?", 
                 {
-                    layer: 'capabaseargenmap'
+                    layers: 'capabaseargenmap'
                 }, {
                     buffer: 0, 
                     ratio: 1, 
