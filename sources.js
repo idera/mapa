@@ -1,31 +1,52 @@
 var sources = {
     ign: {
-        url: "http://wms.ign.gob.ar/geoserver/wms?",
+        url: "http://wms.ign.gob.ar/geoserver/ows?service=wcs&version=1.3.0&request=GetCapabilities?",
         title: "Instituto Geográfico Nacional ",
         ptype: "gxp_wmscsource"
     },
     rosario: {
-        url: "ogc/rosario.xml",
+        url: "http://infomapa.rosario.gov.ar/wms/planobase?",
         title: "Municipalidad de Rosario",
         ptype: "gxp_wmscsource"
     },
+   // malvinas: {
+     //   url: "http://mapas.malvinasargentinas.gov.ar/cgi-bin/mapserv?map=/var/www/visor/config/malvinas/malvin.map&",
+     //   title: "Municipalidad de Malvinas Argentinas. BA",
+     //   ptype: "gxp_wmscsource"
+   // },
     catamarca: {
         url: "ogc/catamarca.xml",
         title: "ETISIG Catamarca",
         ptype: "gxp_wmscsource"
     },
     chaco: {
-        url: "http://etisig.siup.gov.ar/mapasetisig.map",
+        url: "http://etisig.chaco.gov.ar/mapasetisig.map",
         title: "IDE Chaco",
         ptype: "gxp_wmssource"
     },
     formosa: {
-        url: "http://idef.formosa.gob.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        url: "http://idef.formosa.gob.ar/servicios/ows?service=wms&version=1.1.1&request=GetCapabilities",
         title: "IDE Formosa",
         ptype: "gxp_wmscsource"
     },
+    mendoza: {
+        url: "http://www.siat.mendoza.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        title: "SIAT Mendoza",
+        ptype: "gxp_wmscsource"
+    },
+
+    neuquen: {
+        url: "http://geodesia.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        title: "Catastro Neuquén",
+        ptype: "gxp_wmscsource"
+    },
+    rionegro: {
+        url: "http://ide.extranet.rionegro.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        title: "IDE Rio Negro",
+        ptype: "gxp_wmscsource"
+    },
     santacruz: {
-        url: "ogc/santacruz.xml",
+        url: "http://spm.sitsantacruz.gob.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
         title: "SIT Santa Cruz",
         ptype: "gxp_wmscsource"
     },
@@ -39,13 +60,18 @@ var sources = {
         title: "Provincia de Tucumán",
         ptype: "gxp_wmscsource"
     },
+    smtucuman: {
+        url: "http://sigcap.no-ip.org:8082/geoserver/wms",
+        title: "Municipalidad de San Miguel de Tucumán",
+        ptype: "gxp_wmscsource"
+    },
     educacion: {
         url: "ogc/educacion.xml",
         title: "Ministerio de Educación",
         ptype: "gxp_wmscsource"
     },
     inta: {
-        url: "ogc/inta.xml",
+        url: "http://geointa.inta.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
         title: "INTA",
         ptype: "gxp_wmscsource"
     },
@@ -55,7 +81,7 @@ var sources = {
         ptype: "gxp_wmscsource"
     },
     energia: {
-        url: "http://sig.se.gov.ar/gis/wms6/?service=WMS&version=1.1.1&request=GetCapabilities",
+        url: "http://sig.se.gob.ar/cgi-bin/mapserv6?map=/var/www/html/visor/geofiles/map/mapase.map&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities",  //?service=WMS&version=1.1.1&request=GetCapabilities",
         title: "Secretaría de Energía",
         ptype: "gxp_wmscsource"
     },
@@ -64,13 +90,18 @@ var sources = {
         title: "SEGEMAR",
         ptype: "gxp_wmscsource"
     },
+   // senasa: {
+   //     url: "http://geoserver.senasa.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+   //     title: "SENASA",
+   //     ptype: "gxp_wmscsource"
+   // },
     arba: {
         url: "http://cartoservices.arba.gov.ar/geoserver/wms?service=WMS&request=getcapabilities",
         title: "Buenos Aires - ARBA",
         ptype: "gxp_wmscsource"
     },
     urbasig: {
-        url: "http://www.mosp.gba.gov.ar/webmapping/cgi-bin/urbasig",
+        url: "http://sig.gobierno.gba.gov.ar:8080/geoserver/urbasig/wms?",
         title: "Buenos Aires - URBASIG",
         ptype: "gxp_wmscsource"
     },
@@ -92,10 +123,19 @@ var sources = {
     ol: {
         ptype: "gxp_olsource"
     },
-    idera_csw: {
-        ptype: "gxp_cataloguesource",
-        url: "http://www.idera.gob.ar/catalogo/srv/es/csw?request=GetCapabilities&service=CSW",
-        //url: "http://ide.se.gov.ar/geonetwork/srv/en/csw",
-        title: "Catalogo IDERA"
-    }
+            ideracsw: {
+                ptype: "gxp_cataloguesource",
+                url: "http://idera.gob.ar/catalogo/srv/en/csw",
+                title: "Catalogo IDERA"
+            },
+            geonode: {
+                ptype: "gxp_cataloguesource",
+                url: "http://gxp.opengeo.org/geonetwork/srv/en/csw",
+                title: "Geonode"
+            },
+            pycsw: {
+                ptype: "gxp_cataloguesource",
+                url: "http://gxp.opengeo.org/pycsw",
+                title: "pycsw"
+            }
 }
