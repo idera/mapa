@@ -181,7 +181,7 @@ Ext.onReady(function() {
             }, {
                 source: "ign",
                 name: "capabaseargenmap",
-                title: "Capa Base SIG 250 IGN",
+                title: "Capa Base IGN",
                 selected: true,
                 //transparent:false,
                 group: "background"
