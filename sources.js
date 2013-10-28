@@ -1,6 +1,6 @@
 var sources = {
     ign: {
-        url: "http://wms.ign.gob.ar/geoserver/ows?service=wcs&version=1.3.0&request=GetCapabilities?",
+        url: "http://wms.ign.gob.ar/geoserver/wms?",
         title: "Instituto Geográfico Nacional ",
         ptype: "gxp_wmscsource"
     },
