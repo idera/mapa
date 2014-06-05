@@ -5,7 +5,7 @@ var sources = {
         ptype: "gxp_wmscsource"
     },
     rosario: {
-        url: "http://infomapa.rosario.gov.ar/wms/planobase?",
+        url: "http://infomapa.rosario.gov.ar/wms/planobase?version=1.1.1&request=GetCapabilities",
         title: "Municipalidad de Rosario",
         ptype: "gxp_wmscsource"
     },
@@ -35,11 +35,13 @@ var sources = {
         ptype: "gxp_wmscsource"
     },
 
-    neuquen: {
-        url: "http://geodesia.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-        title: "Catastro Neuquén",
-        ptype: "gxp_wmscsource"
-    },
+    // FUERA DE SERVICIO (02/06/2014)
+    // neuquen: {
+    //     url: "http://geodesia.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+    //     title: "Catastro Neuquén",
+    //     ptype: "gxp_wmscsource"
+    // },
+
     rionegro: {
         url: "http://ide.extranet.rionegro.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
         title: "IDE Rio Negro",
@@ -60,11 +62,14 @@ var sources = {
         title: "Provincia de Tucumán",
         ptype: "gxp_wmscsource"
     },
-    smtucuman: {
-        url: "http://sigcap.no-ip.org:8082/geoserver/wms",
-        title: "Municipalidad de San Miguel de Tucumán",
-        ptype: "gxp_wmscsource"
-    },
+
+    // FUERA DE SERVICIO (02/06/2014)
+    // smtucuman: {
+    //     url: "http://sigcap.no-ip.org:8082/geoserver/wms",
+    //     title: "Municipalidad de San Miguel de Tucumán",
+    //     ptype: "gxp_wmscsource"
+    // },
+
     educacion: {
         url: "ogc/educacion.xml",
         title: "Ministerio de Educación",
@@ -85,11 +90,14 @@ var sources = {
         title: "Secretaría de Energía",
         ptype: "gxp_wmscsource"
     },
-    segemar: {
-        url: "http://www.onegeology-arg.com.ar/geoserver/wms?service=WMS&version=1.1.1&request=GetCapabilities",
-        title: "SEGEMAR",
-        ptype: "gxp_wmscsource"
-    },
+
+    // FUERA DE SERVICIO (02/06/2014)
+    // segemar: {
+    //     url: "http://www.onegeology-arg.com.ar/geoserver/wms?service=WMS&version=1.1.1&request=GetCapabilities",
+    //     title: "SEGEMAR",
+    //     ptype: "gxp_wmscsource"
+    // },
+
    // senasa: {
    //     url: "http://geoserver.senasa.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
    //     title: "SENASA",
@@ -100,25 +108,31 @@ var sources = {
         title: "Buenos Aires - ARBA",
         ptype: "gxp_wmscsource"
     },
-    urbasig: {
-        url: "http://sig.gobierno.gba.gov.ar:8080/geoserver/urbasig/wms?",
-        title: "Buenos Aires - URBASIG",
-        ptype: "gxp_wmscsource"
-    },
+
+    // FUERA DE SERVICIO (02/06/2014)
+    // urbasig: {
+    //     url: "http://sig.gobierno.gba.gov.ar:8080/geoserver/urbasig/wms?",
+    //     title: "Buenos Aires - URBASIG",
+    //     ptype: "gxp_wmscsource"
+    // },
+
     mapaescolar: {
-        url: "http://190.210.101.129/cgi-bin/mapaescolar",
+        url: "http://190.210.101.129/cgi-bin/mapaescolar?service=WMS&request=getcapabilities",
         title: "Buenos Aires - Mapa Escolar",
         ptype: "gxp_wmscsource"
     },
-    hidraulica: {
-        url: "http://www.mosp.gba.gov.ar/wms_hidraulica/cgi-bin/mapserv.exe?map=/ms4w/apps/m/wms.map",
-        title: "Buenos Aires - Dccion. Hidraulica",
-        ptype: "gxp_wmscsource"
-    },
+
+    // FUERA DE SERVICIO (02/06/2014)
+    // hidraulica: {
+    //     url: "http://www.mosp.gba.gov.ar/wms_hidraulica/cgi-bin/mapserv.exe?map=/ms4w/apps/m/wms.map",
+    //     title: "Buenos Aires - Dccion. Hidraulica",
+    //     ptype: "gxp_wmscsource"
+    // },
+
     rides: {
-    	url: "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer",
-	title: "Tucumán - MDP",
-	ptype: "gxp_wmscsource"
+        url: "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?request=getcapabilities",
+        title: "Tucumán - MDP",
+       ptype: "gxp_wmscsource"
     },
     ol: {
         ptype: "gxp_olsource"
