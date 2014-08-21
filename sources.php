@@ -5,14 +5,20 @@ $sources = file_get_contents('sources.js');
 // Responder peticion plana
 
 if ($_GET['format']=='plain') {
-echo '"ign","http://wms.ign.gob.ar/geoserver/wms?",
-	"rosario","http://infomapa.rosario.gov.ar/wms/planobase?version=1.1.1&request=GetCapabilities"';
-/*
-	$plano=json_decode($sources);
-	var_dump(json_decode($sources));
-	echo $sources;
 
-*/
+	$sources_json=str_replace("var sources = ","",$sources); 
+	$plano = json_decode($sources_json,true);
+foreach ($plano as $nombre=>$datos){
+	echo $nombre.",".$datos['url'].",";
+} 
+//	echo json_last_error().json_last_error_msg();
+//	echo "<hr>";
+//	var_dump($plano);
+//	echo "<hr>";
+//	echo "Source json: ".$sources_json;
+
+//	echo "Source original: ".$sources;
+
 }
 // Responder peticion JSON
 else {
