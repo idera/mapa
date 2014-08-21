@@ -16,6 +16,6 @@ echo '"ign","http://wms.ign.gob.ar/geoserver/wms?",
 }
 // Responder peticion JSON
 else {
-	echo "var sources = {".$sources." }";
+	echo $sources;
 }
 ?>
