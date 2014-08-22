@@ -23,6 +23,27 @@ if ($_GET['format']=='plain') {
 //	echo "Source original: ".$sources;
 
 }
+// 
+else if ($_GET['format']=='html'){
+	$jSources=str_replace("var sources = ","",$sources); 
+	$aSources = json_decode($jSources,true);
+
+?>
+<html>
+<body>
+<h1>Listado de servicios WMS</h1>
+<ul>
+<?php
+foreach ($aSources as $nombre=>$datos){
+if (($datos['ptype']=='gxp_wmssource') or ($datos['ptype']=='gxp_wmscsource'))
+	echo "<li><h3>".htmlentities($datos['title'])."</h3><a href=".$datos['url'].">".htmlentities($datos['url'])."</a></li>";
+}
+?>
+</ul>
+</body>
+</html>
+<?php
+}
 // Responder peticion JSON
 else if ($_GET['format']=='xml') {
 	//paso a json para usar array
