@@ -1,57 +1,57 @@
 var sources = {
     "ign": {
-        "url": "http://wms.ign.gob.ar/geoserver/wms?",
+        "url": "http://wms.ign.gob.ar/geoserver/wms?version=1.1.1&request=GetCapabilities",
         "title": "Instituto Geográfico Nacional ",
         "ptype": "gxp_wmscsource"
     },
     "rosario": {
-        "url": "http://infomapa.rosario.gov.ar/wms/planobase?version=1.1.1&request=GetCapabilities",
+        "url": "http://infomapa.rosario.gov.ar/wms/planobase?service=WMS&version=1.1.1&request=GetCapabilities",
         "title": "Municipalidad de Rosario",
         "ptype": "gxp_wmscsource"
     },
     "catamarca": {
-        "url": "ogc/catamarca.xml",
-        "title": "ETISIGCatamarca",
+        "url": "http://200.43.169.148:8080/cgi-bin/wms_acat?service=WMS&version=1.1.1&request=GetCapabilities",
+        "title": "ETISIG Catamarca",
         "ptype": "gxp_wmscsource"
     },
     "chaco": {
-        "url": "http://etisig.chaco.gov.ar/mapasetisig.map",
-        "title": "IDEChaco",
+        "url": "http://etisig.chaco.gov.ar/mapasetisig.map?service=WMS&version=1.1.1&request=GetCapabilities",
+        "title": "IDE Chaco",
         "ptype": "gxp_wmssource"
     },
     "formosa": {
         "url": "http://idef.formosa.gob.ar/servicios/ows?service=wms&version=1.1.1&request=GetCapabilities",
-        "title": "IDEFormosa",
+        "title": "IDE Formosa",
         "ptype": "gxp_wmscsource"
     },
     "mendoza": {
         "url": "http://www.siat.mendoza.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-        "title": "SIATMendoza",
+        "title": "SIAT Mendoza",
         "ptype": "gxp_wmscsource"
     },
     "rionegro": {
         "url": "http://ide.extranet.rionegro.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-        "title": "IDERioNegro",
+        "title": "IDE Rio Negro",
         "ptype": "gxp_wmscsource"
     },
     "santacruz": {
         "url": "http://spm.sitsantacruz.gob.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-        "title": "SITSantaCruz",
+        "title": "SIT Santa Cruz",
         "ptype": "gxp_wmscsource"
     },
     "santafe": {
-        "url": "ogc/santafe.xml",
-        "title": "IDESFSantaFe",
+        "url": "http://www.idesf.santafe.gov.ar/cgi-bin/idesf?service=WMS&version=1.1.1&request=GetCapabilities",
+        "title": "IDESF Santa Fe",
         "ptype": "gxp_wmscsource"
     },
     "tucuman": {
-        "url": "ogc/tucuman.xml",
-        "title": "ProvinciadeTucumán",
+        "url": "http://idet.tucuman.gov.ar/geoserver/idet/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "title": "Provincia de Tucumán",
         "ptype": "gxp_wmscsource"
     },
     "educacion": {
-        "url": "ogc/educacion.xml",
-        "title": "MinisteriodeEducación",
+        "url": "http://wms.mapaeducativo.edu.ar/geoserver/ogc/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "title": "Ministerio de Educación",
         "ptype": "gxp_wmscsource"
     },
     "inta": {
@@ -70,7 +70,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "arba": {
-        "url": "http://cartoservices.arba.gov.ar/geoserver/wms?service=WMS&request=getcapabilities",
+        "url": "http://cartoservices.arba.gov.ar/geoserver/cartoservice/wms?service=WMS&request=GetCapabilities",
         "title": "BuenosAires-ARBA",
         "ptype": "gxp_wmscsource"
     },
