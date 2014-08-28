@@ -25,17 +25,17 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "mendoza": {
-        "url": "http://www.siat.mendoza.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "url": "http://www.siat.mendoza.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "SIAT Mendoza",
         "ptype": "gxp_wmscsource"
     },
     "rionegro": {
-        "url": "http://ide.extranet.rionegro.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "url": "http://ide.extranet.rionegro.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "IDE Rio Negro",
         "ptype": "gxp_wmscsource"
     },
     "santacruz": {
-        "url": "http://spm.sitsantacruz.gob.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "url": "http://spm.sitsantacruz.gob.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "SIT Santa Cruz",
         "ptype": "gxp_wmscsource"
     },
@@ -45,17 +45,17 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "tucuman": {
-        "url": "http://idet.tucuman.gov.ar/geoserver/idet/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "url": "http://idet.tucuman.gov.ar/geoserver/idet/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "Provincia de Tucumán",
         "ptype": "gxp_wmscsource"
     },
     "educacion": {
-        "url": "http://wms.mapaeducativo.edu.ar/geoserver/ogc/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "url": "http://wms.mapaeducativo.edu.ar/geoserver/ogc/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "Ministerio de Educación",
         "ptype": "gxp_wmscsource"
     },
     "inta": {
-        "url": "http://geointa.inta.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+        "url": "http://geointa.inta.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "INTA",
         "ptype": "gxp_wmscsource"
     },
@@ -70,17 +70,17 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "arba": {
-        "url": "http://cartoservices.arba.gov.ar/geoserver/cartoservice/wms?service=WMS&request=GetCapabilities",
+        "url": "http://cartoservices.arba.gov.ar/geoserver/cartoservice/ows?service=WMS&version=1.1.1&request=GetCapabilities",
         "title": "BuenosAires-ARBA",
         "ptype": "gxp_wmscsource"
     },
     "mapaescolar": {
-        "url": "http://190.210.101.129/cgi-bin/mapaescolar?service=WMS&request=getcapabilities",
+        "url": "http://190.210.101.129/cgi-bin/mapaescolar?service=WMS&version=1.1.1&request=getcapabilities",
         "title": "BuenosAires-MapaEscolar",
         "ptype": "gxp_wmscsource"
     },
     "rides": {
-        "url": "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?request=getcapabilities",
+        "url": "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?version=1.1.1&request=getcapabilities",
         "title": "Tucumán-MDP",
         "ptype": "gxp_wmscsource"
     },
@@ -89,17 +89,7 @@ var sources = {
     },
     "ideracsw": {
         "ptype": "gxp_cataloguesource",
-        "url": "http://idera.gob.ar/catalogo/srv/en/csw",
-        "title": "CatalogoIDERA"
-    },
-    "geonode": {
-        "ptype": "gxp_cataloguesource",
-        "url": "http://gxp.opengeo.org/geonetwork/srv/en/csw",
-        "title": "Geonode"
-    },
-    "pycsw": {
-        "ptype": "gxp_cataloguesource",
-        "url": "http://gxp.opengeo.org/pycsw",
-        "title": "pycsw"
+        "url": "http://catalogo.idera.gob.ar:10080/geonetwork/srv/spa/csw",
+        "title": "Catalogo IDERA"
     }
 }
