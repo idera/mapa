@@ -1,0 +1,14 @@
+#!/bin/bash
+
+OIFS=$IFS;
+IFS=",";
+
+capabilities="`wget -qO- http://localhost/mapa/sources.php?format=plain`";
+capabilitiesArray=($capabilities);
+
+for ((i=0; i<${#capabilitiesArray[@]}; i=$i+2));
+do
+    wget -O ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]}
+done
+ 
+IFS=$OIFS;
