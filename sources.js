@@ -15,7 +15,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "chaco": {
-        "url": "http://etisig.chaco.gov.ar/mapasetisig.map?service=WMS&version=1.1.1&request=GetCapabilities",
+        "url": "http://idechaco.gob.ar/mapasetisig.map?service=WMS&version=1.1.1&request=GetCapabilities",
         "title": "IDE Chaco",
         "ptype": "gxp_wmssource"
     },
