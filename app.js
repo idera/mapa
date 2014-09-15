@@ -156,6 +156,12 @@ Ext.onReady(function() {
             }]
         }*/],
 
+        mapPlugins: {
+            ptype:"gxp_loadingindicator",
+            onlyShowOnFirstLoad: true,
+            loadingMapMessage:"Cargando mapa..."
+        },
+
         // layer sources
         defaultSourceType: "gxp_wmssource",
         sources: sources,
