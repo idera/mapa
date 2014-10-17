@@ -15,7 +15,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "chaco": {
-        "url": "http://idechaco.gob.ar/mapasetisig.map?service=WMS&version=1.1.1&request=GetCapabilities",
+        "url": "http://idechaco.gob.ar/geoserver/IDEChaco/wms?service=WMS&version=1.1.1&request=GetCapabilities",
         "title": "IDE Chaco",
         "ptype": "gxp_wmssource"
     },
@@ -54,6 +54,11 @@ var sources = {
         "title": "Ministerio de Educación",
         "ptype": "gxp_wmscsource"
     },
+    "educacion2": {
+        "url": "http://www.mapaeducativo.edu.ar/geoserver/men/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        "title": "Base de Asentamientos Humanos de la República Argentina (BAHRA)",
+        "ptype": "gxp_wmscsource"
+    },
     "inta": {
         "url": "http://geointa.inta.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "INTA",
@@ -61,7 +66,17 @@ var sources = {
     },
     "indec": {
         "url": "http://200.51.91.231/cgi-bin/mapserv?program=/cgibin/mapserv&map=/prosiga/INDEC_WMS_Poblacion.map&SERVICE=WMS&Version=1.1.1&REQUEST=GetCapabilities",
-        "title": "INDEC",
+        "title": "INDEC - Censos 1991 y 2001",
+        "ptype": "gxp_wmscsource"
+    },
+    "indec2": {
+        "url": "http://www.opex.sig.indec.gov.ar/cgi-bin/mapserv?map=/home/wms/codgeo_2010.map&REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.1.1",
+        "title": "INDEC - Censo 2010",
+        "ptype": "gxp_wmscsource"
+    },
+    "conae_focoscalor": {
+        "url": "http://focosdecalor.conae.gov.ar/geoserver/FocosDeCalor/wms?service=WMS&version=1.1.1&request=GetCapabilities",
+        "title": "Comisión Nacional de Actividades Espaciales. Focos de calor, instrumento MODIS.",
         "ptype": "gxp_wmscsource"
     },
     "energia": {
@@ -82,6 +97,11 @@ var sources = {
     "rides": {
         "url": "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?version=1.1.1&request=getcapabilities",
         "title": "Tucumán-MDP",
+        "ptype": "gxp_wmscsource"
+    },
+    "urbasig": {
+        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/urbasig/wms?service=WMS&version=1.1.1&request=GetCapabilities",
+        "title": "Dirección Provincial de Ordenamiento Urbano y Territorial (Subsecretaria de Gobierno, Ministerio de Gobierno (urBAsig))",
         "ptype": "gxp_wmscsource"
     },
     "ol": {
