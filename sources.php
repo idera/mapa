@@ -81,6 +81,24 @@ else if ($_GET['format']=='wms') {
 	$jSources = json_encode($aSources);
 	echo "var sources = ".stripslashes($jSources);
 }
+else if ($_GET['format']=='qgis') {
+        header('Content-type: text/xml');
+        header('Content-Disposition: attachment; filename="qgis.xml"');
+        header('Content-Type: charset=utf-8');
+	$jSources=str_replace("var sources = ","",$sources); 
+	$plano = json_decode($jSources,true);
+        
+        $cadena = "<wms ignoreGetMapURI='false' smoothPixmapTransform='false' dpiMode='7' password='' ignoreGetFeatureInfoURI='false' referer='' username='' invertAxisOrientation='false' ignoreAxisOrientation='false'";
+        
+        echo "<qgsWMSConnections version='1.0'>";
+	foreach ($plano as $nombre=>$datos){
+            if (($datos['ptype']=='gxp_wmssource') || ($datos['ptype']=='gxp_wmscsource')){
+                $cadena2 = $cadena. " url='" .htmlentities($datos['url'])."' name='IDERA_". $datos['title']. "'/>"; 
+            }
+            echo $cadena2;                            
+	}
+        echo "</qgsWMSConnections>";        
+} 
 else {
 	echo $sources;
 }
