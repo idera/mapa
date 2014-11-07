@@ -51,7 +51,7 @@ var sources = {
     },
     "educacion": {
         "url": "http://wms.mapaeducativo.edu.ar/geoserver/ogc/ows?service=wms&version=1.1.1&request=GetCapabilities",
-        "title": "Ministerio de Educación",
+        "title": "Ministerio de Educación de Nación",
         "ptype": "gxp_wmscsource"
     },
     "educacion2": {
@@ -61,7 +61,7 @@ var sources = {
     },
     "inta": {
         "url": "http://geointa.inta.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
-        "title": "INTA",
+        "title": "INTA - Instituto Nacional de Tecnología Agropecuaria",
         "ptype": "gxp_wmscsource"
     },
     "indec": {
@@ -81,17 +81,17 @@ var sources = {
     },
     "energia": {
         "url": "http://sig.se.gob.ar/cgi-bin/mapserv6?map=/var/www/html/visor/geofiles/map/mapase.map&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities",
-        "title": "SecretaríadeEnergía",
+        "title": "Secretaría de Energía de Nacion",
         "ptype": "gxp_wmscsource"
     },
     "arba": {
         "url": "http://cartoservices.arba.gov.ar/geoserver/cartoservice/ows?service=WMS&version=1.1.1&request=GetCapabilities",
-        "title": "BuenosAires-ARBA",
+        "title": "Buenos Aires-ARBA",
         "ptype": "gxp_wmscsource"
     },
     "mapaescolar": {
         "url": "http://190.210.101.129/cgi-bin/mapaescolar?service=WMS&version=1.1.1&request=getcapabilities",
-        "title": "BuenosAires-MapaEscolar",
+        "title": "Dirección General de Cultura y Educación - GBA - Mapa Escolar",
         "ptype": "gxp_wmscsource"
     },
     "rides": {
@@ -104,6 +104,83 @@ var sources = {
         "title": "Dirección Provincial de Ordenamiento Urbano y Territorial (Subsecretaria de Gobierno, Ministerio de Gobierno (urBAsig))",
         "ptype": "gxp_wmscsource"
     },
+    "mosp": {
+        "url": "http://www.mosp.gba.gov.ar/wms_hidraulica/cgi-bin/mapserv.exe?map=/ms4w/apps/m/wms.map&REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.1.1",
+        "title": "Dirección de Hidráulica - Ministerio de Infraestructura - GBA",
+        "ptype": "gxp_wmscsource"
+    },
+    "msgba": {
+        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/salud/wms?version=1.1.1&request=GetCapabilities",
+        "title": "Ministerio de Salud - GBA",
+        "ptype": "gxp_wmscsource"
+    },
+    "aptgba": {
+        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/apt/wms?version=1.1.1&request=GetCapabilities",
+        "title": "Transporte - GBA",
+        "ptype": "gxp_wmscsource"
+    },
+    "vialidadgba": {
+        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/vialidad/wms?version=1.1.1&request=GetCapabilities",
+        "title": "Vialidad - GBA",
+        "ptype": "gxp_wmscsource"
+    },
+    "recnatgba": {
+        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/opds/wms?version=1.1.1&request=GetCapabilities",
+        "title": "Recursos Naturales - GBA",
+        "ptype": "gxp_wmscsource"
+    },
+    "cdigba": {
+        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/cdi/wms?version=1.1.1&request=GetCapabilities",
+        "title": "CDI - GBA",
+        "ptype": "gxp_wmscsource"
+    },
+    "dcgba": {
+        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/dc/wms?version=1.1.1&request=GetCapabilities",
+        "title": "Defensa Civil - GBA",
+        "ptype": "gxp_wmscsource"
+    },
+    "dcgba": {
+        "url": "http://www.sannicolas.gov.ar:8081/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        "title": "Municipalidad de San Nicolás de los Arroyos",
+        "ptype": "gxp_wmscsource"
+    },
+    "jujuy": {
+        "url": "http://181.15.175.27/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        "title": "IDE Jujuy",
+        "ptype": "gxp_wmscsource"
+    },
+    "misiones": {
+        "url": "http://www.ide.misiones.gov.ar/cgi-bin/mapserv?map=/var/www/ide/htdocs/WMSdextraGD.map&SERVICE=WMS&Version=1.1.1&REQUEST=GetCapabilities",
+        "title": "IDE Misiones",
+        "ptype": "gxp_wmscsource"
+    },
+    "neuquen": {
+        "url": "http://geodesia.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        "title": "IDE Neuquén",
+        "ptype": "gxp_wmscsource"
+    },
+    "santacruz": {
+        "url": "http://spm.sitsantacruz.gob.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        "title": "IDE Santa Cruz",
+        "ptype": "gxp_wmscsource"
+    },
+    "santafe": {
+        "url": "http://www.idesf.santafe.gov.ar/cgi-bin/idesf?service=WMS&version=1.1.1&request=GetCapabilities",
+        "title": "IDEF Santa Fe",
+        "ptype": "gxp_wmscsource"
+    },
+    "tucuman": {
+        "url": "http://idet.tucuman.gov.ar/geoserver/idet/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        "title": "IDET Tucumán",
+        "ptype": "gxp_wmscsource"
+    },
+    "mptucuman": {
+        "url": "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?request=GetCapabilities&service=WMS&version=1.1.1",
+        "title": "Ministerio de Desarrollo Productivo - Tucumán",
+        "ptype": "gxp_wmscsource"
+    },
+
+    
     "ol": {
         "ptype": "gxp_olsource"
     },
@@ -113,3 +190,7 @@ var sources = {
         "title": "Catalogo IDERA"
     }
 }
+ 
+ 
+ 
+ 
