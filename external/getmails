@@ -1,0 +1,2 @@
+#!/bin/bash
+grep "<ContactElectronicMailAddress>.*</ContactElectronicMailAddress>" ogc/*.xml | sed "s/<ContactElectronicMailAddress>//" | sed "s/<\/ContactElectronicMailAddress>//" > ogc/emails.txt
