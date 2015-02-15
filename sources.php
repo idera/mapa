@@ -10,7 +10,7 @@ if ($_GET['format']=='plain') {
 
 	foreach ($plano as $nombre=>$datos){
 		if (($datos['ptype']=='gxp_wmssource') || ($datos['ptype']=='gxp_wmscsource'))
-			echo $nombre.",".$datos['url'].",";
+			echo $nombre . "," . $datos['url'] . "&TILED=true,";
 	} 
 }
 //Responder peticion HTML 
