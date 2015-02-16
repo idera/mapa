@@ -7,11 +7,11 @@ capabilities="`wget -qO- http://idera.gob.ar/mapa/sources.php?format=plain`";
 
 capabilitiesArray=($capabilities);
 
-rm ogc/*.xml;
+rm /var/www/mapa/ogc/*.xml;
 
 for ((i=0; i<${#capabilitiesArray[@]}; i=$i+2));
 do
-    wget -O ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]} ||
+    wget -O /var/www/mapa/ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]} ||
     (pepe=$(grep ${capabilitiesArray[$i]} ogc/emails.txt | sed "s/ogc\/"${capabilitiesArray[$i]}".xml: *//");
     echo "El servicio WMS de "${capabilitiesArray[$i]}" fue inaccesible el""se envió un correo a: "$pepe" y a coordinador_id@idera.gob.ar"|mailx -s "WMS inaccesible" $pepe coordinador_id@idera.gob.ar) 
 done
