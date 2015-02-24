@@ -59,8 +59,8 @@ else if ($_GET['format']=='xml') {
 	} 
 
 	//vuelta al formato original
-	$jSources = json_encode($aSources);
-	echo "var sources = ".stripslashes($jSources);
+	$jSources = json_encode($aSources, JSON_UNESCAPED_UNICODE);
+	echo "var sources = ".stripslashes(utf8_decode($jSources));
 }
 //Solo responder servicios WMS (app estado servicios wms)
 else if ($_GET['format']=='wms') {
@@ -78,8 +78,8 @@ else if ($_GET['format']=='wms') {
 	}
 
 	//vuelta al formato original
-	$jSources = json_encode($aSources);
-	echo "var sources = ".stripslashes($jSources);
+	$jSources = json_encode($aSources, JSON_UNESCAPED_UNICODE);
+	echo "var sources = ".stripslashes(utf8_decode($jSources));
 }
 else if ($_GET['format']=='qgis') {
         header('Content-type: text/xml');
@@ -100,6 +100,6 @@ else if ($_GET['format']=='qgis') {
         echo "</qgsWMSConnections>";        
 } 
 else {
-	echo $sources;
+	echo utf8_decode($sources);
 }
 ?>
