@@ -19,7 +19,7 @@ Ext.onReady(function() {
                 {
                     title: "Estado de Servidores WMS",
                     autoScroll: true,
-                    html: "<iframe src='http://www.idera.gob.ar/portal/estadodeloswms'>"
+                    html: "<iframe src='http://190.220.8.214:10080/idera-estadowms/'>"
                 }, {
                     title: "Ayuda",
                     autoScroll: true,
