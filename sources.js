@@ -40,7 +40,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "santafe": {
-        "url": "http://www.idesf.santafe.gov.ar/cgi-bin/idesf?service=WMS&version=1.1.1&request=GetCapabilities",
+        "url": "https://aswe.santafe.gov.ar/idesf/wms?service=WMS&version=1.1.1&request=GetCapabilities",
         "title": "IDESF Santa Fe",
         "ptype": "gxp_wmscsource"
     },
