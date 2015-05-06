@@ -164,11 +164,6 @@ var sources = {
         "title": "IDE Santa Cruz",
         "ptype": "gxp_wmscsource"
     },
-    "santafe": {
-        "url": "http://www.idesf.santafe.gov.ar/cgi-bin/idesf?service=WMS&version=1.1.1&request=GetCapabilities",
-        "title": "IDEF Santa Fe",
-        "ptype": "gxp_wmscsource"
-    },
     "tucuman": {
         "url": "http://idet.tucuman.gov.ar/geoserver/idet/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "IDET Tucumán",
