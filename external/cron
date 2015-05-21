@@ -3,17 +3,40 @@
 OIFS=$IFS;
 IFS=",";
 
-capabilities="`wget -qO- http://idera.gob.ar/mapa/sources.php?format=plain`";
+# Consulta Servidores de los servicios.
+capabilities="`wget -qO- http://www.idera.gob.ar/mapa/sources.php?format=plain`";
+
+#echo $capabilities;
 
 capabilitiesArray=($capabilities);
 
-rm /var/www/mapa/ogc/*.xml;
+#Borra xml cacheados anteriormente
+#rm /var/www/mapa/ogc/*.xml;
 
+
+# Recorre los servidores y obtiene capacidades de cada servicio.
 for ((i=0; i<${#capabilitiesArray[@]}; i=$i+2));
 do
-    wget -O /var/www/mapa/ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]} ||
-    (pepe=$(grep ${capabilitiesArray[$i]} ogc/emails.txt | sed "s/ogc\/"${capabilitiesArray[$i]}".xml: *//");
-    echo "El servicio WMS de "${capabilitiesArray[$i]}" fue inaccesible el""se envió un correo a: "$pepe" y a coordinador_id@idera.gob.ar"|mailx -s "WMS inaccesible" $pepe coordinador_id@idera.gob.ar) 
+    #Descarga capacidades si existen y guarda en /var/www/mapa/ogc/*.xml;
+    wget --tries=1 --timeout=5 -O /var/www/mapa/ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]} ||
+    (pepe=$(grep ${capabilitiesArray[$i]} emails.txt | sed "s/\/var\/www\/mapa\/ogc\/"${capabilitiesArray[$i]}".xml: *//");
+    pepe2=$pepe;
+    pepe2+=" 1";
+    echo $pepe2;
+    sed "s|$pepe|$pepe2|" emails.txt;
+    #Envio de mail x servidor caido
+    #php escribir.php
+    regex="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
+    
+
+if [[ $pepe =~ $regex ]] ; then
+    echo "El servicio WMS de "${capabilitiesArray[$i]}" fue inaccesible el""se envió un correo a: "$pepe" y a coordinador_id@idera.gob.ar"|mailx -s "WMS inaccesible" $pepe coordinador_id@idera.gob.ar
+else
+    echo "El servicio WMS de "${capabilitiesArray[$i]}" fue inaccesible y la direccion de mail es invalida o no esta seteada"|mailx -s "WMS inaccesible de "${capabilitiesArray[$i]}"" coordinador_id@idera.gob.ar
+fi
+
+    ) 
+    
 done
- 
+
 IFS=$OIFS;
