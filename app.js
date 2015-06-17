@@ -17,10 +17,6 @@ Ext.onReady(function() {
                 activeTab: 0,
                 items: ["mymap",
                 {
-                    title: "Estado de Servidores WMS",
-                    autoScroll: true,
-                    html: "<iframe src='http://190.220.8.214:10080/idera-estadowms/'>"
-                }, {
                     title: "Ayuda",
                     autoScroll: true,
                     html: "<iframe src='help.html'>"
