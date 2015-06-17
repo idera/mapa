@@ -4,7 +4,7 @@ OIFS=$IFS;
 IFS=",";
 
 # Consulta Servidores de los servicios.
-capabilities="`wget -qO- http://www.idera.gob.ar/mapa/sources.php?format=plain`";
+capabilities="`wget -qO- http://servicios.idera.gob.ar/mapa/sources.php?format=plain`";
 
 #echo $capabilities;
 
