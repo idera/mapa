@@ -174,14 +174,12 @@ var sources = {
         "title": "Ministerio de Desarrollo Productivo - Tucumán",
         "ptype": "gxp_wmscsource"
     },
-
-    
     "ol": {
         "ptype": "gxp_olsource"
     },
     "ideracsw": {
         "ptype": "gxp_cataloguesource",
-        "url": "http://catalogo.idera.gob.ar:10080/geonetwork/srv/spa/csw",
+        "url": "http://catalogo.idera.gob.ar/geonetwork/srv/spa/csw",
         "title": "Catalogo IDERA"
     }
 }
