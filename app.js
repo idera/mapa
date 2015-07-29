@@ -29,7 +29,7 @@ Ext.onReady(function() {
                 xtype: "container",
                 layout: "vbox",
                 region: "west",
-                width: 200,
+                width: 250,
                 defaults: {
                     width: "100%",
                     layout: "fit"
@@ -63,6 +63,7 @@ Ext.onReady(function() {
             outputConfig: {
                 id: "tree",
                 border: true,
+                autoScroll: true,
                 tbar: []
             },
             outputTarget: "layers_tree"
@@ -111,7 +112,11 @@ Ext.onReady(function() {
             toggleGroup: "navegacion"
         }, {
             ptype: "gxp_legend",
-            outputTarget: "legend"
+            outputTarget: "legend",
+            outputConfig: {
+                header: false,
+                autoScroll: true
+            }
         }, {
             ptype: "gxp_print",
             outputTarget: "map.tbar"
