@@ -100,6 +100,7 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
     /** i18n */
     aboutText: "About",
     titleText: "Title",
+    attributionText: "Attribution",
     nameText: "Name",
     descriptionText: "Description",
     displayText: "Display",
@@ -110,7 +111,7 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
     transparentText: "Transparent",
     cacheText: "Caching",
     cacheFieldText: "Use cached tiles",
-    stylesText: "Styles",
+    stylesText: "Available Styles",
     displayOptionsText: "Display options",
     queryText: "Limit with filters",
     scaleText: "Limit by scale",
@@ -119,6 +120,8 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
     switchToFilterBuilderText: "Switch back to filter builder",
     cqlPrefixText: "or ",
     cqlText: "use CQL filter instead",
+    singleTileText: "Single tile",
+    singleTileFieldText: "Use a single tile",
 
     initComponent: function() {
         this.cqlFormat = new OpenLayers.Format.CQL();
@@ -252,35 +255,7 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
         return Ext.apply(config, {
             title: this.stylesText,
             style: "padding: 10px",
-            editable: false,
-            listeners: Ext.apply(config.listeners, {
-                "beforerender": {
-                    fn: function(cmp) {
-                        var render = !this.editableStyles;
-                        if (!render) {
-                            if (typeof this.authorized == 'boolean') {
-                                cmp.editable = this.authorized;
-                                cmp.ownerCt.doLayout();
-                            } else {
-                                Ext.Ajax.request({
-                                    method: "PUT",
-                                    url: url + "/styles",
-                                    callback: function(options, success, response) {
-                                        // we expect a 405 error code here if we are dealing with
-                                        // GeoServer and have write access. Otherwise we will
-                                        // create the panel in readonly mode.
-                                        cmp.editable = (response.status == 405);
-                                        cmp.ownerCt.doLayout();
-                                    }
-                                });
-                            }
-                        }
-                        return render;
-                    },
-                    scope: this,
-                    single: true
-                }
-            })
+            editable: false
         });
     },
     
@@ -318,6 +293,22 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
                     anchor: "99%",
                     value: this.layerRecord.get("name"),
                     readOnly: true
+                }, {
+                    xtype: "textfield",
+                    fieldLabel: this.attributionText,
+                    anchor: "99%",
+                    listeners: {
+                        change: function(field) {
+                            var layer = this.layerRecord.getLayer();
+                            layer.attribution = field.getValue();
+                            layer.map.events.triggerEvent("changelayer", {
+                                layer: layer, property: "attribution"
+                            });
+                            this.fireEvent("change");
+                        },
+                        scope: this
+                    },
+                    value: this.layerRecord.getLayer().attribution
                 }]
             }, {
                 layout: "form",
@@ -442,7 +433,7 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
                                 layer.mergeNewParams({
                                     transparent: checked ? "true" : "false"
                                 });
-                                 this.fireEvent("change");
+                                this.fireEvent("change");
                             },
                             scope: this
                         }
@@ -450,6 +441,25 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
                         xtype: "label",
                         cls: "gxp-layerproperties-label",
                         text: this.transparentText
+                    }]
+                }, {
+                    xtype: "compositefield",
+                    fieldLabel: this.singleTileText,
+                    anchor: "99%",
+                    items: [{
+                        xtype: "checkbox",
+                        checked: this.layerRecord.get("layer").singleTile,
+                        listeners: {
+                            check: function(checkbox, checked) {
+                                layer.addOptions({singleTile: checked});
+                                this.fireEvent("change");
+                            },
+                            scope: this
+                        }
+                    }, {
+                        xtype: "label",
+                        cls: "gxp-layerproperties-label",
+                        text: this.singleTileFieldText
                     }]
                 }, {
                     xtype: "compositefield",
@@ -512,6 +522,7 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
                 },
                 hidden: this.source === null,
                 checkboxToggle: true,
+                collapsed: !this.layerRecord.getLayer().params.CQL_FILTER,
                 items: [{
                     xtype: "textarea",
                     value: this.layerRecord.getLayer().params.CQL_FILTER,
@@ -548,6 +559,8 @@ gxp.WMSLayerPanel = Ext.extend(Ext.TabPanel, {
                     scope: this
                 },
                 checkboxToggle: true,
+                collapsed: this.layerRecord.getLayer().options.maxScale == null &&
+                    this.layerRecord.getLayer().options.minScale == null,
                 items: [{
                     xtype: "compositefield",
                     fieldLabel: this.minScaleText,

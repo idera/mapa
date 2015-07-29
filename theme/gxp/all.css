@@ -1,3 +1,21 @@
+div.commit-msg {
+    font-size: 14px;
+    font-weight: bold;
+}
+span.commit-datetime {
+    color: #888;
+}
+li.commit {
+    font-size: 12px;
+    border-bottom: 1px solid #E2EAEE;
+}
+li.commit div {
+    padding: 2px;
+}
+.ext-chrome input[type="checkbox"] {
+    margin-top: 1px;
+}
+
 .gxp-layerproperties-label {
     line-height: 21px;
 }
@@ -148,6 +166,7 @@
 }
 .timeline-highlight-point-decorator {
     background-color: #F46817;
+    width: 5px;
 }
 
 /* gxp_annotation */
@@ -264,7 +283,7 @@
 
 /* gxp_zoom */
 .x-btn .gxp-icon-zoom, .x-tree-node .gxp-icon-zoom {
-    background-image: url(img/silk/magnifier_zoom.png);
+    background-image: url(img/silk/magnifier.png);
 }
 .x-btn .gxp-icon-zoom-in, .x-tree-node .gxp-icon-zoom-in {
     background-image: url(img/silk/magnifier_zoom_in.png);
@@ -313,7 +332,7 @@
     position: absolute;
     right: 0;
     -moz-opacity: 0;
-    filter:alpha(opacity: 0);
+    filter:alpha(opacity=0);
     opacity: 0;
     z-index: 2;
     height: 22px;
@@ -353,7 +372,7 @@ div.olMap div.gx-overlay-playback {
     top: 22px;
     left: 65px;
 }
-.gx-overlay-playback.x-toolbar {
+.gx-overlay-playback .x-toolbar {
     background: none;
     border: none;
 }
@@ -506,7 +525,6 @@ div.olMap div.gx-overlay-playback {
 }
 
 .gx_timeslider div.x-slider-thumb{
-    background-position:0;
     cursor: pointer;
 }
 .gx_timeslider div.x-slider-min-thumb{

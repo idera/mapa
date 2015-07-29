@@ -10,7 +10,9 @@
  * @require util.js
  * @require widgets/RulePanel.js
  * @require widgets/StylePropertiesDialog.js
- * @require OpenLayers/Renderer.js
+ * @requires OpenLayers/Renderer/SVG.js
+ * @requires OpenLayers/Renderer/VML.js
+ * @requires OpenLayers/Renderer/Canvas.js
  * @require OpenLayers/Style2.js
  * @require OpenLayers/Format/SLD/v1_0_0_GeoServer.js
  * @require GeoExt/data/AttributeStore.js
@@ -184,7 +186,7 @@ gxp.WMSStylesDialog = Ext.extend(Ext.Container, {
      *  add the dialogue to a container.
      */
     dialogCls: Ext.Window,
-        
+
     /** private: method[initComponent]
      */
     initComponent: function() {
@@ -402,7 +404,7 @@ gxp.WMSStylesDialog = Ext.extend(Ext.Container, {
                 }
             },
             listeners: {
-                "close": function() {
+                "beforedestroy": function() {
                     this.selectedStyle.set(
                         "userStyle",
                         styleProperties.propertiesDialog.userStyle);
@@ -472,7 +474,9 @@ gxp.WMSStylesDialog = Ext.extend(Ext.Container, {
      *  the last rule.
      */
     updateRuleRemoveButton: function() {
-        this.items.get(3).items.get(1).setDisabled(!this.selectedRule);
+        this.items.get(3).items.get(1).setDisabled(
+            !this.selectedRule || this.items.get(2).items.get(0).rules.length < 2
+        );
     },
     
     /** private: method[createRule]
@@ -560,7 +564,9 @@ gxp.WMSStylesDialog = Ext.extend(Ext.Container, {
     /** private: method[removeRule]
      */
     removeRule: function() {
-        this.selectedStyle.get("userStyle").rules.remove(this.selectedRule);
+        var selectedRule = this.selectedRule;
+        this.items.get(2).items.get(0).unselect();
+        this.selectedStyle.get("userStyle").rules.remove(selectedRule);
         // mark the style as modified
         this.afterRuleChange();
     },
@@ -722,7 +728,7 @@ gxp.WMSStylesDialog = Ext.extend(Ext.Container, {
             this.stylesStore.removeAll();
             this.selectedStyle = null;
             
-            var userStyle, record, index;
+            var userStyle, record, index, defaultStyle;
             for (var i=0, len=userStyles.length; i<len; ++i) {
                 userStyle = userStyles[i];
                 // remove existing record - this way we replace styles from
@@ -742,6 +748,14 @@ gxp.WMSStylesDialog = Ext.extend(Ext.Container, {
                             (!initialStyle && userStyle.isDefault === true))) {
                     this.selectedStyle = record;
                 }
+                if (userStyle.isDefault === true) {
+                    defaultStyle = record;
+                }
+            }
+            // fallback to the default style, this can happen when the layer referenced
+            // a non-existing style as initialStyle
+            if (!this.selectedStyle) {
+                this.selectedStyle = defaultStyle;
             }
             
             this.addRulesFieldSet();
@@ -751,6 +765,9 @@ gxp.WMSStylesDialog = Ext.extend(Ext.Container, {
             layerParams.SLD_BODY && this.markModified();
         }
         catch(e) {
+            if (window.console) {
+                console.warn(e.message);
+            }
             this.setupNonEditable();
         }
     },

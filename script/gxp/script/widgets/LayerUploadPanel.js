@@ -28,14 +28,16 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
     fileLabel: "Data",
     fieldEmptyText: "Browse for data archive...",
     uploadText: "Upload",
+    uploadFailedText: "Upload failed",
+    processingUploadText: "Processing upload...",
     waitMsgText: "Uploading your data...",
     invalidFileExtensionText: "File extension must be one of: ",
     optionsText: "Options",
     workspaceLabel: "Workspace",
     workspaceEmptyText: "Default workspace",
     dataStoreLabel: "Store",
-    dataStoreEmptyText: "Create new store",
-    defaultDataStoreEmptyText: "Default data store",
+    dataStoreEmptyText: "Choose a store",
+    dataStoreNewText: "Create new store",
     crsLabel: "CRS",
     crsEmptyText: "Coordinate Reference System ID",
     invalidCrsText: "CRS identifier should be an EPSG code (e.g. EPSG:4326)",
@@ -57,7 +59,7 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
      *  ``String``
      *  URL for GeoServer RESTConfig root.  E.g. "http://example.com/geoserver/rest".
      */
-    
+
     /** private: property[defaultDataStore]
      *  ``string``
      */
@@ -114,6 +116,7 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
             validator: this.fileNameValidator.createDelegate(this)
         }, {
             xtype: "fieldset",
+            ref: "optionsFieldset",
             title: this.optionsText,
             checkboxToggle: true,
             collapsed: true,
@@ -156,10 +159,10 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
                     if (fields.workspace) {
                         jsonData["import"].targetWorkspace = {workspace: {name: fields.workspace}};
                     }
-                    if (fields.store) {
-                        jsonData["import"].targetStore = {dataStore: {name: fields.store}}
-                    } else if (this.defaultDataStore) {
-                        jsonData["import"].targetStore = {dataStore: {name: this.defaultDataStore}}                        
+                    if (Ext.isEmpty(fields.store) && this.defaultDataStore) {
+                        jsonData["import"].targetStore = {dataStore: {name: this.defaultDataStore}};
+                    } else if (!Ext.isEmpty(fields.store) && fields.store !== this.dataStoreNewText) {
+                        jsonData["import"].targetStore = {dataStore: {name: fields.store}};
                     }
                     Ext.Ajax.request({
                         url: this.getUploadUrl(),
@@ -167,8 +170,9 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
                         jsonData: jsonData,
                         success: function(response) {
                             this._import = response.getResponseHeader("Location");
+                            this.optionsFieldset.expand();
                             form.submit({
-                                url: this._import + "/tasks",
+                                url: this._import + "/tasks?expand=all",
                                 waitMsg: this.waitMsgText,
                                 waitMsgTarget: true,
                                 reset: true,
@@ -248,7 +252,6 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
             name: "workspace",
             ref: "../workspace",
             fieldLabel: this.workspaceLabel,
-            emptyText: this.workspaceEmptyText,
             store: new Ext.data.JsonStore({
                 url: this.getWorkspacesUrl(),
                 autoLoad: true,
@@ -260,7 +263,7 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
             mode: "local",
             allowBlank: true,
             triggerAction: "all",
-            editable: false,
+            forceSelection: true,
             listeners: {
                 select: function(combo, record, index) {
                     this.getDefaultDataStore(record.get('name'));
@@ -289,23 +292,35 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
                 store.proxy = new Ext.data.HttpProxy({
                     url: workspaceUrl.split(".json").shift() + "/datastores.json"
                 });
+                store.proxy.on('loadexception', addDefault, this);
                 store.load();
             },
             scope: this
         });
 
+        var addDefault = function() {
+            var defaultData = {
+                name: this.dataStoreNewText
+            };
+            var r = new store.recordType(defaultData);
+            store.insert(0, r);
+            store.proxy && store.proxy.un('loadexception', addDefault, this);
+        };
+
+        store.on('load', addDefault, this);
+
         var combo = new Ext.form.ComboBox({
             name: "store",
             ref: "../dataStore",
-            fieldLabel: this.dataStoreLabel,
             emptyText: this.dataStoreEmptyText,
+            fieldLabel: this.dataStoreLabel,
             store: store,
             displayField: "name",
             valueField: "name",
             mode: "local",
             allowBlank: true,
             triggerAction: "all",
-            editable: false,
+            forceSelection: true,
             listeners: {
                 select: function(combo, record, index) {
                     this.fireEvent("datastoreselected", this, record);
@@ -322,18 +337,25 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
             url: this.url + '/workspaces/' + workspace + '/datastores/default.json',
             callback: function(options, success, response) {
                 this.defaultDataStore = null;
-                this.dataStore.emptyText = this.dataStoreEmptyText;
-                this.dataStore.setValue('');
                 if (response.status === 200) {
                     var json = Ext.decode(response.responseText);
+                    if (workspace === 'default' && json.dataStore && json.dataStore.workspace) {
+                        this.workspace.setValue(json.dataStore.workspace.name);
+                        var store = this.workspace.store;
+                        var data = {
+                            name: json.dataStore.workspace.name,
+                            href: json.dataStore.workspace.href
+                        };
+                        var r = new store.recordType(data);
+                        this.fireEvent("workspaceselected", this, r);
+                    }
                     //TODO Revisit this logic - currently we assume that stores
                     // with the substring "file" in the type are file based,
                     // and for file-based data stores we want to crate a new
                     // store.
                     if (json.dataStore && json.dataStore.enabled === true && !/file/i.test(json.dataStore.type)) {
                         this.defaultDataStore = json.dataStore.name;
-                        this.dataStore.emptyText = this.defaultDataStoreEmptyText;
-                        this.dataStore.setValue('');
+                        this.dataStore.setValue(this.defaultDataStore);
                     }
                 }
             },
@@ -360,7 +382,8 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
     handleUploadResponse: function(response) {
         var obj = this.parseResponseText(response.responseText),
             records, tasks, task, msg, i,
-            success = true;
+            formData = this.getForm().getFieldValues(),
+            success = !!obj;
         if (obj) {
             if (typeof obj === "string") {
                 success = false;
@@ -376,11 +399,12 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
                         if (!task) {
                             success = false;
                             msg = "Unknown upload error";
-                            break;
-                        } else if (task.state !== "READY") {
+                        } else if (task.state === 'NO_FORMAT') {
                             success = false;
-                            msg = "Source " + task.source.file + " is " + task.state;
-                            break;
+                            msg = "Upload contains no suitable files.";
+                        } else if (task.state === 'NO_CRS' && !formData.nativeCRS) {
+                            success = false;
+                            msg = "Coordinate Reference System (CRS) of source file " + task.data.file + " could not be determined. Please specify manually.";
                         }
                     }
                 }
@@ -388,40 +412,62 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
         }
         if (!success) {
             // mark the file field as invlid
-            records = [{data: {id: "file", msg: msg}}];
+            records = [{data: {id: "file", msg: msg || this.uploadFailedText}}];
         } else {
-            var formData = this.getForm().getFieldValues(),
-                // for now we only support a single item (items[0])
-                resource = task.items[0].resource,
-                itemModified = !!(formData.title || formData["abstract"] || formData.nativeCRS),
-                queue = [];
-            if (itemModified) {
-                var layer = resource.featureType ? "featureType" : "coverage",
-                    item = {resource: {}};
-                item.resource[layer] = {
+            var itemModified = !!(formData.title || formData["abstract"] || formData.nativeCRS);
+            // do not do this for coverages see https://github.com/boundlessgeo/suite/issues/184
+            if (itemModified && tasks[0].target.dataStore) {
+                this.waitMsg = new Ext.LoadMask((this.ownerCt || this).getEl(), {msg: this.processingUploadText});
+                this.waitMsg.show();
+                // for now we only support a single task
+                var payload = {
                     title: formData.title || undefined,
                     "abstract": formData["abstract"] || undefined,
-                    nativeCRS: formData.nativeCRS || undefined
+                    srs: formData.nativeCRS || undefined
                 };
                 Ext.Ajax.request({
                     method: "PUT",
-                    url: tasks[0].items[0].href,
-                    jsonData: {item: item},
-                    callback: this.finishUpload,
+                    url: tasks[0].layer.href,
+                    jsonData: payload,
+                    success: this.finishUpload,
+                    failure: function(response) {
+                        if (this.waitMsg) {
+                            this.waitMsg.hide();
+                        }
+                        var errors = [];
+                        try {
+                            var json = Ext.decode(response.responseText);
+                            if (json.errors) {
+                                for (var i=0, ii=json.errors.length; i<ii; ++i) {
+                                    errors.push({
+                                        id: ~json.errors[i].indexOf('SRS') ? 'nativeCRS' : 'file',
+                                        msg: json.errors[i]
+                                    });
+                                }
+                            }
+                        } catch(e) {
+                            errors.push({
+                                id: "file",
+                                msg: response.responseText
+                            });
+                        }
+                        this.getForm().markInvalid(errors);
+                    },
                     scope: this
                 });
             } else {
                 this.finishUpload();
             }
         }
-        return {success: success, records: records};
+        // always return unsuccessful - we manually reset the form in callbacks
+        return {success: false, records: records};
     },
     
     finishUpload: function() {
         Ext.Ajax.request({
             method: "POST",
             url: this._import,
-            //TODO error handling
+            failure: this.handleFailure,
             success: this.handleUploadSuccess,
             scope: this
         });
@@ -457,14 +503,36 @@ gxp.LayerUploadPanel = Ext.extend(Ext.FormPanel, {
     handleUploadSuccess: function(response) {
         Ext.Ajax.request({
             method: "GET",
-            url: this._import,
+            url: this._import + '?expand=all',
+            failure: this.handleFailure,
             success: function(response) {
+                if (this.waitMsg) {
+                    this.waitMsg.hide();
+                }
+                this.getForm().reset();
                 var details = Ext.decode(response.responseText);
-                this.fireEvent("uploadcomplete", this, details);
-                delete this._import;
+                // wait 250 ms for GeoServer to settle after the upload
+                window.setTimeout(function() {
+                  this.fireEvent("uploadcomplete", this, details);
+                  delete this._import;
+                }.bind(this), 250);
             },
             scope: this
         });
+    },
+    
+    /** private: method[handleFailure]
+     */
+    handleFailure: function(response) {
+        // see http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
+        if (response && response.status === 1223) {
+            this.handleUploadSuccess(response);
+        } else {
+            if (this.waitMsg) {
+                this.waitMsg.hide();
+            }
+            this.getForm().markInvalid([{file: this.uploadFailedText}]);
+        }
     }
 
 });

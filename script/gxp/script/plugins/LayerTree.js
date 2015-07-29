@@ -119,7 +119,13 @@ gxp.plugins.LayerTree = Ext.extend(gxp.plugins.Tool, {
      */
     addOutput: function(config) {
         config = Ext.apply(this.createOutputConfig(), config || {});
-        return gxp.plugins.LayerTree.superclass.addOutput.call(this, config);
+        var output = gxp.plugins.LayerTree.superclass.addOutput.call(this, config);
+        output.on({
+            contextmenu: this.handleTreeContextMenu,
+            beforemovenode: this.handleBeforeMoveNode,
+            scope: this
+        });
+        return output;
     },
     
     /** private: method[createOutputConfig]
@@ -132,6 +138,11 @@ gxp.plugins.LayerTree = Ext.extend(gxp.plugins.Tool, {
             isTarget: false,
             allowDrop: false
         });
+
+        var baseAttrs;
+        if (this.initialConfig.loader && this.initialConfig.loader.baseAttrs) {
+            baseAttrs = this.initialConfig.loader.baseAttrs;
+        }
         
         var defaultGroup = this.defaultGroup,
             plugin = this,
@@ -148,8 +159,8 @@ gxp.plugins.LayerTree = Ext.extend(gxp.plugins.Tool, {
                 group: group == this.defaultGroup ? undefined : group,
                 loader: new GeoExt.tree.LayerLoader({
                     baseAttrs: exclusive ?
-                        {checkedGroup: Ext.isString(exclusive) ? exclusive : group} :
-                        undefined,
+                        Ext.apply({checkedGroup: Ext.isString(exclusive) ? exclusive : group}, baseAttrs) :
+                        baseAttrs,
                     store: this.target.mapPanel.layers,
                     filter: (function(group) {
                         return function(record) {
@@ -185,11 +196,6 @@ gxp.plugins.LayerTree = Ext.extend(gxp.plugins.Tool, {
                     scope: this
                 }
             }),
-            listeners: {
-                contextmenu: this.handleTreeContextMenu,
-                beforemovenode: this.handleBeforeMoveNode,                
-                scope: this
-            },
             contextMenu: new Ext.menu.Menu({
                 items: []
             })
@@ -210,7 +216,7 @@ gxp.plugins.LayerTree = Ext.extend(gxp.plugins.Tool, {
             }));
             if (record) {
                 attr.qtip = record.get('abstract');
-                if (!record.get("queryable")) {
+                if (!record.get("queryable") && !attr.iconCls) {
                     attr.iconCls = "gxp-tree-rasterlayer-icon";
                 }
                 if (record.get("fixed")) {

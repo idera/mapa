@@ -38,6 +38,12 @@ gxp.plugins.FeatureEditor = Ext.extend(gxp.plugins.ClickableFeatures, {
     
     /** api: ptype = gxp_featureeditor */
     ptype: "gxp_featureeditor",
+
+    /** api: config[commitMessage]
+     *  ``Boolean`` Should we prompt the user for a commit message?
+     *  Default is false.
+     */
+    commitMessage: false,
     
     /** api: config[splitButton]
      *  ``Boolean`` If set to true, the actions will be rendered as a single
@@ -91,6 +97,8 @@ gxp.plugins.FeatureEditor = Ext.extend(gxp.plugins.ClickableFeatures, {
     lineText: "Line",
     polygonText: "Polygon",
     noGeometryText: "Event",
+    commitTitle: "Commit message",
+    commitText: "Please enter a commit message for this edit:",
 
     /** api: config[createFeatureActionTip]
      *  ``String``
@@ -148,6 +156,12 @@ gxp.plugins.FeatureEditor = Ext.extend(gxp.plugins.ClickableFeatures, {
      *  modify tool, i.e. there is no option to add new features.
      */
     modifyOnly: false,
+
+    /** api: config[createOnly]
+     *  ``Boolean`` Set to true to use the FeatureEditor merely as a feature
+     *  creation tool, i.e. there is no option to modify existing features.
+     */
+    createOnly: false,
     
     /** api: config[showSelectedOnly]
      *  ``Boolean`` If set to true, only selected features will be displayed
@@ -454,98 +468,135 @@ gxp.plugins.FeatureEditor = Ext.extend(gxp.plugins.ClickableFeatures, {
                         schema: this.schema,
                         allowDelete: true,
                         width: 200,
-                        height: 250,
-                        listeners: {
-                            "close": function() {
-                                if (this.readOnly === false) {
-                                    this.selectControl.activate();
+                        height: 250
+                    });
+                    popup.on({
+                        "close": function() {
+                            if (this.readOnly === false) {
+                                this.selectControl.activate();
+                            }
+                            if(feature.layer && feature.layer.selectedFeatures.indexOf(feature) !== -1) {
+                                this.selectControl.unselect(feature);
+                            }
+                            if (feature === this.autoLoadedFeature) {
+                                if (feature.layer) {
+                                    feature.layer.removeFeatures([evt.feature]);
                                 }
-                                if(feature.layer && feature.layer.selectedFeatures.indexOf(feature) !== -1) {
-                                    this.selectControl.unselect(feature);
-                                }
-                                if (feature === this.autoLoadedFeature) {
-                                    if (feature.layer) {
-                                        feature.layer.removeFeatures([evt.feature]);
-                                    }
-                                    this.autoLoadedFeature = null;
-                                }
-                            },
-                            "featuremodified": function(popup, feature) {
-                                popup.disable();
-                                featureStore.on({
-                                    write: {
-                                        fn: function() {
-                                            if (popup) {
-                                                if (popup.isVisible()) {
-                                                    popup.enable();
-                                                }
-                                                if (this.closeOnSave) {
-                                                    popup.close();
-                                                }
-                                            }
-                                            var layer = featureManager.layerRecord;
-                                            this.target.fireEvent("featureedit", featureManager, {
-                                                name: layer.get("name"),
-                                                source: layer.get("source")
-                                            });
-                                        },
-                                        single: true
+                                this.autoLoadedFeature = null;
+                            }
+                        },
+                        "featuremodified": function(popup, feature) {
+                            featureStore.on({
+                                beforewrite: {
+                                    fn: function(store, action, rs, options) {
+                                        if (this.commitMessage === true) {
+                                            options.params.handle = this._commitMsg;
+                                            delete this._commitMsg;
+                                        }
                                     },
-                                    exception: {
-                                        fn: function(proxy, type, action, options, response, records) {
-                                            var msg = this.exceptionText;
-                                            if (type === "remote") {
-                                                // response is service exception
-                                                if (response.exceptionReport) {
-                                                    msg = gxp.util.getOGCExceptionText(response.exceptionReport);
-                                                }
-                                            } else {
-                                                // non-200 response from server
-                                                msg = "Status: " + response.status;
+                                    single: true
+                                },
+                                beforesave: {
+                                    fn: function() {
+                                        if (popup && popup.isVisible()) {
+                                            popup.disable();
+                                        }
+                                        if (this.commitMessage === true) {
+                                            if (!this._commitMsg) {
+                                                var fn = arguments.callee;
+                                                Ext.Msg.show({
+                                                    prompt: true,
+                                                    title: this.commitTitle,
+                                                    msg: this.commitText,
+                                                    buttons: Ext.Msg.OK,
+                                                    fn: function(btn, text) {
+                                                        if (btn === 'ok') {
+                                                            this._commitMsg = text;
+                                                            featureStore.un('beforesave', fn, this);
+                                                            featureStore.save();
+                                                        }
+                                                    },
+                                                    scope: this,
+                                                    multiline: true
+                                                });
+                                                return false;
                                             }
-                                            // fire an event on the feature manager
-                                            featureManager.fireEvent("exception", featureManager, 
-                                                response.exceptionReport || {}, msg, records);
-                                            // only show dialog if there is no listener registered
-                                            if (featureManager.hasListener("exception") === false && 
-                                                featureStore.hasListener("exception") === false) {
-                                                    Ext.Msg.show({
-                                                        title: this.exceptionTitle,
-                                                        msg: msg,
-                                                        icon: Ext.MessageBox.ERROR,
-                                                        buttons: {ok: true}
-                                                    });
-                                            }
-                                            if (popup && popup.isVisible()) {
+                                        }
+                                    },
+                                    single: this.commitMessage !== true
+                                },
+                                write: {
+                                    fn: function() {
+                                        if (popup) {
+                                            if (popup.isVisible()) {
                                                 popup.enable();
-                                                popup.startEditing();
                                             }
-                                        },
-                                        single: true
+                                            if (this.closeOnSave) {
+                                                popup.close();
+                                            }
+                                        }
+                                        var layer = featureManager.layerRecord;
+                                        this.target.fireEvent("featureedit", featureManager, {
+                                            name: layer.get("name"),
+                                            source: layer.get("source")
+                                        });
                                     },
-                                    scope: this
-                                });                                
-                                if(feature.state === OpenLayers.State.DELETE) {                                    
-                                    /**
-                                     * If the feature state is delete, we need to
-                                     * remove it from the store (so it is collected
-                                     * in the store.removed list.  However, it should
-                                     * not be removed from the layer.  Until
-                                     * http://trac.geoext.org/ticket/141 is addressed
-                                     * we need to stop the store from removing the
-                                     * feature from the layer.
-                                     */
-                                    featureStore._removing = true; // TODO: remove after http://trac.geoext.org/ticket/141
-                                    featureStore.remove(featureStore.getRecordFromFeature(feature));
-                                    delete featureStore._removing; // TODO: remove after http://trac.geoext.org/ticket/141
-                                }
-                                featureStore.save();
-                            },
-                            "canceledit": function(popup, feature) {
-                                featureStore.commitChanges();
-                            },
-                            scope: this
-                        }
+                                    single: true
+                                },
+                                exception: {
+                                    fn: function(proxy, type, action, options, response, records) {
+                                        var msg = this.exceptionText;
+                                        if (type === "remote") {
+                                            // response is service exception
+                                            if (response.exceptionReport) {
+                                                msg = gxp.util.getOGCExceptionText(response.exceptionReport);
+                                            }
+                                        } else {
+                                            // non-200 response from server
+                                            msg = "Status: " + response.status;
+                                        }
+                                        // fire an event on the feature manager
+                                        featureManager.fireEvent("exception", featureManager, 
+                                            response.exceptionReport || {}, msg, records);
+                                        // only show dialog if there is no listener registered
+                                        if (featureManager.hasListener("exception") === false && 
+                                            featureStore.hasListener("exception") === false) {
+                                                Ext.Msg.show({
+                                                    title: this.exceptionTitle,
+                                                    msg: msg,
+                                                    icon: Ext.MessageBox.ERROR,
+                                                    buttons: {ok: true}
+                                                });
+                                        }
+                                        if (popup && popup.isVisible()) {
+                                            popup.enable();
+                                            popup.startEditing();
+                                        }
+                                    },
+                                    single: true
+                                },
+                                scope: this
+                            });                                
+                            if(feature.state === OpenLayers.State.DELETE) {
+                                /**
+                                 * If the feature state is delete, we need to
+                                 * remove it from the store (so it is collected
+                                 * in the store.removed list.  However, it should
+                                 * not be removed from the layer.  Until
+                                 * http://trac.geoext.org/ticket/141 is addressed
+                                 * we need to stop the store from removing the
+                                 * feature from the layer.
+                                 */
+                                featureStore._removing = true; // TODO: remove after http://trac.geoext.org/ticket/141
+                                featureStore.remove(featureStore.getRecordFromFeature(feature));
+                                delete featureStore._removing; // TODO: remove after http://trac.geoext.org/ticket/141
+                            }
+                            featureStore.save();
+                        },
+                        "canceledit": function(popup, feature) {
+                            featureStore.commitChanges();
+                        },
+                        scope: this
                     });
                     this.popup = popup;
                 }
@@ -681,6 +732,7 @@ gxp.plugins.FeatureEditor = Ext.extend(gxp.plugins.ClickableFeatures, {
             //TODO Tool.js sets group, but this doesn't work for GeoExt.Action
             group: toggleGroup,
             groupClass: null,
+            hidden: this.createOnly,
             enableToggle: true,
             allowDepress: true,
             control: this.selectControl,
@@ -834,13 +886,13 @@ gxp.plugins.FeatureEditor = Ext.extend(gxp.plugins.ClickableFeatures, {
             "Polygon": OpenLayers.Handler.Polygon,
             "Surface": OpenLayers.Handler.Polygon
         };
-        var simpleType = mgr.geometryType.replace("Multi", "");
-        var Handler = handlers[simpleType];
+        var simpleType = mgr.geometryType && mgr.geometryType.replace("Multi", "");
+        var Handler = simpleType && handlers[simpleType];
         if (Handler) {
             var multi = (simpleType != mgr.geometryType);
             this.setHandler(Handler, multi);
             button.enable();
-        } else if (this.supportAbstractGeometry === true && mgr.geometryType === 'Geometry') {
+        } else if (this.supportAbstractGeometry === true && mgr.geometryType && mgr.geometryType === 'Geometry') {
             button.enable();
         } else {
             button.disable();

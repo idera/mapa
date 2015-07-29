@@ -54,6 +54,13 @@ gxp.plugins.CSWCatalogueSource = Ext.extend(gxp.plugins.CatalogueSource, {
         gxp.plugins.LayerSource.prototype.createStore.apply(this, arguments);
     },
 
+    /** api: method[getPagingStart]
+     *  :return: ``Integer`` Where does paging start at?
+     */
+    getPagingStart: function() {
+        return 1;
+    },
+
     /** api: method[getPagingParamNames]
      *  :return: ``Object`` with keys start and limit.
      *
@@ -135,6 +142,11 @@ gxp.plugins.CSWCatalogueSource = Ext.extend(gxp.plugins.CatalogueSource, {
         }
         Ext.apply(this.store.baseParams, data);
         this.store.load();
+    },
+
+    createLayerRecord: function(layerConfig) {
+        layerConfig.queryable = true;
+        return gxp.plugins.CSWCatalogueSource.superclass.createLayerRecord.apply(this, arguments);
     }
 
 });

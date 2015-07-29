@@ -11,6 +11,12 @@
  * @requires OpenLayers/StyleMap.js
  * @requires OpenLayers/Rule.js
  * @requires OpenLayers/Control/Measure.js
+ * @requires OpenLayers/Layer/Vector.js
+ * @requires OpenLayers/Handler/Path.js
+ * @requires OpenLayers/Handler/Polygon.js
+ * @requires OpenLayers/Renderer/SVG.js
+ * @requires OpenLayers/Renderer/VML.js
+ * @requires OpenLayers/Renderer/Canvas.js
  */
 
 /** api: (define)
@@ -37,6 +43,12 @@ gxp.plugins.Measure = Ext.extend(gxp.plugins.Tool, {
      *  ``String`` Popups created by this tool are added to the map by default.
      */
     outputTarget: "map",
+
+    /** api: config[buttonText]
+     *  ``String``
+     *  Text for the Measure button (i18n).
+     */
+    buttonText: "Measure",
 
     /** api: config[lengthMenuText]
      *  ``String``
@@ -193,6 +205,7 @@ gxp.plugins.Measure = Ext.extend(gxp.plugins.Tool, {
         this.button = new Ext.SplitButton({
             iconCls: "gxp-icon-measure-length",
             tooltip: this.measureTooltip,
+            buttonText: this.buttonText,
             enableToggle: true,
             toggleGroup: this.toggleGroup,
             allowDepress: true,

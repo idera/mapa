@@ -62,7 +62,7 @@ gxp.plugins.Legend = Ext.extend(gxp.plugins.Tool, {
                 height: 400
             };
         }
-        //Ext.applyIf(this.outputConfig, {title: this.menuText});
+        Ext.applyIf(this.outputConfig, {title: this.menuText});
     },
 
     /** api: method[addActions]
@@ -74,7 +74,7 @@ gxp.plugins.Legend = Ext.extend(gxp.plugins.Tool, {
             tooltip: this.tooltip,
             handler: function() {
                 this.removeOutput();
-                this.addOutput();
+                this.addOutput(this.outputConfig);
             },
             scope: this
         }];

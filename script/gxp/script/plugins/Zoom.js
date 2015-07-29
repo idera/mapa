@@ -115,7 +115,7 @@ gxp.plugins.Zoom = Ext.extend(gxp.plugins.Tool, {
                 control: new OpenLayers.Control.ZoomBox(this.controlOptions),
                 map: this.target.mapPanel.map,
                 enableToggle: true,
-                allowDepress: true,
+                allowDepress: false,
                 toggleGroup: this.toggleGroup
             }));
         }

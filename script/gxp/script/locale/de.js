@@ -20,7 +20,9 @@ GeoExt.Lang.add("de", {
         panelTitleText: "Titel",
         layerSelectionText: "Verfügbare Daten anzeigen von:",
         doneText: "Fertig",
-        uploadText: "Daten hochladen"
+        uploadText: "Daten hochladen",
+        addFeedActionMenuText: "Add feeds",
+        searchText: "Search for layers"
     },
     
     "gxp.plugins.BingSource.prototype": {
@@ -35,7 +37,9 @@ GeoExt.Lang.add("de", {
         createFeatureActionText: "Erzeugen",
         editFeatureActionText: "Bearbeiten",
         createFeatureActionTip: "neues Objekt erstellen",
-        editFeatureActionTip: "bestehendes Objekt bearbeiten"
+        editFeatureActionTip: "bestehendes Objekt bearbeiten",
+        commitTitle: "Commit message",
+        commitText: "Please enter a commit message for this edit:"
     },
     
     "gxp.plugins.FeatureGrid.prototype": {
@@ -120,13 +124,13 @@ GeoExt.Lang.add("de", {
     "gxp.plugins.NavigationHistory.prototype": {
         previousMenuText: "Kartenausschnitt zurück",
         nextMenuText: "Kartenausschnitt vorwärts",
-        previousTooltip: "Kartenausschnitt zurück",
-        nextTooltip: "Kartenausschnitt vorwärts"
+        previousTooltip: "Vorherigen Kartenausschnitt anzeigen",
+        nextTooltip: "Nächsten Kartenausschnit anzeigen"
     },
 
     "gxp.plugins.OSMSource.prototype": {
         title: "OpenStreetMap Layer",
-        mapnikAttribution: "Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>",
+        mapnikAttribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors",
         osmarenderAttribution: "Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>"
     },
 
@@ -180,14 +184,14 @@ GeoExt.Lang.add("de", {
         zoomMenuText: "Zoom Box",
         zoomInMenuText: "Vergrössern",
         zoomOutMenuText: "Verkleinern",
-        zoomTooltip: "Zoom durch Aufziehen einer Box",
+        zoomTooltip: "Box aufziehen zum Zoomen",
         zoomInTooltip: "Vergrössern",
         zoomOutTooltip: "Verkleinern"
     },
     
     "gxp.plugins.ZoomToExtent.prototype": {
         menuText: "Maximale Ausdehnung",
-        tooltip: "Maximale Ausdehnung"
+        tooltip: "Maximale Ausdehnung anzeigen"
     },
     
     "gxp.plugins.ZoomToDataExtent.prototype": {
@@ -309,6 +313,7 @@ GeoExt.Lang.add("de", {
     },
     
     "gxp.WMSLayerPanel.prototype": {
+        attributionText: "Attribution",
         aboutText: "Über",
         titleText: "Titel",
         nameText: "Name",
@@ -319,9 +324,19 @@ GeoExt.Lang.add("de", {
         transparentText: "transparent",
         cacheText: "Cache",
         cacheFieldText: "Version aus dem Cache benützen",
-        stylesText: "Styles",
+        stylesText: "Verfügbare Styles",
         infoFormatText: "Info Format",
-        infoFormatEmptyText: "Format auswählen"
+        infoFormatEmptyText: "Format auswählen",
+        displayOptionsText: "Display options",
+        queryText: "Limit with filters",
+        scaleText: "Limit by scale",
+        minScaleText: "Min scale",
+        maxScaleText: "Max scale",
+        switchToFilterBuilderText: "Switch back to filter builder",
+        cqlPrefixText: "or ",
+        cqlText: "use CQL filter instead",
+        singleTileText: "Single tile",
+        singleTileFieldText: "Use a single tile"
     },
 
     "gxp.EmbedMapDialog.prototype": {
@@ -370,6 +385,8 @@ GeoExt.Lang.add("de", {
         fileLabel: "Daten",
         fieldEmptyText: "Datenarchiv durchsuchen...",
         uploadText: "Hochladen",
+        uploadFailedText: "Hochladen fehlgeschlagen",
+        processingUploadText: "Upload wird bearbeitet",
         waitMsgText: "Ihre Daten werden hochgeladen...",
         invalidFileExtensionText: "Dateierweiterung muss eine sein von: ",
         optionsText: "Optionen",
@@ -390,6 +407,23 @@ GeoExt.Lang.add("de", {
 
     "gxp.ScaleOverlay.prototype": { 
         zoomLevelText: "Zoomstufe"
+    },
+
+    "gxp.Viewer.prototype": {
+        saveErrorText: "Beim Speichern ist ein Problem aufgetreten: "
+    },
+
+    "gxp.FeedSourceDialog.prototype": {
+        feedTypeText: "Source",
+        addPicasaText: "Picasa Fotos",
+        addYouTubeText: "YouTube Videos",
+        addRSSText: "Andere GeoRSS Feed",
+        addFeedText: "zur Karte hinzufügen",
+        addTitleText: "Titel",
+        keywordText: "Keyword",
+        doneText: "Fertig",
+        titleText: "Add-Feeds",
+        maxResultsText: "Max Items"
     }
 
 });
