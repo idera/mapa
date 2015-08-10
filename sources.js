@@ -17,7 +17,7 @@ var sources = {
     "chaco": {
         "url": "http://idechaco.gob.ar/geoserver/IDEChaco/wms?service=WMS&version=1.1.1&request=GetCapabilities",
         "title": "IDE Chaco",
-        "ptype": "gxp_wmssource"
+        "ptype": "gxp_wmscsource"
     },
     "formosa": {
         "url": "http://idef.formosa.gob.ar/servicios/ows?service=wms&version=1.1.1&request=GetCapabilities",
@@ -172,6 +172,11 @@ var sources = {
     "mptucuman": {
         "url": "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?request=GetCapabilities&service=WMS&version=1.1.1",
         "title": "Ministerio de Desarrollo Productivo - Tucumán",
+        "ptype": "gxp_wmscsource"
+    },
+    "siia": {
+        "url": "http://ide.siia.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+        "title": "SIIA - Ministerio de Agricultura, Ganaderia y Pesca",
         "ptype": "gxp_wmscsource"
     },
     "ol": {
