@@ -18,7 +18,7 @@ capabilitiesArray=($capabilities);
 for ((i=0; i<${#capabilitiesArray[@]}; i=$i+2));
 do
     #Descarga capacidades si existen y guarda en /var/www/mapa/ogc/*.xml;
-    wget --tries=1 --timeout=5 -O /var/www/mapa/ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]} ||
+    wget --tries=2 --timeout=30 -O /var/www/mapa/ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]} ||
     (pepe=$(grep ${capabilitiesArray[$i]} emails.txt | sed "s/\/var\/www\/mapa\/ogc\/"${capabilitiesArray[$i]}".xml: *//");
     pepe2=$pepe;
     pepe2+=" 1";
