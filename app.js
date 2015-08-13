@@ -1,8 +1,15 @@
+GeoExt.Lang.set("es");
+
 var app;
 var permalink;
 
-Ext.onReady(function() {
-    GeoExt.Lang.set("es");
+var slider = new GeoExt.LayerOpacitySlider({
+    width: 120,
+    layer: null,
+    aggressive: true,
+    inverse: true,
+    plugins: new GeoExt.LayerOpacitySliderTip({template: '<div>{opacity}%</div>'})
+});
 
     app = new gxp.Viewer({
         proxy: "/mapa/proxy/?url=",
@@ -67,8 +74,9 @@ Ext.onReady(function() {
             ptype: "gxp_layertree",
             outputConfig: {
                 id: "tree",
+                autoScroll: true,
                 tbar: [],
-                autoScroll: true
+                bbar: ["Transparencia:&nbsp;&nbsp;", slider]
             },
             outputTarget: "layers_tree"
         }, {
@@ -217,5 +225,13 @@ Ext.onReady(function() {
     app.mapPanel.map.events.register("mousemove", app.mapPanel.map, function (e) {
         position = app.mapPanel.map.getLonLatFromViewPortPx(e.xy);
         Ext.getCmp('position').update("<label>Latitud: " + position.lat + "</label><br/><label>Longitud: " + position.lon + "</label>");
+    });
+
+app.on('ready', function() {
+    //asocia el layer clickeado al slider
+    var tree = Ext.getCmp('tree');
+    tree.on("click", function (node, e) {
+        if (node.isLeaf())
+            slider.setLayer(node.layer);
     });
 });
