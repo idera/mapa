@@ -32,17 +32,22 @@ Ext.onReady(function() {
                 width: 250,
                 defaults: {
                     width: "100%",
-                    layout: "fit"
+                    layout: "fit",
+                    autoScroll: true
                 },
                 items: [{
                     title: "Capas",
                     id: "layers_tree",
-                    border: false,
                     flex: 1
                 }, {
                     height: 250,
                     layout: "accordion",
                     title: "Herramientas",
+                    defaults: {
+                        width: "100%",
+                        layout: "fit",
+                        autoScroll: true
+                    },
                     items: [{
                         title: "Leyenda",
                         id: "legend"
@@ -62,9 +67,8 @@ Ext.onReady(function() {
             ptype: "gxp_layertree",
             outputConfig: {
                 id: "tree",
-                border: true,
-                autoScroll: true,
-                tbar: []
+                tbar: [],
+                autoScroll: true
             },
             outputTarget: "layers_tree"
         }, {
