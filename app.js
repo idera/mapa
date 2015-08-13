@@ -1,7 +1,27 @@
 GeoExt.Lang.set("es");
 
-var app;
-var permalink;
+var permalink, capabilities = {},
+    temasPerfilMetadatos = {
+        'Agricultura': true,
+        'Aguas interiores': true,
+        'Biota': true,
+        'Clima': true,
+        'Coberturas Básicas': true,
+        'Economía': true,
+        'Elevación': true,
+        'Estructura': true,
+        'Información geocientífica': true,
+        'Inteligencia / Militar': true,
+        'Límites': true,
+        'Medio ambiente': true,
+        'Océanos': true,
+        'Planificación de catastro': true,
+        'Salud': true,
+        'Sociedad': true,
+        'Transporte': true,
+        'Ubicación': true,
+        'Utilidades / Comunicaciones': true
+    };
 
 var slider = new GeoExt.LayerOpacitySlider({
     width: 120,
@@ -72,6 +92,20 @@ var slider = new GeoExt.LayerOpacitySlider({
         // configuration of all tool plugins for this application
         tools: [{
             ptype: "gxp_layertree",
+            groups: {
+                "default": {
+                    title: "Capas incluidas",
+                    expanded: true
+                },
+                "temas": {
+                    title: "Temas Perfil de Metadatos",
+                    expanded: true
+                },
+                "background": {
+                    title: "Capas base disponibles",
+                    exclusive: true
+                }
+            },
             outputConfig: {
                 id: "tree",
                 autoScroll: true,
@@ -210,9 +244,9 @@ var slider = new GeoExt.LayerOpacitySlider({
                 fixed: true,
                 type: "OpenLayers.Layer",
                 args: ["Sin capa base",
-                {
-                    visibility: false
-                }]
+                    {
+                        visibility: false
+                    }]
             }],
             items: [{
                 xtype: "gx_zoomslider",
@@ -227,11 +261,139 @@ var slider = new GeoExt.LayerOpacitySlider({
         Ext.getCmp('position').update("<label>Latitud: " + position.lat + "</label><br/><label>Longitud: " + position.lon + "</label>");
     });
 
+
 app.on('ready', function() {
-    //asocia el layer clickeado al slider
+    //asocia el layer seleccionado al slider
     var tree = Ext.getCmp('tree');
     tree.on("click", function (node, e) {
         if (node.isLeaf())
             slider.setLayer(node.layer);
     });
+
+    //UI provider
+    var treeNodeUI = Ext.extend(
+        GeoExt.tree.LayerNodeUI,
+        new GeoExt.tree.TreeNodeUIEventMixin()
+    );
+    // agrega una capa por tema del perfil
+    for(tema in temasPerfilMetadatos) {
+        var attr = {
+            uiProvider: treeNodeUI,
+            text: tema,
+            checked: false,
+            leaf: true,
+            //TODO
+            qtip: 'capas que contengan uno o más temas entre sus "keywords"',
+            iconCls: "gxp-tree-rasterlayer-icon",
+            listeners: {
+                "checkchange": function(node, checked){
+                    if(checked){
+                        addLayerByKw(this.text);
+                    } else{
+                        removeLayerByKw(this.text);
+                    }
+                }
+            }
+        };
+        var nodoTema = new Ext.tree.TreeNode(attr);
+        var treeCmp = Ext.getCmp('tree');
+        treeCmp.root.childNodes[1].appendChild(nodoTema);
+    };
+
+    for(var s in sources) {
+        if(sources[s].ptype == "gxp_wmssource" || sources[s].ptype == "gxp_wmscsource")
+            getCapabilitiesXML(s, sources[s]);
+    };
+
 });
+
+//carga variable capabilities con los xmls
+function getCapabilitiesXML(id, source) {
+    OpenLayers.Request.GET({
+        url: source.url,
+        params: {
+            SERVICE: "WMS",
+            VERSION: "1.1.1",
+            REQUEST: "GetCapabilities",
+            timestamp: Math.round((new Date()).getTime() / 1000)
+        },
+        callback: function(request) {
+            if (request.status != 200) { 
+                Log('El servidor ' + source.title + ' está caído');
+                return;
+            }
+
+            var doc = request.responseXML;
+            if (!doc || !doc.documentElement)
+                doc = request.responseText;
+
+            //TODO eliminar partes innecesarias del doc
+            if(doc && doc.documentElement) capabilities[id] = doc;
+        }, 
+        failure: function() {            
+            var msj = 'El servidor ' + source.title + ' no está accesible.';
+            Log(msj);
+        }
+    });
+};
+
+function Log( texto ) {
+    if (window.console)
+        console.log( texto);
+};
+
+//agrega capas que tengan una keyword especifica
+function addLayerByKw(keyword) {
+
+    for(var k in capabilities) {
+
+        var capability = capabilities[k];
+        var layerSection = capabilities[k].getElementsByTagName("Layer")[0];
+        var layers;
+
+        if(!layerSection) continue;
+
+        layers = layerSection.getElementsByTagName("Layer");
+
+        if(!layers) continue;
+
+        for (var i = layers.length - 1; i >= 0; i--) {
+            
+            //checkeo que no sea un tag de categoria
+            if(!("queryable" in layers[i].attributes)) continue;
+
+            var keywords = layers[i].getElementsByTagName("Keyword");
+
+            for (var j = keywords.length - 1; j >= 0; j--) {
+
+                if(keywords[j].textContent.toUpperCase() == keyword.toUpperCase()) {
+                    var layerName = layers[i].getElementsByTagName("Name")[0].textContent;
+                    var layerTitle = layers[i].getElementsByTagName("Title")[0].textContent;
+                    var getMapUrl = capability.getElementsByTagName("OnlineResource")[0].attributes["xlink:href"].value;
+                    
+                    var newLayer = new OpenLayers.Layer.WMS(
+                         layerTitle + " (" + k + ")",
+                         getMapUrl,
+                         {
+                             layers: layerName,
+                             transparent: "true",
+                             format: "image/png"
+                         }, { 
+                             isBaseLayer: false,
+                             keyword: keyword
+                         }
+                     );
+                    app.mapPanel.map.addLayer(newLayer);
+                }
+            };
+        };        
+    }
+};
+
+//quita las capas en base a una keyword
+removeLayerByKw = function(keyword) {
+    var map = app.mapPanel.map;
+
+    for (var i = map.layers.length - 1; i >= 0; i--)
+        if(map.layers[i].keyword == keyword) map.layers[i].destroy();
+};
