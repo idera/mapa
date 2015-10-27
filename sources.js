@@ -80,7 +80,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "energia": {
-        "url": "http://sig.se.gob.ar/cgi-bin/mapserv6?map=/var/www/html/visor/geofiles/map/mapase.map&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities",
+        "url": "http://sig.se.gob.ar/wmsenergia&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities",
         "title": "Secretaría de Energía de Nacion",
         "ptype": "gxp_wmscsource"
     },
