@@ -256,6 +256,28 @@ var slider = new GeoExt.LayerOpacitySlider({
         }
     });
 
+    btnMetadatos = new Ext.Button({
+        text: 'Metadatos',
+        tooltip: 'Acceso a metadatos de la capa',
+        icon: './theme/info-new-window.png',
+        disabled: true,
+        handler: function(baseItem, e){
+            if (Ext.getCmp('ventanaMetadatos')) {
+                Ext.getCmp('ventanaMetadatos').destroy();
+            }
+            new Ext.Window({
+                title: 'Metadatos de la capa',
+                id: 'ventanaMetadatos',
+                maximizable: true,
+                width: 800,
+                height: 550,
+                stateful : false,
+                html: '<iframe src ="' + app.selectedLayer.data.layer.MetadataURL +
+                    '" width="100%" height="100%"></iframe>'
+            }).show();
+        }
+    });
+
     app.mapPanel.map.events.register("mousemove", app.mapPanel.map, function (e) {
         position = app.mapPanel.map.getLonLatFromViewPortPx(e.xy);
         Ext.getCmp('position').update("<label>Latitud: " + position.lat + "</label><br/><label>Longitud: " + position.lon + "</label>");
@@ -266,9 +288,20 @@ app.on('ready', function() {
     //asocia el layer seleccionado al slider
     var tree = Ext.getCmp('tree');
     tree.on("click", function (node, e) {
-        if (node.isLeaf())
+        if (node.isLeaf()) {
             slider.setLayer(node.layer);
+
+            if (app.selectedLayer.data.layer.MetadataURL){
+                btnMetadatos.enable();
+            } else {
+                btnMetadatos.disable();
+            }
+        }
     });
+
+    var treeTbar = Ext.getCmp('layers_tree').items.items[0].toolbars[0];
+    treeTbar.add(btnMetadatos);
+    treeTbar.doLayout();
 
     //UI provider
     var treeNodeUI = Ext.extend(
@@ -282,7 +315,6 @@ app.on('ready', function() {
             text: tema,
             checked: false,
             leaf: true,
-            //TODO
             qtip: 'capas que contengan uno o más temas entre sus "keywords"',
             iconCls: "gxp-tree-rasterlayer-icon",
             listeners: {
@@ -370,6 +402,8 @@ function addLayerByKw(keyword) {
                     var layerName = layers[i].getElementsByTagName("Name")[0].textContent;
                     var layerTitle = layers[i].getElementsByTagName("Title")[0].textContent;
                     var getMapUrl = capability.getElementsByTagName("OnlineResource")[0].attributes["xlink:href"].value;
+                    var metaUrl = layers[i].getElementsByTagName("MetadataURL")[0] || null;
+                    if(metaUrl) metaUrl = metaUrl.getElementsByTagName("OnlineResource")[0].attributes["xlink:href"].value;
                     
                     var newLayer = new OpenLayers.Layer.WMS(
                          layerTitle + " (" + k + ")",
@@ -380,7 +414,8 @@ function addLayerByKw(keyword) {
                              format: "image/png"
                          }, { 
                              isBaseLayer: false,
-                             keyword: keyword
+                             keyword: keyword, 
+                             MetadataURL : metaUrl
                          }
                      );
                     app.mapPanel.map.addLayer(newLayer);
