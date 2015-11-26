@@ -70,7 +70,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "indec2": {
-        "url": "http://www.opex.sig.indec.gov.ar/cgi-bin/mapserv?map=/home/wms/codgeo_2010.map&REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.1.1",
+        "url": "http://geoservicios.indec.gov.ar/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
         "title": "INDEC - Censo 2010",
         "ptype": "gxp_wmscsource"
     },
