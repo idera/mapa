@@ -1,8 +1,8 @@
 addOverview = function() {
     var mapOptions = {
-        maxExtent: new OpenLayers.Bounds(-111, -62, -16, -7),
+        //maxExtent: new OpenLayers.Bounds(-111, -62, -16, -7),
         //numZoomLevels: 1,
-        projection: new OpenLayers.Projection("EPSG:4326"),
+        projection: new OpenLayers.Projection("EPSG:3857"),
         units: "m"
     };
     var controlOptions = {
@@ -13,7 +13,7 @@ addOverview = function() {
         layers: [
             new OpenLayers.Layer.WMS(
                 "overview", 
-                "http://wms.ign.gob.ar/geoserver/wms?", 
+                "http://wms.ign.gob.ar/geoserver/wms?version=1.1.1", 
                 {
                     layers: 'capabaseargenmap'
                 }, {
