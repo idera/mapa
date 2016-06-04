@@ -183,7 +183,7 @@ app = new gxp.Viewer({
             iconCls: "gxp-icon-permalink",
             handler: function() {
                 Ext.MessageBox.show({
-                    title: 'Permalink', 
+                    title: 'Permalink',
                     msg: 'Seleccione y copie el texto con Ctrl+C',
                     value: permalink,
                     multiline: true,
@@ -305,7 +305,7 @@ app.on('ready', function() {
     loadCapabilities();
 });
 
-// agrega arbol de temas del perfil de metadatos de IDERA 
+// agrega arbol de temas del perfil de metadatos de IDERA
 function addArbolTemas() {
     //UI provider
     var treeNodeUI = Ext.extend(
@@ -355,7 +355,7 @@ function getCapabilitiesXML(id, source) {
             timestamp: Math.round((new Date()).getTime() / 1000)
         },
         callback: function(request) {
-            if (request.status != 200) { 
+            if (request.status != 200) {
                 Log('El servidor ' + source.title + ' está caído');
                 return;
             }
@@ -366,8 +366,8 @@ function getCapabilitiesXML(id, source) {
 
             //TODO eliminar partes innecesarias del doc
             if(doc && doc.documentElement) capabilities[id] = doc;
-        }, 
-        failure: function() {            
+        },
+        failure: function() {
             var msj = 'El servidor ' + source.title + ' no está accesible.';
             Log(msj);
         }
@@ -395,7 +395,7 @@ function addLayerByKw(keyword) {
         if(!layers) continue;
 
         for (var i = layers.length - 1; i >= 0; i--) {
-            
+
             //checkeo que no sea un tag de categoria
             if(!("queryable" in layers[i].attributes)) continue;
 
@@ -409,7 +409,7 @@ function addLayerByKw(keyword) {
                     var getMapUrl = capability.getElementsByTagName("OnlineResource")[0].attributes["xlink:href"].value;
                     var metaUrl = layers[i].getElementsByTagName("MetadataURL")[0] || null;
                     if(metaUrl) metaUrl = metaUrl.getElementsByTagName("OnlineResource")[0].attributes["xlink:href"].value;
-                    
+
                     var newLayer = new OpenLayers.Layer.WMS(
                          layerTitle + " (" + k + ")",
                          getMapUrl,
@@ -417,16 +417,17 @@ function addLayerByKw(keyword) {
                              layers: layerName,
                              transparent: "true",
                              format: "image/png"
-                         }, { 
+                         }, {
                              isBaseLayer: false,
-                             keyword: keyword, 
+                             visibility: false,
+                             keyword: keyword,
                              MetadataURL : metaUrl
                          }
                      );
                     app.mapPanel.map.addLayer(newLayer);
                 }
             };
-        };        
+        };
     }
 };
 
