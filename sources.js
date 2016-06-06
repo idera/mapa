@@ -100,7 +100,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "urbasig": {
-        "url": "http://sig.gobierno.gba.gov.ar:8080/geoserver/urbasig/wms?",
+        "url": "http://sig.gobierno.gba.gov.ar/geoserver/urbasig/wms?",
         "title": "Dirección Provincial de Ordenamiento Urbano y Territorial (Subsecretaria de Gobierno, Ministerio de Gobierno (urBAsig))",
         "ptype": "gxp_wmscsource"
     },
@@ -170,7 +170,7 @@ var sources = {
         "ptype": "gxp_wmscsource"
     },
     "mptucuman": {
-        "url": "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?&",
+        "url": "http://rides.producciontucuman.gov.ar/ArcGIS/services/Informacion_Productiva/mapserver/WMSServer?",
         "title": "Ministerio de Desarrollo Productivo - Tucumán",
         "ptype": "gxp_wmscsource"
     },
