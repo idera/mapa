@@ -85,7 +85,7 @@ var sources = {
     "ptype": "gxp_wmscsource"
   },
   "indec2": {
-    "url": "http://geoservicios.indec.gov.ar/geoserver/ows?",
+    "url": "http://geoservicios.indec.gov.ar/geoserver/geocenso2010/ows?",
     "title": "INDEC - Censo 2010",
     "ptype": "gxp_wmscsource"
   },
