@@ -33,7 +33,7 @@ exec("rm $path/*.xml");
 
 foreach ($services as $provider => $service) {
     if (isset($service["url"])) {
-        exec("wget --tries=2 --timeout=30 -O $path/$provider.xml '$service[url]'");
+        exec("wget --tries=2 --timeout=30 -O $path/$provider.xml '$service[url]&service=WMS&version=1.1.1&request=GetCapabilities'");
 
         if (0 == filesize("$path/$provider.xml")) {
 
