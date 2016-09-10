@@ -13,12 +13,15 @@ capabilitiesArray=($capabilities);
 #Borra xml cacheados anteriormente
 #rm /var/www/mapa/ogc/*.xml;
 
+#Variable para concatenar los parametros a cada WMS
+parametrosWms="&service=WMS&version=1.1.1&request=GetCapabilities";
+
 
 # Recorre los servidores y obtiene capacidades de cada servicio.
 for ((i=0; i<${#capabilitiesArray[@]}; i=$i+2));
 do
     #Descarga capacidades si existen y guarda en /var/www/mapa/ogc/*.xml;
-    wget --tries=2 --timeout=30 -O /var/www/mapa/ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]} ||
+    wget --tries=2 --timeout=30 -O /var/www/mapa/ogc/${capabilitiesArray[$i]}.xml ${capabilitiesArray[$i+1]}$parametrosWms ||
     (pepe=$(grep ${capabilitiesArray[$i]} emails.txt | sed "s/\/var\/www\/mapa\/ogc\/"${capabilitiesArray[$i]}".xml: *//");
     pepe2=$pepe;
     pepe2+=" 1";
@@ -27,7 +30,7 @@ do
     #Envio de mail x servidor caido
     #php escribir.php
     regex="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
-    
+
 
 if [[ $pepe =~ $regex ]] ; then
     echo "El servicio WMS de "${capabilitiesArray[$i]}" fue inaccesible el""se envió un correo a: "$pepe" y a coordinador_id@idera.gob.ar"|mailx -s "WMS inaccesible" $pepe coordinador_id@idera.gob.ar
@@ -35,8 +38,8 @@ else
     echo "El servicio WMS de "${capabilitiesArray[$i]}" fue inaccesible y la direccion de mail es invalida o no esta seteada"|mailx -s "WMS inaccesible de "${capabilitiesArray[$i]}"" coordinador_id@idera.gob.ar
 fi
 
-    ) 
-    
+    )
+
 done
 
 IFS=$OIFS;
