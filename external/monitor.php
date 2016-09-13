@@ -5,7 +5,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$path = '/var/www/mapa/ogc';
+require 'PHPMailer/PHPMailerAutoload.php';
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->SMTPDebug = 2;
+$mail->Debugoutput = 'html';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = true;
+$mail->Username = "usergmail@gmail.com";
+$mail->Password = "passwordgmail";
+$mail->setFrom('usergmail@gmail.com', 'IDERA');
+$mail->Subject = 'Servidor Inaccesible';
+$mail->msgHTML("Desde Idera informamos que su servidor se encuentra inaccesible. Por favor no responda este mensaje");
+
+$path= '/var/www/mapa/ogc';
 # Consulta Servidores de los servicios.
 $file = file_get_contents("http://servicios.idera.gob.ar/mapa/sources.php?format=json");
 $jSources = str_replace("var sources = ", "", $file);
@@ -55,8 +70,11 @@ foreach ($services as $provider => $service) {
 
                     $para = $resultado["email"];
                     echo "Intento enviar email \n";
-                    $exitoso = mail($para, "Su servidor wms ha caído", "Desde Idera informamos que su servidor wms se encuentra inaccesible.");
-                    if ($exitoso) {
+                    
+                    $mail->addAddress($para);
+                    if (!$mail->send()) {
+                        echo "Mailer Error: " . $mail->ErrorInfo;
+                    } else {
                         echo "envio un email porque el servidor de $_provider esta caido \n";
                         $_fecha = $hoy->format("Y-m-d H:i:s");
                         $update->execute();

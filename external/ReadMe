@@ -1,0 +1,5 @@
+1- Instalar drivers para sqlite (Ej: apt-get install php5-sqlite)
+2- Configurar en extrenal/monitor.php los parámetros de phpmailer (host, puerto, usuario, contraseña)
+2- Debe existir el directorio /var/www/mapa/ogc (donde guarda el doc capabilities de cada servidor)
+3- Ejecutar la primera vez el script monitor.php mediante linea de comandos
+4- Ejecutar la primera vez el script mails.php mediante linea de comandos
