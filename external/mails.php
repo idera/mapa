@@ -34,30 +34,29 @@ $update->bindParam(':provider', $_provider);
 $update->bindParam(':email', $_email);
 
 // Loop thru all messages and execute prepared insert statement
-foreach ($services as $provider => $service) {
+foreach ($services as $provider => $service) {    
     //exec("wget --tries=2 --timeout=30 -O $path/$provider.xml '$service[url]'");
-    if (file_exists("$path/$provider.xml")){
+    if (file_exists("$path/$provider.xml")){        
        $source = file_get_contents("$path/$provider.xml");
        $pos_inic = strpos($source, "<ContactElectronicMailAddress>");
        $pos_fin = strpos($source, "</ContactElectronicMailAddress>");
        
        //SI existen las etiquetas
-       if ($pos_inic && $pos_fin){
+       if ($pos_inic && $pos_fin){           
           $_email = substr($source, $pos_inic+30, $pos_fin-$pos_inic-30);
           $_provider = $provider;
           
           //Si es un email valido
-          if (strpos($_email, "@")){
-
+          if (strpos($_email, "@")){              
             $sql_consulta = "SELECT * FROM emails where provider = '$_provider'";
             $consulta= $file_db->prepare($sql_consulta);
             $consulta->execute();
             $fila = $consulta->fetch(PDO::FETCH_ASSOC);
 
             //Si existe  el provider en la base de datos
-            if (empty($fila)){
+            if (empty($fila)){                
                 $insert->execute();
-            }else{
+            }else{                
                 $update->execute();
             }
           }
