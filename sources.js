@@ -9,9 +9,9 @@ var sources = {
     "title": "SENASA",
     "ptype": "gxp_wmscsource"
   },
-  "siia": {
+  "minagro": {
     "url": "http://ide.siia.gov.ar/geoserver/ows?",
-    "title": "SIIA - Ministerio de Agricultura, Ganaderia y Pesca",
+    "title": "Ministerio de Agroindustria de la Nación",
     "ptype": "gxp_wmscsource"
   },
   "ambiente": {
