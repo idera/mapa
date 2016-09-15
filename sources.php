@@ -1,6 +1,6 @@
 <?php
 // Abrir archivo de sources
-$sources = file_get_contents('sources.js');
+$sources = file_get_contents('https://raw.githubusercontent.com/idera/mapa/master/sources.js');
 
 // Responder peticion plana (cron)
 if ($_GET['format']=='plain') {
