@@ -47,7 +47,7 @@ exec("rm $path/*.xml");
 # Recorre los servidores y obtiene capacidades de cada servicio.
 
 foreach ($services as $provider => $service) {
-    if (isset($service["url"])) {
+    if (isset($service["url"]) && ($service["ptype"] != "gxp_cataloguesource")) {
         exec("wget --tries=2 --timeout=30 -O $path/$provider.xml '$service[url]&service=WMS&version=1.1.1&request=GetCapabilities'");
 
         if (0 == filesize("$path/$provider.xml")) {
