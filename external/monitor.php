@@ -72,7 +72,7 @@ foreach ($services as $provider => $service) {
                     echo "Intento enviar email \n";
                     
                     $mail->addAddress($para);
-                    $mail->msgHTML("informamos que su servicio" . $sevice['url'] . " se encuentra inaccesible. Por favor no responda este mensaje");
+                    $mail->msgHTML("informamos que su servicio " . $sevice['url'] . " se encuentra inaccesible. Por favor no responda este mensaje");
                     if (!$mail->send()) {
                         echo "Mailer Error: " . $mail->ErrorInfo;
                     } else {
