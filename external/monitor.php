@@ -18,7 +18,7 @@ $mail->Username = "usergmail@gmail.com";
 $mail->Password = "passwordgmail";
 $mail->setFrom('usergmail@gmail.com', 'IDERA');
 $mail->Subject = 'Servidor Inaccesible';
-$mail->msgHTML("Desde Idera informamos que su servidor se encuentra inaccesible. Por favor no responda este mensaje");
+
 
 $path= '/var/www/mapa/ogc';
 # Consulta Servidores de los servicios.
@@ -72,6 +72,7 @@ foreach ($services as $provider => $service) {
                     echo "Intento enviar email \n";
                     
                     $mail->addAddress($para);
+                    $mail->msgHTML("informamos que su servicio" . $sevice['url'] . " se encuentra inaccesible. Por favor no responda este mensaje");
                     if (!$mail->send()) {
                         echo "Mailer Error: " . $mail->ErrorInfo;
                     } else {
