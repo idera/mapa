@@ -10,13 +10,13 @@ $mail = new PHPMailer;
 $mail->isSMTP();
 $mail->SMTPDebug = 2;
 $mail->Debugoutput = 'html';
-$mail->Host = 'smtp.gmail.com';
-$mail->Port = 587;
-$mail->SMTPSecure = 'tls';
+$mail->Host = '***';
+$mail->Port = 54645;
+//$mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "usergmail@gmail.com";
-$mail->Password = "passwordgmail";
-$mail->setFrom('usergmail@gmail.com', 'IDERA');
+$mail->Username = "***";
+$mail->Password = "***";
+$mail->setFrom('admin@idera.gob.ar', 'IDERA');
 $mail->Subject = 'Servidor Inaccesible';
 
 
@@ -27,7 +27,7 @@ $jSources = str_replace("var sources = ", "", $file);
 $services = json_decode($jSources, true);
 
 
-$file_db = new PDO('sqlite:emails.sqlite');
+$file_db = new PDO('sqlite:/var/www/mapa/external/emails.sqlite');
 
 $hoy = new DateTime();
 
@@ -48,18 +48,18 @@ exec("rm $path/*.xml");
 
 foreach ($services as $provider => $service) {
     if (isset($service["url"]) && ($service["ptype"] != "gxp_cataloguesource")) {
-        exec("wget --tries=2 --timeout=30 -O $path/$provider.xml '$service[url]&service=WMS&version=1.1.1&request=GetCapabilities'");
+        exec("wget --tries=2 --timeout=60 -O $path/$provider.xml '$service[url]&service=WMS&version=1.1.1&request=GetCapabilities'");
 
         if (0 == filesize("$path/$provider.xml")) {
 
             $_provider = $provider;
-
+            $_url = $service["url"];
             $sql_consulta = "SELECT * FROM emails where provider = '$_provider'";
             $consulta = $file_db->prepare($sql_consulta);
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
             echo "Existe el email \n";
-                
+
             if (!empty($resultado)) { //si tiene email entra
                 $fecha_envio = $resultado["fecha_envio"];
                 $ultimo_envio = DateTime::createFromFormat("Y-m-d H:i:s", $fecha_envio);
@@ -70,9 +70,9 @@ foreach ($services as $provider => $service) {
 
                     $para = $resultado["email"];
                     echo "Intento enviar email \n";
-                    
+
                     $mail->addAddress($para);
-                    $mail->msgHTML("informamos que su servicio " . $sevice['url'] . " se encuentra inaccesible. Por favor no responda este mensaje");
+                    $mail->msgHTML("informamos que su servicio " . $_url . " se encuentra inaccesible. Por favor no responda este mensaje");
                     if (!$mail->send()) {
                         echo "Mailer Error: " . $mail->ErrorInfo;
                     } else {
@@ -85,7 +85,3 @@ foreach ($services as $provider => $service) {
         }
     }
 }
-
-
-
-    
