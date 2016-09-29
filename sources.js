@@ -259,11 +259,6 @@ var sources = {
     "title": "Municipalidad de San Nicolás de los Arroyos",
     "ptype": "gxp_wmscsource"
   },
-  "jujuy": {
-    "url": "http://181.15.175.27/geoserver/ows?",
-    "title": "IDE Jujuy",
-    "ptype": "gxp_wmscsource"
-  },
   "misiones": {
     "url": "http://www.ide.misiones.gov.ar/cgi-bin/mapserv?map=/var/www/ide/htdocs/WMSdextraGD.map?",
     "title": "IDE Misiones",
